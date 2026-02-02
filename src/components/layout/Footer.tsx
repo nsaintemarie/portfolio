@@ -9,7 +9,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background-secondary">
+    <footer className="border-t border-border bg-background-secondary snap-start">
       <Container>
         <div className="flex flex-col items-center justify-between gap-6 py-8 md:flex-row">
           <p className="text-sm text-foreground-muted">

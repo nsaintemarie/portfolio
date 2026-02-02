@@ -38,6 +38,10 @@
   --leading-heading-lg: 70px;
   --tracking-heading-lg: -0.08em;
 
+  --text-heading-md: 24px;
+  --leading-heading-md: auto;
+  --tracking-heading-md: -0.02em;
+
   --text-logo: 20px;
   --leading-logo: auto;
   --tracking-logo: -0.06em;
@@ -50,7 +54,7 @@
   --leading-paragraph-line: 26px;
   --tracking-paragraph-line: -0.01em;
 
-    --text-paragraph: 16px;
+  --text-paragraph: 16px;
   --leading-paragraph: auto;
   --tracking-paragraph: -0.02em;
 
@@ -80,6 +84,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
   --color-primary: var(--color-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -101,6 +106,18 @@ body {
   font-size: var(--text-heading-xl);
   line-height: var(--leading-heading-xl);
   letter-spacing: var(--tracking-heading-xl);
+}
+
+.text-heading-lg {
+  font-size: var(--text-heading-lg);
+  line-height: var(--leading-heading-lg);
+  letter-spacing: var(--tracking-heading-lg);
+}
+
+.text-heading-md {
+  font-size: var(--text-heading-md);
+  line-height: var(--leading-heading-md);
+  letter-spacing: var(--tracking-heading-md);
 }
 
 .text-logo {

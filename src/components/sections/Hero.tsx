@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden snap-start snap-always">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero-bg-2.webp')" }}
+        style={{ backgroundImage: "url('/hero-bg.webp')" }}
       />
 
       {/* Black overlay */}
@@ -151,7 +151,7 @@ export function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-1 hover:transition-colors"
+              className="flex items-center gap-1 hover:transition-colors hover:text-primary"
             >
               Github <span className="mdi mdi-arrow-bottom-right" />
             </motion.a>
@@ -162,7 +162,7 @@ export function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-1 hover:transition-colors"
+              className="flex items-center gap-1 hover:transition-colors hover:text-primary"
             >
               Linkedin <span className="mdi mdi-arrow-bottom-right" />
             </motion.a>
@@ -173,7 +173,7 @@ export function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-1 hover:transition-colors"
+              className="flex items-center gap-1 hover:transition-colors hover:text-primary"
             >
               Malt <span className="mdi mdi-arrow-bottom-right" />
             </motion.a>

@@ -17,7 +17,7 @@ export function Section({
     background === "secondary" ? "bg-background-secondary" : "bg-background";
 
   return (
-    <section id={id} className={`py-16 md:py-24 ${bgClass} ${className}`}>
+    <section id={id} className={`h-screen flex flex-col justify-center py-16 md:py-24 snap-start snap-always ${bgClass} ${className}`}>
       <Container>{children}</Container>
     </section>
   );
