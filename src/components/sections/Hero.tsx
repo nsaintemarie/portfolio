@@ -32,12 +32,12 @@ export function Hero() {
           initial={{ y: -60, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-logo text-primary text-center"
+          className="text-logo text-center"
         >
           NOEMIE S®
         </motion.p>
 
-        <div className="flex flex-col w-full text-primary text-heading-xl uppercase gap-2.5 items-start">
+        <div className="flex flex-col w-full text-heading-xl uppercase gap-2.5 items-start">
           {/* LEAD */}
           <div className="relative">
             {/* Label - mask in first */}
@@ -49,7 +49,7 @@ export function Hero() {
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.3, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="block text-paragraph-caps text-primary"
+                className="block text-paragraph-caps"
               >
                 [ARCHITECTURE]
               </motion.span>
@@ -78,7 +78,7 @@ export function Hero() {
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.3, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="block text-paragraph-caps text-primary"
+                className="block text-paragraph-caps"
               >
                 [FORMATION]
               </motion.span>
@@ -107,7 +107,7 @@ export function Hero() {
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.3, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="block text-paragraph-caps text-primary"
+                className="block text-paragraph-caps"
               >
                 [CONSEIL]
               </motion.span>
@@ -136,7 +136,7 @@ export function Hero() {
               initial={{ y: "120%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.3, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-paragraph-line text-primary"
+              className="text-paragraph-line"
             >
               Du site vitrine à l'application complexe, je construis et déploie vos sites et applications, ou accompagne vos équipes, pour des projets performants et évolutifs, pensés pour votre business.
             </motion.p>
@@ -151,7 +151,7 @@ export function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-1 hover:text-primary transition-colors"
+              className="flex items-center gap-1 hover:transition-colors"
             >
               Github <span className="mdi mdi-arrow-bottom-right" />
             </motion.a>
@@ -162,7 +162,7 @@ export function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-1 hover:text-primary transition-colors"
+              className="flex items-center gap-1 hover:transition-colors"
             >
               Linkedin <span className="mdi mdi-arrow-bottom-right" />
             </motion.a>
@@ -173,7 +173,7 @@ export function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-1 hover:text-primary transition-colors"
+              className="flex items-center gap-1 hover:transition-colors"
             >
               Malt <span className="mdi mdi-arrow-bottom-right" />
             </motion.a>

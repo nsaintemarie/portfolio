@@ -32,7 +32,7 @@ export function Navigation() {
             >
               <Link
                 href={item.href}
-                className="flex items-center justify-center text-paragraph-sm text-primary transition-colors gap-2"
+                className="flex items-center justify-center text-paragraph-sm transition-colors gap-2"
               >
                 {item.icon && (
                   <Image src={item.icon} alt="" width={12} height={12} />
