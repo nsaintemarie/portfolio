@@ -88,12 +88,12 @@ export function About() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-12 min-h-1/2 xl:-ml-11"
         >
-          <p className="text-paragraph-line">
+          <p className="text-paragraph-line opacity-80">
             Aujourd'hui, depuis plus de 3 ans, je suis développeuse full-stack. J'aime comprendre un besoin, en saisir la logique métier, imaginer une architecture claire et écrire un code solide qui servira vraiment le produit.
             <br /><br />
             On me reconnaît souvent une vraie capacité à prendre du recul, accompagner avec pédagogie et rendre compréhensible ce qui peut sembler complexe.
           </p>
-          <p className="text-paragraph-line xl:mt-16">
+          <p className="text-paragraph-line opacity-80 xl:mt-16">
             J'accompagne des startups, des équipes tech et des entrepreuneurs : pour donner vie à un projet, renforcer une équipe ou accompagner une organisation sur ses choix techniques.
             <br /><br />
             Mon approche est à la fois rigoureuse, flexible et orientée produit — parce que la technique n'a de sens que si elle répond à un besoin réel.
