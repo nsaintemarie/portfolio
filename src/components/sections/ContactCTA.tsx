@@ -6,7 +6,7 @@ import { Button } from "@/components/ui";
 
 export function ContactCTA() {
   return (
-    <Section background="secondary">
+    <Section>
       <div className="text-center">
         <div style={{ clipPath: "inset(0 0 0 0)" }}>
           <motion.h2

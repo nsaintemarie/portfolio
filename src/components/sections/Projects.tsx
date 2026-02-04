@@ -18,12 +18,12 @@ const projects = [
     image: "/project-2.jpg",
     href: "/projets/projet-2",
   },
-  // {
-  //   title: "Projet 3",
-  //   stacks: ["Angular", "TypeScript", "RxJS"],
-  //   image: "/project-3.jpg",
-  //   href: "/projets/projet-3",
-  // },
+  {
+    title: "Projet 3",
+    stacks: ["Angular", "TypeScript", "RxJS"],
+    image: "/project-3.jpg",
+    href: "/projets/projet-3",
+  },
 ];
 
 export function Projects() {

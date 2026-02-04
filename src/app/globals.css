@@ -143,3 +143,9 @@ body {
   line-height: var(--leading-paragraph-sm);
   letter-spacing: var(--tracking-paragraph-sm);
 }
+
+.text-paragraph-line {
+  font-size: var(--text-paragraph-line);
+  line-height: var(--leading-paragraph-line);
+  letter-spacing: var(--tracking-paragraph-line);
+}
