@@ -5,9 +5,7 @@ const navLinks = [
   { name: "[À PROPOS]", href: "#a-propos", label: "En savoir plus sur moi" },
   {
     name: "[LINKEDIN]",
-    href:
-      process.env.NEXT_PUBLIC_LINKEDIN_URL ??
-      "https://linkedin.com/",
+    href: "https://linkedin.com/",
     external: true,
     label: "Voir mon profil LinkedIn",
   },
