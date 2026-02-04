@@ -1,30 +1,39 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { GridBackground, SocialLinks } from "@/components/ui";
+import { EASE_OUT_EXPO } from "@/constants/animation";
+
+const heroLines = [
+  { text: "LEAD", label: "[ARCHITECTURE]", align: "start", delay: 0.3 },
+  { text: "FULLSTACK", label: "[FORMATION]", align: "center", delay: 0.5 },
+  { text: "DEVELOPER", label: "[CONSEIL]", align: "end", delay: 0.7 },
+] as const;
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden snap-start snap-always">
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero-bg.webp')" }}
+    <section
+      className="relative h-screen w-full overflow-hidden snap-start snap-always"
+      aria-label="Introduction"
+    >
+      {/* Background image - optimized with Next/Image */}
+      <Image
+        src="/hero-bg.webp"
+        alt=""
+        fill
+        priority
+        quality={85}
+        sizes="100vw"
+        className="object-cover object-center"
+        aria-hidden="true"
       />
 
       {/* Black overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
 
       {/* Vertical grid lines */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(to right, rgba(255,255,255,0.12) 0px, rgba(255,255,255,0) 1px, transparent 1px, transparent 40px)",
-          backgroundSize: "40px 100%",
-          maskImage: "linear-gradient(to bottom, white 0%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, white 0%, transparent 100%)",
-        }}
-      />
+      <GridBackground />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col justify-between h-full px-5 pt-12 pb-26 md:pt-6 md:px-20">
@@ -37,147 +46,78 @@ export function Hero() {
           NOEMIE S®
         </motion.p>
 
-        <div className="flex flex-col w-full text-heading-xl uppercase gap-2.5 items-start">
-          {/* LEAD */}
-          <div className="relative">
-            {/* Label - mask in first */}
+        <h1 className="flex flex-col w-full text-heading-xl uppercase gap-2.5 items-start">
+          {heroLines.map((line) => (
             <div
-              className="absolute lg:-top-6 left-full -translate-x-full"
-              style={{ clipPath: "inset(0 0 0 0)" }}
+              key={line.text}
+              className={`relative ${
+                line.align === "center"
+                  ? "self-center lg:-translate-x-1/6"
+                  : line.align === "end"
+                  ? "self-end"
+                  : ""
+              }`}
             >
-              <motion.span
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.3, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="block text-paragraph-caps"
+              {/* Label */}
+              <div
+                className="absolute lg:-top-6 left-full -translate-x-full"
+                style={{ clipPath: "inset(0 0 0 0)" }}
               >
-                [ARCHITECTURE]
-              </motion.span>
+                <motion.span
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{
+                    duration: 1.3,
+                    delay: line.delay - 0.1,
+                    ease: EASE_OUT_EXPO,
+                  }}
+                  className="block text-paragraph-caps"
+                  aria-hidden="true"
+                >
+                  {line.label}
+                </motion.span>
+              </div>
+              {/* Text */}
+              <div style={{ clipPath: "inset(-10% -10% 0 -10%)" }}>
+                <motion.span
+                  initial={{ y: "110%" }}
+                  animate={{ y: 0 }}
+                  transition={{
+                    duration: 1.3,
+                    delay: line.delay,
+                    ease: EASE_OUT_EXPO,
+                  }}
+                  className="block"
+                >
+                  {line.text}
+                </motion.span>
+              </div>
             </div>
-            {/* Text - mask in after */}
-            <div style={{ clipPath: "inset(-10% -10% 0 -10%)" }}>
-              <motion.span
-                initial={{ y: "110%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.3, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="block"
-              >
-                LEAD
-              </motion.span>
-            </div>
-          </div>
-
-          {/* FULLSTACK */}
-          <div className="relative self-center lg:-translate-x-1/6">
-            {/* Label - mask in first */}
-            <div
-              className="absolute lg:-top-6 left-full -translate-x-full"
-              style={{ clipPath: "inset(0 0 0 0)" }}
-            >
-              <motion.span
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.3, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="block text-paragraph-caps"
-              >
-                [FORMATION]
-              </motion.span>
-            </div>
-            {/* Text - mask in after */}
-            <div style={{ clipPath: "inset(-10% -10% 0 -10%)" }}>
-              <motion.span
-                initial={{ y: "110%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.3, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="block"
-              >
-                FULLSTACK
-              </motion.span>
-            </div>
-          </div>
-
-          {/* DEVELOPER */}
-          <div className="relative self-end">
-            {/* Label - mask in first */}
-            <div
-              className="absolute lg:-top-6 left-full -translate-x-full"
-              style={{ clipPath: "inset(0 0 0 0)" }}
-            >
-              <motion.span
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.3, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="block text-paragraph-caps"
-              >
-                [CONSEIL]
-              </motion.span>
-            </div>
-            {/* Text - mask in after */}
-            <div style={{ clipPath: "inset(-10% -10% 0 -10%)" }}>
-              <motion.span
-                initial={{ y: "110%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.3, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="block"
-              >
-                DEVELOPER
-              </motion.span>
-            </div>
-          </div>
-        </div>
+          ))}
+        </h1>
 
         <div className="flex justify-between">
-          {/* Description - mask in */}
-          <div
-            className="max-w-2/5"
-            style={{ clipPath: "inset(0 0 0 0)" }}
-          >
+          {/* Description */}
+          <div className="max-w-2/5" style={{ clipPath: "inset(0 0 0 0)" }}>
             <motion.p
               initial={{ y: "120%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 1.3, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1.3, delay: 1.2, ease: EASE_OUT_EXPO }}
               className="text-paragraph-line"
             >
-              Du site vitrine à l'application complexe, je construis et déploie vos sites et applications, ou accompagne vos équipes, pour des projets performants et évolutifs, pensés pour votre business.
+              Du site vitrine à l'application complexe, je construis et déploie
+              vos sites et applications, ou accompagne vos équipes, pour des
+              projets performants et évolutifs, pensés pour votre business.
             </motion.p>
           </div>
 
-          {/* Links - slide in from bottom */}
-          <div className="flex flex-col gap-1 text-paragraph-caps text-primary/80 uppercase">
-            <motion.a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-1 hover:transition-colors hover:text-primary"
-            >
-              Github <span className="mdi mdi-arrow-bottom-right" />
-            </motion.a>
-            <motion.a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-1 hover:transition-colors hover:text-primary"
-            >
-              Linkedin <span className="mdi mdi-arrow-bottom-right" />
-            </motion.a>
-            <motion.a
-              href="https://malt.fr"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-1 hover:transition-colors hover:text-primary"
-            >
-              Malt <span className="mdi mdi-arrow-bottom-right" />
-            </motion.a>
-          </div>
+          {/* Social Links */}
+          <SocialLinks
+            showArrow
+            animate
+            baseDelay={1.2}
+            linkClassName="text-paragraph-caps text-primary/80 uppercase hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+          />
         </div>
       </div>
     </section>

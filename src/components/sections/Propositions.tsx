@@ -1,26 +1,10 @@
 "use client";
 
-import { cn } from "@/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-const propositions = [
-  {
-    title: "Concevoir et lancer votre produit",
-    description: "J’accompagne la création de votre produit de l’idée au déploiement, en prenant en charge toutes les étapes clés : conception, cadrage technique, développement et mise en production.",
-    image: "/proposition-1.webp",
-  },
-  {
-    title: "Renforcer et structurer votre équipe",
-    description: "J’intègre vos équipes en tant que développeuse ou lead technique, selon vos enjeux du moment.Je peux prendre en charge des fonctionnalités clés, structurer le travail, faciliter la collaboration ou apporter une vision plus claire sur la direction technique d’un projet.",
-    image: "/proposition-2.png",
-  },
-  {
-    title: "Optimiser vos choix techniques",
-    description: "Je vous accompagne,  que ce soit pour structurer votre stack, vous aider sur des migrations, améliorer la qualité de votre code ou faire monter une équipe en compétences. C’est un format flexible : quelques séances, un audit léger ou un suivi régulier, selon vos besoins.",
-    image: "/proposition-3.png",
-  },
-];
+import { cn } from "@/utils";
+import { propositions } from "@/data/propositions";
+import { EASE_OUT_EXPO, VIEWPORT_ONCE } from "@/constants/animation";
 
 export function Propositions() {
   return (
@@ -37,10 +21,11 @@ export function Propositions() {
             transition={{
               duration: 0.8,
               delay: 0.2 + index * 0.15,
-              ease: [0.16, 1, 0.3, 1],
+              ease: EASE_OUT_EXPO,
             }}
-            viewport={{ once: true, margin: "-100px" }}
-            className={cn('flex-1 rounded-lg bg-white/3 p-8',
+            viewport={VIEWPORT_ONCE}
+            className={cn(
+              "flex-1 rounded-lg bg-white/3 p-8",
               index === 1 && "mt-20"
             )}
           >

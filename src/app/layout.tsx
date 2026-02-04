@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer, Navigation } from "@/components/layout";
+import { SkipLink } from "@/components/ui";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,8 +15,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Noémie Sainte-Marie | Portfolio",
-  description: "Portfolio de Noémie Sainte-Marie - Développeuse web",
+  title: "Noémie Sainte-Marie | Développeuse Fullstack",
+  description:
+    "Développeuse fullstack freelance - Architecture, conseil et développement d'applications web performantes et évolutives.",
+  keywords: [
+    "développeuse",
+    "fullstack",
+    "freelance",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+  ],
+  authors: [{ name: "Noémie Sainte-Marie" }],
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    title: "Noémie Sainte-Marie | Développeuse Fullstack",
+    description:
+      "Développeuse fullstack freelance - Architecture, conseil et développement d'applications web.",
+    siteName: "Portfolio Noémie Sainte-Marie",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Noémie Sainte-Marie | Développeuse Fullstack",
+    description:
+      "Développeuse fullstack freelance - Architecture, conseil et développement d'applications web.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -34,8 +64,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
+        <SkipLink />
         <Navigation />
-        <main className="h-screen overflow-y-auto snap-y snap-mandatory">
+        <main
+          id="main-content"
+          className="h-screen overflow-y-auto snap-y snap-mandatory"
+          role="main"
+        >
           {children}
           <Footer />
         </main>
