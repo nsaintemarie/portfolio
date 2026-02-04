@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer, Navigation } from "@/components/layout";
+import { LenisProvider } from "@/components/providers";
 import { SkipLink } from "@/components/ui";
 import "./globals.css";
 
@@ -64,16 +65,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        <SkipLink />
-        <Navigation />
-        <main
-          id="main-content"
-          className="h-screen overflow-y-auto snap-y snap-mandatory"
-          role="main"
-        >
-          {children}
-          <Footer />
-        </main>
+        <LenisProvider>
+          <SkipLink />
+          <Navigation />
+          <main id="main-content" role="main">
+            {children}
+            <Footer />
+          </main>
+        </LenisProvider>
       </body>
     </html>
   );

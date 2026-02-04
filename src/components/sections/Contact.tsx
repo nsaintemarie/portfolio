@@ -23,7 +23,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen max-h-screen snap-start snap-always px-26 pt-16 pb-22 flex flex-col justify-between bg-background-tertiary">
+    <section id="contact" className="min-h-screen max-h-screen px-26 pt-16 pb-22 flex flex-col justify-between bg-background-tertiary">
       <div className="flex justify-between items-end mr-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

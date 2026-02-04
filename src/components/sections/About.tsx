@@ -8,7 +8,7 @@ export function About() {
   return (
     <section
       id="a-propos"
-      className="min-h-screen max-h-screen grid grid-cols-2 gap-6 lg:gap-10 px-12 lg:px-28 py-20 lg:py-26 snap-start snap-always overflow-hidden"
+      className="min-h-screen max-h-screen grid grid-cols-2 gap-6 lg:gap-10 px-12 lg:px-28 py-20 lg:py-26 overflow-hidden"
     >
       {/* Left column: Title + Image 2 */}
       <div className="flex flex-col justify-between gap-6 lg:gap-10">

@@ -14,7 +14,7 @@ const heroLines = [
 export function Hero() {
   return (
     <section
-      className="relative h-screen w-full overflow-hidden snap-start snap-always"
+      className="relative h-screen w-full overflow-hidden"
       aria-label="Introduction"
     >
       {/* Background image - optimized with Next/Image */}

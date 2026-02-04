@@ -14,7 +14,7 @@ const navLinks = [
 export function Footer() {
   return (
     <footer
-      className="relative z-60 bg-background overflow-hidden snap-start"
+      className="relative z-60 bg-background overflow-hidden"
       role="contentinfo"
       aria-label="Pied de page"
     >

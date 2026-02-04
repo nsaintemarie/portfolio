@@ -19,7 +19,7 @@ export function Projects() {
   return (
     <section
       id="projets"
-      className="min-h-screen flex flex-col justify-center px-28 py-26 snap-start snap-always"
+      className="min-h-screen flex flex-col justify-center px-28 py-26"
     >
       {/* Title */}
       <div className="mb-12">

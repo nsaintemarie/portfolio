@@ -10,7 +10,7 @@ export function Propositions() {
   return (
     <section
       id="propositions"
-      className="min-h-screen flex flex-col justify-center px-28 py-26 snap-start snap-always bg-background-secondary!"
+      className="min-h-screen flex flex-col justify-center px-28 py-26 bg-background-secondary!"
     >
       <div className="flex gap-6 items-start">
         {propositions.map((item, index) => (
