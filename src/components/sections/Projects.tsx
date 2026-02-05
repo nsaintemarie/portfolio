@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { MaskInText } from "@/components/ui";
 import { cn } from "@/utils";
@@ -19,14 +19,14 @@ export function Projects() {
   return (
     <section
       id="projets"
-      className="min-h-screen flex flex-col justify-center px-28 py-26 snap-start snap-always"
+      className="min-h-screen flex flex-col justify-center px-28 py-20 snap-start snap-always"
     >
       {/* Title */}
-      <div className="mb-12">
+      <div className="mb-8">
         <h2 className="text-heading-lg">
           <MaskInText delay={0.2}>Des projets pensés pour durer</MaskInText>
           <MaskInText delay={0.5} className="pl-30">
-            Architectures claires, produits utiles.
+            Fondations solides, résultats concrets.
           </MaskInText>
         </h2>
       </div>
@@ -45,7 +45,7 @@ export function Projects() {
             <a
               key={project.title}
               href={project.href}
-              className="group/item relative bg-black/16 px-8 py-10 hover:border-[1.5px] hover:border-white/24"
+              className="group/item relative bg-black/16 p-8 border-[1.5px] border-background hover:border-white/24"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -69,7 +69,7 @@ export function Projects() {
                   {project.stacks.map((stack) => (
                     <span
                       key={stack}
-                      className="rounded-full px-3 py-1 text-paragraph-caps border border-white/8 uppercase"
+                      className="rounded-full px-3 py-1 text-paragraph-sm border border-white/8 uppercase"
                     >
                       {stack}
                     </span>
@@ -83,16 +83,26 @@ export function Projects() {
         {/* Right - Image (1/3) */}
         <div
           className={cn(
-            "hidden lg:block relative h-full",
-            hoveredIndex == null && "peer-hover:hidden"
+            "hidden lg:block relative h-full border-[1.5px] border-background overflow-hidden bg-[#0E0E0E]",
           )}
         >
-          <Image
-            src={currentImage}
-            alt="Project preview"
-            fill
-            className="object-cover object-top transition-opacity duration-500"
-          />
+          <AnimatePresence>
+            <motion.div
+              key={currentImage}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={currentImage}
+                alt="Project preview"
+                fill
+                className="object-cover object-top"
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
       </motion.div>
     </section>
