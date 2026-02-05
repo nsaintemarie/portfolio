@@ -4,7 +4,7 @@ export const propositions: Proposition[] = [
   {
     title: "Concevoir et lancer votre produit",
     description:
-      "J'accompagne la création de votre produit de l'idée au déploiement, en prenant en charge toutes les étapes clés : conception, cadrage technique, développement et mise en production.",
+      "J'accompagne la création de votre produit de l'idée au déploiement, en prenant en charge toutes les étapes clés : conception, cadrage technique, développement et mise en production  — en vous transmettant les clés pour comprendre et piloter votre tech.",
     image: "/proposition-1.webp",
   },
   {

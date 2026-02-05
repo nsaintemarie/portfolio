@@ -8,6 +8,7 @@ type MaskInTextProps = {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  wrapperClassName?: string;
   as?: "span" | "p" | "h1" | "h2" | "h3";
   animate?: boolean; // true = animate on mount, false = whileInView
 };
@@ -16,6 +17,7 @@ export function MaskInText({
   children,
   delay = 0,
   className,
+  wrapperClassName,
   as = "span",
   animate = false,
 }: MaskInTextProps) {
@@ -33,7 +35,7 @@ export function MaskInText({
       };
 
   return (
-    <div style={{ clipPath: "inset(0 0 0 0)" }}>
+    <div className={wrapperClassName} style={{ clipPath: "inset(0 0 0 0)" }}>
       <MotionComponent
         {...animationProps}
         transition={{ duration: 1, delay, ease: EASE_OUT_EXPO }}

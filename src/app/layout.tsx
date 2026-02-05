@@ -64,7 +64,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        <SkipLink />
+        <SkipLink /> {/* Lien d'accessibilité pour sauter la navigation */}
         <Navigation />
         <main
           id="main-content"
