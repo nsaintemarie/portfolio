@@ -6,9 +6,9 @@ import Link from "next/link";
 import { EASE_OUT_EXPO } from "@/constants/animation";
 
 const navigation = [
-  { name: "PROJETS", icon: "/diamond.svg", href: "#projets", delay: 1.3 },
-  { name: "A PROPOS", href: "#a-propos", delay: 1.4 },
-  { name: "CONTACT", href: "#contact", delay: 1.5 },
+  { name: "PROJETS", icon: "/diamond.svg", href: "/#projets", delay: 1.3 },
+  { name: "A PROPOS", href: "/#a-propos", delay: 1.4 },
+  { name: "CONTACT", href: "/#contact", delay: 1.5 },
 ];
 
 export function Navigation() {

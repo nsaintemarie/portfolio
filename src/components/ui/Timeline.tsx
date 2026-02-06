@@ -103,7 +103,6 @@ export function Timeline({ containerRef, className, onProgressChange }: Timeline
         height="2294"
         viewBox="0 0 693 2294"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
         className="h-full w-auto absolute"
         style={{ opacity: 0.1 }}
         preserveAspectRatio="xMidYMid meet"
@@ -122,7 +121,6 @@ export function Timeline({ containerRef, className, onProgressChange }: Timeline
         height="2294"
         viewBox="0 0 693 2294"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
         className="h-full w-auto absolute transition-all duration-150"
         style={{
           opacity: 0.9,

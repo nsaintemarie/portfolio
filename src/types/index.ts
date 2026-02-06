@@ -6,6 +6,18 @@ export interface Project {
   href: string;
 }
 
+export interface ProjectContent {
+  context: {
+    picture1: string;
+    picture2: string;
+    picture3: string;
+    stack: string[];
+    title: string;
+    description1: string;
+    description2: string;
+  };
+}
+
 export interface Proposition {
   title: string;
   description: string;

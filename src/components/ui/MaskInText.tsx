@@ -9,7 +9,7 @@ type MaskInTextProps = {
   delay?: number;
   className?: string;
   wrapperClassName?: string;
-  as?: "span" | "p" | "h1" | "h2" | "h3";
+  as?: "span" | "p" | "h1" | "h2" | "h3" | "div";
   animate?: boolean; // true = animate on mount, false = whileInView
 };
 

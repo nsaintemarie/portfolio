@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { MaskInText } from "@/components/ui";
 import { cn } from "@/utils";
-import { projects } from "@/data/projects";
+import { projectsListing as projects } from "@/data";
 import { transitions, VIEWPORT_ONCE } from "@/constants/animation";
 
 export function Projects() {
@@ -14,7 +14,7 @@ export function Projects() {
   const currentImage =
     hoveredIndex !== null
       ? projects[hoveredIndex].image
-      : "/project-placeholder.webp";
+      : "/projects/project-placeholder.webp";
 
   return (
     <section
