@@ -127,9 +127,9 @@ export function Contact() {
           </div>
           <button
             type="submit"
-            className="text-paragraph-sm uppercase w-full border border-primary/56 text-primary/80 py-3 rounded-sm cursor-pointer hover:border-primary hover:text-primary transition-all "
+            className="relative overflow-hidden text-paragraph-sm uppercase w-full border border-primary/56 text-primary/90 py-3 rounded-sm cursor-pointer hover:border-primary hover:text-background-tertiary transition-all before:absolute before:inset-0 before:bg-primary/80 before:origin-left before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-600 before:ease-out"
           >
-            Envoyer
+            <span className="relative z-10">Envoyer</span>
           </button>
         </motion.form>
 
@@ -142,7 +142,7 @@ export function Contact() {
           className="relative w-96 aspect-square -mb-22"
         >
           <Image
-            src="/about-placeholder.webp"
+            src="/contact.png"
             alt="Photo de contact"
             fill
             className="object-cover"
