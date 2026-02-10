@@ -15,6 +15,13 @@ export interface ProjectContent {
     title: string;
     description1: string;
     description2: string;
+  },
+  contribution: {
+    title: string;
+    descriptions: {
+      title: string;
+      content: string;
+    }[]
   };
 }
 

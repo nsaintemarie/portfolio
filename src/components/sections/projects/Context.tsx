@@ -5,17 +5,7 @@ import { ProjectContent } from "@/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const heroLines = [
-  { text: "LEAD", label: "[ARCHITECTURE]", align: "start", delay: 0.3 },
-  { text: "FULLSTACK", label: "[FORMATION]", align: "center", delay: 0.5 },
-  { text: "DEVELOPER", label: "[CONSEIL]", align: "end", delay: 0.7 },
-] as const;
-
-export function Context({ data }: { data: ProjectContent["context"] }) { // Typer
-
-  const RADIUS = 29.625;
-  const PERIMETER = 2 * Math.PI * RADIUS;
-  console.log("PERIMETER", PERIMETER);
+export function Context({ data }: { data: ProjectContent["context"] }) {
   return (
     <section
       className="relative h-screen w-full overflow-hidden snap-start snap-always bg-background-secondary flex flex-col justify-between gap-6 pb-22"

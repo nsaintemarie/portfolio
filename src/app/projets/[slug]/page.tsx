@@ -1,4 +1,4 @@
-import { Context } from "@/components/sections/projects/";
+import { Context, Contribution } from "@/components/sections/projects/";
 import { projectsContents } from "@/data/projects/contents";
 
 export default async function ProjectPage({ params }: { params: { slug : string } }) {
@@ -8,6 +8,7 @@ export default async function ProjectPage({ params }: { params: { slug : string 
   return (
     <>
       <Context data={data.context} />
+      <Contribution data={data.contribution} />
     </>
   );
 }
