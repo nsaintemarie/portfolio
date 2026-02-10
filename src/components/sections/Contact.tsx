@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { FadeInUp } from "@/components/ui";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -25,25 +25,13 @@ export function Contact() {
   return (
     <section id="contact" className="min-h-screen max-h-screen snap-start snap-always px-26 pt-16 pb-22 flex flex-col justify-between bg-background-tertiary">
       <div className="flex justify-between items-end mr-10">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="max-w-2/3 mb-8"
-        >
+        <FadeInUp delay={0.2} className="max-w-2/3 mb-8">
           <h2 className="text-heading-lg">
             Transformons une idée en produit.<br />
             Contactez-moi pour en parler.
           </h2>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="flex flex-col gap-8"
-        >
+        </FadeInUp>
+        <FadeInUp className="flex flex-col gap-8">
           <div className="space-y-2">
             <span className="text-paragraph-sm opacity-56 block">Reseau</span>
             <a
@@ -64,19 +52,16 @@ export function Contact() {
               contact@noemie-sainte-marie.fr
             </a>
           </div>
-        </motion.div>
+        </FadeInUp>
       </div>
 
       {/* Second view */}
       <div className="flex justify-between gap-24 items-end">
         {/* Left - Contact form */}
-        <motion.form
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true, margin: "-100px" }}
+        <FadeInUp className="w-full flex-1">
+        <form
           onSubmit={handleSubmit}
-          className="w-full flex-1 space-y-6"
+          className="space-y-6"
         >
           <div>
             <label htmlFor="name" className="text-paragraph-sm opacity-56 block">Nom *</label>
@@ -131,23 +116,18 @@ export function Contact() {
           >
             <span className="relative z-10">Envoyer</span>
           </button>
-        </motion.form>
+        </form>
+        </FadeInUp>
 
         {/* Right - Photo */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="relative w-96 aspect-square -mb-22"
-        >
+        <FadeInUp delay={0.2} className="relative w-96 aspect-square -mb-22">
           <Image
             src="/contact.png"
             alt="Photo de contact"
             fill
             className="object-cover"
           />
-        </motion.div>
+        </FadeInUp>
       </div>
     </section>
   );

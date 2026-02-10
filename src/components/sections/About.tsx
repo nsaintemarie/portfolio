@@ -1,8 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { FramedImage, MaskInText } from "@/components/ui";
-import { transitions, VIEWPORT_ONCE } from "@/constants/animation";
+import { FadeIn, FramedImage, MaskInText } from "@/components/ui";
 
 export function About() {
   return (
@@ -24,48 +22,30 @@ export function About() {
         </h2>
 
         {/* Image 2 - portrait */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={transitions.fadeInSlow(0.8)}
-          viewport={VIEWPORT_ONCE}
-          className="flex-1 max-w-162.5 mx-auto -mb-6 px-10 py-2"
-        >
+        <FadeIn delay={0.8} className="flex-1 max-w-162.5 mx-auto -mb-6 px-10 py-2">
           <FramedImage
             src="/about-2.png"
             alt="Portrait"
             className="w-full h-full"
             imageClassName="p-3 object-cover"
           />
-        </motion.div>
+        </FadeIn>
       </div>
 
       {/* Row 2: Image 1 + Text */}
       <div className="flex gap-6 lg:gap-10 flex-1">
         {/* Image 1 - en action */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={transitions.fadeInSlow(1)}
-          viewport={VIEWPORT_ONCE}
-          className="w-72 xl:w-80 flex-1 -mt-10 p-2"
-        >
+        <FadeIn delay={1} className="w-72 xl:w-80 flex-1 -mt-10 p-2">
           <FramedImage
             src="/about-1.png"
             alt="En action"
             className="w-full h-full"
             imageClassName="px-3 pb-20 pt-4 object-[50%38%]"
           />
-        </motion.div>
+        </FadeIn>
 
         {/* Text */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={transitions.fadeInSlow(1.2)}
-          viewport={VIEWPORT_ONCE}
-          className="max-w-7/12 grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-12 pt-4 pl-10"
-        >
+        <FadeIn delay={1.2} className="max-w-7/12 grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-12 pt-4 pl-10">
           <p className="text-paragraph-line opacity-80 self-start">
             Avant de devenir développeuse, je travaillais dans les operations d'une startup tech. C'est là que j'ai découvert le plaisir de résoudre des problèmes, d'améliorer des process… et l'envie de passer "de l'autre côté", celui où l'on construit des solutions.
             <br />
@@ -81,7 +61,7 @@ export function About() {
             <br />
             <br />
             J'aime comprendre un besoin, en saisir la logique métier, imaginer une architecture claire et écrire un code solide qui servira vraiment le produit — parce que la technique n'a de sens que si elle répond à un besoin réel.          </p>
-        </motion.div>
+        </FadeIn>
       </div>
     </section>
   );

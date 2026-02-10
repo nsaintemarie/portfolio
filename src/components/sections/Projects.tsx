@@ -3,63 +3,81 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { MaskInText } from "@/components/ui";
+import { FadeIn, MaskInText } from "@/components/ui";
 import { cn } from "@/utils";
 import { projectsListing as projects } from "@/data";
-import { transitions, VIEWPORT_ONCE } from "@/constants/animation";
+import { Project } from "@/types";
 
-export function Projects() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+export function Projects({ current }: { current?: string }) {
+  const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
 
-  const currentImage =
-    hoveredIndex !== null
-      ? projects[hoveredIndex].image
-      : "/projects/project-placeholder.webp";
+  const currentImage = hoveredProject?.image || "/projects/project-placeholder.webp";
 
   return (
     <section
       id="projets"
-      className="min-h-screen flex flex-col justify-center px-28 py-20 snap-start snap-always"
+      className={cn("min-h-screen flex flex-col justify-center px-28 py-20 snap-start snap-always", current && 'bg-background-tertiary')}
     >
       {/* Title */}
       <div className="mb-8">
         <h2 className="text-heading-lg">
-          <MaskInText delay={0.2}>Des projets pensés pour durer</MaskInText>
-          <MaskInText delay={0.5} className="pl-30">
-            Fondations solides, résultats concrets.
-          </MaskInText>
+          {
+            current ? (
+              <MaskInText delay={0.2}>
+                Mes autres projets
+              </MaskInText>
+            ) : (
+              <>
+                <MaskInText delay={0.2}>Des projets pensés pour durer</MaskInText>
+                <MaskInText delay={0.5} className="pl-30">
+                  Fondations solides, résultats concrets.
+                </MaskInText>
+              </>
+            )
+          }
+
         </h2>
       </div>
 
       {/* Content */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={transitions.fadeInSlow(1)}
-        viewport={VIEWPORT_ONCE}
-        className="grid grid-cols-1 lg:grid-cols-3 gap-8 h-full my-auto"
-      >
+      <FadeIn delay={1} className="grid grid-cols-1 lg:grid-cols-3 gap-8 h-full my-auto">
         {/* Left - Project Cards (2/3) */}
         <div className="lg:col-span-2 flex flex-col gap-4 peer">
-          {projects.map((project, index) => (
+          {projects.filter((project) => project.slug !== current).map((project, index) => (
             <a
               key={project.title}
-              href={project.href}
+              href={`/projets/${project.slug}`}
               className="group/item relative bg-black/16 p-8 border-[1.5px] border-background hover:border-white/24"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              onMouseEnter={() => setHoveredProject(project)}
+              onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Corner + signs */}
-              <span className="absolute -top-0.5 left-0 -translate-x-1/2 -translate-y-1/2 text-white/0 px-1.5 group-hover/item:text-white group-hover/item:bg-background transition-colors duration-150 text-sm/4">
+              <span className={cn(
+                "absolute text-white/0 group-hover/item:text-white transition-colors duration-150 text-sm/4",
+                "-top-0.5 left-0 -translate-x-1/2 -translate-y-1/2 px-1.5",
+                current ? "group-hover/item:bg-background-tertiary " : "group-hover/item:bg-background"
+              )}>
                 +
               </span>
-              <span className="absolute -top-0.5 right-0 translate-x-1/2 -translate-y-1/2 text-white/0 p-0.5 group-hover/item:text-white group-hover/item:bg-background transition-colors duration-150 text-sm/4">
+              <span className={cn(
+                "absolute text-white/0 group-hover/item:text-white transition-colors duration-150 text-sm/4",
+                "-top-0.5 right-0 translate-x-1/2 -translate-y-1/2 p-0.5",
+                current ? "group-hover/item:bg-background-tertiary " : "group-hover/item:bg-background"
+              )}>
                 +
               </span>
-              <span className="absolute bottom-0.5 left-0 -translate-x-1/2 translate-y-1/2 text-white/0 p-0.5 group-hover/item:text-white group-hover/item:bg-background transition-colors duration-150 text-sm/4">
+              <span className={cn(
+                "absolute text-white/0 group-hover/item:text-white transition-colors duration-150 text-sm/4",
+                "bottom-0.5 left-0 -translate-x-1/2 translate-y-1/2 p-0.5",
+                current ? "group-hover/item:bg-background-tertiary " : "group-hover/item:bg-background"
+              )}>
                 +
               </span>
-              <span className="absolute bottom-0.5 right-0 translate-x-1/2 translate-y-1/2 text-white/0 p-0.5 group-hover/item:text-white group-hover/item:bg-background transition-colors duration-150 text-sm/4">
+              <span className={cn(
+                "absolute text-white/0 group-hover/item:text-white transition-colors duration-150 text-sm/4",
+                "bottom-0.5 right-0 translate-x-1/2 translate-y-1/2 p-0.5",
+                current ? "group-hover/item:bg-background-tertiary " : "group-hover/item:bg-background"
+              )}>
                 +
               </span>
 
@@ -99,12 +117,12 @@ export function Projects() {
                 src={currentImage}
                 alt="Project preview"
                 fill
-                className="object-cover object-top"
+                className={cn("object-cover", current ? "object-[50%_15%]" : "object-top")}
               />
             </motion.div>
           </AnimatePresence>
         </div>
-      </motion.div>
+      </FadeIn>
     </section>
   );
 }

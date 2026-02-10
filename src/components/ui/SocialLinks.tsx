@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { socialLinks } from "@/data/social-links";
 import { EASE_OUT_EXPO } from "@/constants/animation";
 import { cn } from "@/utils";
+import { FadeInUp } from "./animations/FadeInUp";
 
 type SocialLinksProps = {
   className?: string;
@@ -32,25 +33,21 @@ export function SocialLinks({
 
         if (animate) {
           return (
-            <motion.a
+            <FadeInUp
+            as="a"
               key={link.name}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: baseDelay + index * 0.1,
-                ease: EASE_OUT_EXPO,
-              }}
+              y={20}
+              delay={baseDelay + index * 0.1}
               className={cn(
                 "flex items-center gap-1 hover:opacity-80 transition-opacity",
                 linkClassName
               )}
             >
               {content}
-            </motion.a>
+            </FadeInUp>
           );
         }
 

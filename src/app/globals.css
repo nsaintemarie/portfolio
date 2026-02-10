@@ -9,6 +9,7 @@
   --background-secondary: #131013;  /* Black */
   --background-tertiary: #1C1717;  /* Brown-2 */
   --foreground: #ECDBCA;
+  --foreground-white: #FAF6F1;
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -89,6 +90,7 @@
   --color-background-secondary: var(--background-secondary);
   --color-background-tertiary: var(--background-tertiary);
   --color-foreground: var(--foreground);
+  --color-foreground-white: var(--foreground-white);
   --color-primary: var(--color-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

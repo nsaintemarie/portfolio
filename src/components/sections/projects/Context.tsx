@@ -1,6 +1,6 @@
 "use client";
 
-import { MaskInText } from "@/components/ui";
+import { FadeIn, FadeInUp, MaskInText } from "@/components/ui";
 import { ProjectContent } from "@/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -12,12 +12,7 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
       aria-label="Context"
     >
       <div className="flex justify-between items-start gap-12 pl-16 pr-10.5 ">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <FadeInUp>
           <Image
             src={data.picture1}
             alt="Photo de contact"
@@ -25,14 +20,8 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
             height={400}
             className="h-full object-cover opacity-85"
           />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="mt-24 -ml-10"
-        >
+        </FadeInUp>
+        <FadeInUp delay={0.2} className="mt-24 -ml-10">
           <Image
             src={data.picture2}
             alt="Photo de contact"
@@ -40,13 +29,8 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
             height={385}
             className="h-full object-cover opacity-85"
           />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        </FadeInUp>
+        <FadeInUp delay={0.4}>
           <Image
             src={data.picture3}
             alt="Photo de contact"
@@ -54,7 +38,7 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
             height={461}
             className="h-full object-cover opacity-85 -mt-1.5"
           />
-        </motion.div>
+        </FadeInUp>
 
         <motion.a
           whileHover='hover'
@@ -68,7 +52,7 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
             fill="none"
             className="mt-5"
           >
-            <rect opacity="0.32" x="0.375" y="0.375" width="59.25" height="59.25" rx="29.625" stroke="#EAE3DC" stroke-width="0.75" />
+            <rect opacity="0.32" x="0.375" y="0.375" width="59.25" height="59.25" rx="29.625" stroke="#EAE3DC" strokeWidth="0.75" />
             <motion.rect
               x="0.300"
               y="0.375"
@@ -93,8 +77,8 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
                 transform: "rotate(80deg)", // départ en haut
               }}
             />
-            <path opacity="0.32" d="M24 24L36.375 36.375" stroke="#EAE3DC" stroke-width="1.5" />
-            <path opacity="0.32" d="M36.375 24L24 36.375" stroke="#EAE3DC" stroke-width="1.5" />
+            <path opacity="0.32" d="M24 24L36.375 36.375" stroke="#EAE3DC" strokeWidth="1.5" />
+            <path opacity="0.32" d="M36.375 24L24 36.375" stroke="#EAE3DC" strokeWidth="1.5" />
           </svg>
         </motion.a>
 
@@ -115,14 +99,10 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
         <MaskInText as='h1' delay={0.7} className="text-heading-lg text-primary/80 mt-2 mb-5">
           {data.title}
         </MaskInText>
-        <div className='grid grid-cols-2 gap-6 text-paragraph text-primary/70'>
-          <MaskInText as='p' delay={0.9} animate>
-            {data.description1}
-          </MaskInText>
-          <MaskInText as='p' delay={1.1} animate>
-            {data.description2}
-          </MaskInText>
-        </div>
+        <FadeIn delay={1.2} className='grid grid-cols-2 gap-6 text-paragraph text-primary/70'>
+          <p>{data.description1}</p>
+          <p>{data.description2}</p>
+        </FadeIn>
       </div>
 
     </section>

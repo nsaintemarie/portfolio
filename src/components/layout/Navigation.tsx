@@ -1,9 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { EASE_OUT_EXPO } from "@/constants/animation";
+import { FadeInUp } from "@/components/ui";
 
 const navigation = [
   { name: "PROJETS", icon: "/diamond.svg", href: "/#projets", delay: 1.3 },
@@ -13,10 +12,11 @@ const navigation = [
 
 export function Navigation() {
   return (
-    <motion.nav
-      initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, delay: 1.2, ease: EASE_OUT_EXPO }}
+    <FadeInUp
+      as="nav"
+      delay={1.2}
+      y={100}
+      animate
       className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2"
       aria-label="Navigation principale"
     >
@@ -26,14 +26,10 @@ export function Navigation() {
       >
         {navigation.map((item) => (
           <li key={item.name}>
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: item.delay,
-                ease: EASE_OUT_EXPO,
-              }}
+            <FadeInUp
+              delay={item.delay}
+              y={20}
+              animate
             >
               <Link
                 href={item.href}
@@ -50,10 +46,10 @@ export function Navigation() {
                 )}
                 {item.name}
               </Link>
-            </motion.div>
+            </FadeInUp>
           </li>
         ))}
       </ul>
-    </motion.nav>
+    </FadeInUp>
   );
 }

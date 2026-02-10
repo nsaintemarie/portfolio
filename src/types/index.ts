@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   stacks: readonly string[];
   image: string;
-  href: string;
+  slug: string;
 }
 
 export interface ProjectContent {
@@ -15,13 +15,22 @@ export interface ProjectContent {
     title: string;
     description1: string;
     description2: string;
-  },
+  };
   contribution: {
     title: string;
     descriptions: {
       title: string;
       content: string;
     }[]
+  };
+  results: {
+    title: string;
+    descriptions: {
+      title: string;
+      content: string;
+    }[];
+    picture1: string;
+    picture2: string;
   };
 }
 

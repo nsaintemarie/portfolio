@@ -1,4 +1,5 @@
-import { Context, Contribution } from "@/components/sections/projects/";
+import { Projects } from "@/components/sections";
+import { Context, Contribution, Results } from "@/components/sections/projects/";
 import { projectsContents } from "@/data/projects/contents";
 
 export default async function ProjectPage({ params }: { params: { slug : string } }) {
@@ -9,6 +10,8 @@ export default async function ProjectPage({ params }: { params: { slug : string 
     <>
       <Context data={data.context} />
       <Contribution data={data.contribution} />
+      <Results data={data.results} />
+      <Projects current={slug} />
     </>
   );
 }

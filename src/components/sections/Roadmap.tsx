@@ -1,11 +1,9 @@
 "use client";
 
 import { useRef, useState, useCallback } from "react";
-import { motion } from "framer-motion";
 import { cn } from "@/utils";
-import { GridBackground, Timeline, MARKER_Y_PERCENTS } from "@/components/ui";
+import { FadeInUp, GridBackground, Timeline, MARKER_Y_PERCENTS } from "@/components/ui";
 import { roadmapSteps } from "@/data/roadmap-steps";
-import { EASE_OUT_EXPO, VIEWPORT_ONCE } from "@/constants/animation";
 
 export function Roadmap() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -40,12 +38,8 @@ export function Roadmap() {
         {/* Steps en quinconce */}
         <div className="relative z-10 grid grid-cols-2 gap-x-120 gap-y-20">
           {roadmapSteps.map((step, index) => (
-            <motion.div
+            <FadeInUp
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: EASE_OUT_EXPO }}
-              viewport={VIEWPORT_ONCE}
               className="grid grid-cols-subgrid col-span-2"
             >
               <div
@@ -59,7 +53,7 @@ export function Roadmap() {
                 <h3 className="text-heading-md opacity-80">{step.title}</h3>
                 <p className="text-paragraph-line opacity-80">{step.content}</p>
               </div>
-            </motion.div>
+            </FadeInUp>
           ))}
         </div>
       </div>

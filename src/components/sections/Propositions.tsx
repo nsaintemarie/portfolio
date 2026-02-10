@@ -5,6 +5,7 @@ import Image from "next/image";
 import { cn } from "@/utils";
 import { propositions } from "@/data/propositions";
 import { EASE_OUT_EXPO, VIEWPORT_ONCE } from "@/constants/animation";
+import { FadeInUp } from "../ui";
 
 export function Propositions() {
   return (
@@ -14,16 +15,10 @@ export function Propositions() {
     >
       <div className="flex gap-6 items-start">
         {propositions.map((item, index) => (
-          <motion.div
+          <FadeInUp
             key={item.title}
-            initial={{ y: 40, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.2 + index * 0.15,
-              ease: EASE_OUT_EXPO,
-            }}
-            viewport={VIEWPORT_ONCE}
+            y={40}
+            delay={0.2 + index * 0.15}
             className={cn(
               "flex-1 rounded-lg bg-white/3 p-8",
               index === 1 && "mt-20"
@@ -52,7 +47,7 @@ export function Propositions() {
 
             {/* Description */}
             <p className="text-paragraph text-primary/56">{item.description}</p>
-          </motion.div>
+          </FadeInUp>
         ))}
       </div>
     </section>
