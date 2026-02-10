@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FadeInUp } from "@/components/ui";
@@ -33,6 +34,11 @@ export function Navigation() {
             >
               <Link
                 href={item.href}
+                onNavigate={() => {
+                  setTimeout(() => {
+                    history.replaceState(null, "", window.location.pathname);
+                  }, 100)
+                }}
                 className="flex items-center justify-center text-paragraph-sm transition-colors gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 {item.icon && (
