@@ -14,7 +14,7 @@ export function Results({ data }: { data: ProjectContent["results"] }) {
       <div className="max-w-6xl mx-auto grid grid-cols-2 gap-20">
         <div>
           <MaskInText delay={0.2} className="text-paragraph uppercase">
-            [RÉSULTATS]
+            [LES RÉSULTATS]
           </MaskInText>
           <MaskInText as='h1' delay={0.5} className="text-heading-lg mt-2 mb-10">
             {data.title}

@@ -18,7 +18,7 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
             alt="Photo de contact"
             width={272}
             height={400}
-            className="h-full object-cover opacity-85"
+            className="h-full object-cover"
           />
         </FadeInUp>
         <FadeInUp delay={0.2} className="mt-24 -ml-10">
@@ -27,7 +27,7 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
             alt="Photo de contact"
             width={430}
             height={385}
-            className="h-full object-cover opacity-85"
+            className="h-full object-cover"
           />
         </FadeInUp>
         <FadeInUp delay={0.4}>
@@ -36,7 +36,7 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
             alt="Photo de contact"
             width={350}
             height={461}
-            className="h-full object-cover opacity-85 -mt-1.5"
+            className="h-full object-cover -mt-1.5"
           />
         </FadeInUp>
 
@@ -99,9 +99,8 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
         <MaskInText as='h1' delay={0.7} className="text-heading-lg text-primary/80 mt-2 mb-5">
           {data.title}
         </MaskInText>
-        <FadeIn delay={1.2} className='grid grid-cols-2 gap-6 text-paragraph text-primary/70'>
-          <p>{data.description1}</p>
-          <p>{data.description2}</p>
+        <FadeIn delay={1.2} as='p' className="columns-2 gap-6 text-paragraph text-primary/70 whitespace-pre-line">
+          {data.description}
         </FadeIn>
       </div>
 

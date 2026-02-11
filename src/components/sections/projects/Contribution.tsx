@@ -22,7 +22,7 @@ export function Contribution({ data }: { data: ProjectContent["contribution"] })
           {data.descriptions.map((desc, index) => (
             <div key={index}>
               <h3 className="text-paragraph-sm uppercase mb-2">{desc.title}</h3>
-              <p className="text-paragraph">{desc.content}</p>
+              <p className="text-paragraph whitespace-pre-line">{desc.content}</p>
             </div>
           ))}
         </FadeIn>
