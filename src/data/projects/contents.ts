@@ -185,25 +185,61 @@ export const projectsContents = {
       picture1: "/projects/nearlist/picture-1.webp",
       picture2: "/projects/nearlist/picture-2.webp",
       picture3: "/projects/nearlist/picture-3.webp",
-      title: "NearList",
-      description: "NearList est une application de découverte de lieux et d'événements locaux. En tant que développeur fullstack, j'ai contribué à la création de l'application en utilisant Angular pour le front-end et Node.js pour le back-end. J'ai travaillé sur la mise en place d'une architecture évolutive, ainsi que sur l'implémentation de fonctionnalités telles que la géolocalisation, les recommandations personnalisées et l'intégration avec des services de cartographie.",
+      title: "Connecter les plateformes musicales autour d’une expérience sociale unifiée",
+      description: `Nearlist est une application mobile pensée comme une surcouche sociale aux plateformes de streaming musical (Spotify, Deezer).
+      L’ambition : permettre aux utilisateurs de créer des playlists collaboratives inter-plateformes, enrichies d’interactions sociales — commentaires, 
+      
+      échanges en temps réel et découverte des playlists de ses amis — sans quitter leur écosystème musical existant. Le défi était double : proposer une expérience simple et naturelle côté utilisateur, tout en orchestrant une synchronisation complexe avec des APIs tierces.`,
       stack: ["Angular", "TypeScript", "RxJS"],
     },
     contribution: {
-      title: "Kapture",
-      descriptions: [{
-        title: "Conception d'une architecture évolutive",
-        content: ""
-      }]
+      title: "Concevoir une expérience collaborative fluide au-dessus de systèmes tiers",
+      descriptions: [
+        {
+          title: "Penser “usage” avant intégration",
+          content: `Plutôt que de reproduire un player musical, Nearlist a été conçu comme un espace d’interaction. La valeur réside dans la collaboration, les échanges et la découverte.`
+        },
+        {
+          title: "Rendre l’interopérabilité invisible",
+          content: `Connexion des comptes Spotify ou Deezer via OAuth, puis manipulation des playlists comme si elles étaient natives. Toute la complexité de synchronisation est masquée derrière une expérience simple.`
+        },
+        {
+          title: "Créer une dynamique sociale autour de la musique",
+          content: `Ajout de commentaires par morceau, playlists collaboratives et chat en temps réel pour transformer l’écoute en expérience partagée.`
+        },
+        {
+          title: "Favoriser la découverte communautaire via l'humain",
+          content: `Mise en place d’un espace Discover permettant d’explorer les playlists publiques de ses amis et de naviguer dans leurs univers musicaux.`
+        },
+        {
+          title: "Structurer une base extensible",
+          content: `Architecture pensée pour accueillir de nouveaux fournisseurs musicaux sans modifier l’expérience utilisateur.`
+        }
+      ]
+
     },
     results: {
-      title: "Kapture",
-      descriptions: [{
-        title: "Conception d'une architecture évolutive",
-        content: ""
-      }],
-      picture1: "/projects/gfield/result-picture-1.webp",
-      picture2: "/projects/gfield/result-picture-2.webp",
+      title: "Une architecture sociale extensible et cohérente",
+      descriptions: [
+        {
+          title: "Expérience musicale réellement unifiée",
+          content: `Les utilisateurs interagissent avec une seule interface sociale tout en conservant leurs plateformes musicales natives.`
+        },
+        {
+          title: "Robustesse face aux contraintes externes",
+          content: `Gestion fiable des flux OAuth, des refresh tokens et des limites d’API assurant une synchronisation stable.`
+        },
+        {
+          title: "Base prête à évoluer",
+          content: `L’abstraction multi-fournisseurs permettrait d’intégrer de nouvelles plateformes de streaming sans refonte majeure.`
+        },
+        {
+          title: "Démonstration produit & technique complète",
+          content: `Nearlist illustre la capacité à concevoir un produit mobile cohérent, à forte dimension sociale, tout en maîtrisant les intégrations tierces et le temps réel.`
+        }
+      ],
+      picture1: "/projects/nearlist/picture-4.webp",
+      picture2: "/projects/nearlist/picture-5.webp",
     }
   },
 } as {
