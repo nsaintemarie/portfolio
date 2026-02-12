@@ -46,59 +46,83 @@ export function Hero() {
           NOEMIE S®
         </motion.p>
 
-        <h1 className="flex flex-col w-full text-heading-xl uppercase gap-2.5 items-start">
-          {heroLines.map((line) => (
-            <div
-              key={line.text}
-              className={`relative ${
-                line.align === "center"
-                  ? "self-center lg:-translate-x-1/6"
-                  : line.align === "end"
-                  ? "self-end"
-                  : ""
-              }`}
-            >
-              {/* Label */}
+        <div>
+          <h1 className="flex flex-col w-full text-heading-xl uppercase gap-2.5 items-start">
+            {heroLines.map((line) => (
               <div
-                className="absolute lg:-top-6 left-full -translate-x-full"
-                style={{ clipPath: "inset(0 0 0 0)" }}
+                key={line.text}
+                className={`relative ${
+                  line.align === "center"
+                    ? "md:self-center md:-translate-x-1/6"
+                    : line.align === "end"
+                    ? "md:self-end"
+                    : ""
+                }`}
               >
-                <motion.span
-                  initial={{ y: "100%" }}
-                  animate={{ y: 0 }}
-                  transition={{
-                    duration: 1.3,
-                    delay: line.delay - 0.1,
-                    ease: EASE_OUT_EXPO,
-                  }}
-                  className="block text-paragraph-caps"
-                  aria-hidden="true"
+                {/* Label - desktop only */}
+                <div
+                  className="hidden md:block absolute -top-6 left-full -translate-x-full"
+                  style={{ clipPath: "inset(0 0 0 0)" }}
                 >
-                  {line.label}
-                </motion.span>
+                  <motion.span
+                    initial={{ y: "100%" }}
+                    animate={{ y: 0 }}
+                    transition={{
+                      duration: 1.3,
+                      delay: line.delay - 0.1,
+                      ease: EASE_OUT_EXPO,
+                    }}
+                    className="block text-paragraph-caps"
+                    aria-hidden="true"
+                  >
+                    {line.label}
+                  </motion.span>
+                </div>
+                {/* Text */}
+                <div style={{ clipPath: "inset(-10% -10% 0 -10%)" }}>
+                  <motion.span
+                    initial={{ y: "110%" }}
+                    animate={{ y: 0 }}
+                    transition={{
+                      duration: 1.3,
+                      delay: line.delay,
+                      ease: EASE_OUT_EXPO,
+                    }}
+                    className="block"
+                  >
+                    {line.text}
+                  </motion.span>
+                </div>
               </div>
-              {/* Text */}
-              <div style={{ clipPath: "inset(-10% -10% 0 -10%)" }}>
-                <motion.span
-                  initial={{ y: "110%" }}
-                  animate={{ y: 0 }}
-                  transition={{
-                    duration: 1.3,
-                    delay: line.delay,
-                    ease: EASE_OUT_EXPO,
-                  }}
-                  className="block"
-                >
-                  {line.text}
-                </motion.span>
-              </div>
-            </div>
-          ))}
-        </h1>
+            ))}
+          </h1>
 
-        <div className="flex justify-between">
+          {/* Tags - mobile only */}
+          <div
+            className="flex gap-4 mt-4 md:hidden"
+            style={{ clipPath: "inset(0 0 0 0)" }}
+          >
+            {heroLines.map((line) => (
+              <motion.span
+                key={line.label}
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{
+                  duration: 1.3,
+                  delay: 0.9,
+                  ease: EASE_OUT_EXPO,
+                }}
+                className="block text-paragraph-caps"
+              >
+                {line.label}
+              </motion.span>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-8 md:flex-row md:justify-between">
           {/* Description */}
-          <div className="max-w-2/5" style={{ clipPath: "inset(0 0 0 0)" }}>
+          <div className="max-w-sm lg:max-w-2/5" style={{ clipPath: "inset(0 0 0 0)" }}>
             <motion.p
               initial={{ y: "120%" }}
               animate={{ y: 0 }}
@@ -116,6 +140,7 @@ export function Hero() {
             showArrow
             animate
             baseDelay={1.2}
+            className="items-end"
             linkClassName="text-paragraph-caps text-primary/80 uppercase hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           />
         </div>

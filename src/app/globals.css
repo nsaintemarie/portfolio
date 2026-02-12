@@ -33,15 +33,15 @@
   --transition-slow: 300ms ease;
 
   /* Typography */
-  --text-heading-xl: 150px;
-  --leading-heading-xl: 135px;
+  --text-heading-xl: clamp(68px, 10.4vw, 150px);
+  --leading-heading-xl: 0.9;
   --tracking-heading-xl: -0.08em;
 
-  --text-heading-lg: 56px;
-  --leading-heading-lg: 70px;
+  --text-heading-lg: clamp(40px, 3.9vw, 56px);
+  --leading-heading-lg: 1.25;
   --tracking-heading-lg: -0.08em;
 
-  --text-heading-md: 24px;
+  --text-heading-md: clamp(20px, 1.67vw, 24px);
   --leading-heading-md: auto;
   --tracking-heading-md: -0.02em;
 
@@ -49,23 +49,23 @@
   --leading-logo: auto;
   --tracking-logo: -0.06em;
 
-  --text-paragraph-caps: 16px;
+  --text-paragraph-caps: clamp(14px, 1.11vw, 16px);
   --leading-paragraph-caps: 24px;
   --tracking-paragraph-caps: -0.03em;
 
-  --text-paragraph-line: 16px;
+  --text-paragraph-line: clamp(15px, 1.11vw, 16px);
   --leading-paragraph-line: 26px;
   --tracking-paragraph-line: -0.01em;
 
-  --text-paragraph: 16px;
+  --text-paragraph: clamp(15px, 1.11vw, 16px);
   --leading-paragraph: auto;
   --tracking-paragraph: -0.02em;
-
-  --text-paragraph-medium: 16px;
+/* 
+  --text-paragraph-medium: clamp(15px, 1.11vw, 16px);
   --leading-paragraph-medium: 28px;
-  --tracking-paragraph-medium: -0.03em;
+  --tracking-paragraph-medium: -0.03em; */
 
-  --text-paragraph-sm: 14px;
+  --text-paragraph-sm: clamp(13px, 0.97vw, 14px);
   --leading-paragraph-sm: auto;
   --tracking-paragraph-sm: -0.03em;
 }

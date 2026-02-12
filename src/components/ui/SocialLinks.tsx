@@ -34,7 +34,8 @@ export function SocialLinks({
         if (animate) {
           return (
             <FadeInUp
-            as="a"
+              as="a"
+              animate
               key={link.name}
               href={link.href}
               target="_blank"
