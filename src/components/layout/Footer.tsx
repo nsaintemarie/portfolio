@@ -20,10 +20,10 @@ export function Footer() {
     >
       {/* Navigation line */}
       <nav
-        className="flex items-center justify-center gap-38 py-16 p-6"
+        className="flex flex-col md:flex-rows items-center justify-center gap-21 md:gap-38 md:py-16 p-6"
         aria-label="Navigation secondaire"
       >
-        <span className="text-paragraph-sm" aria-hidden="true">
+        <span className="text-2xl md:text-paragraph-sm" aria-hidden="true">
           +
         </span>
         {navLinks.map((link) => (
@@ -32,19 +32,19 @@ export function Footer() {
             href={link.href}
             target={link.external ? "_blank" : undefined}
             rel={link.external ? "noopener noreferrer" : undefined}
-            className="text-paragraph-sm uppercase hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            className="md:text-paragraph-sm text-paragraph-caps uppercase hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             aria-label={link.label}
           >
             {link.name}
           </Link>
         ))}
-        <span className="text-paragraph-sm" aria-hidden="true">
+        <span className="text-2xl md:text-paragraph-sm" aria-hidden="true">
           +
         </span>
       </nav>
 
       {/* Footer logo */}
-      <div className="flex justify-center px-10">
+      <div className="flex justify-center px-2 md:px-10">
         <img
           src="/footer-logo.svg"
           alt="Noémie Sainte-Marie - Logo"
