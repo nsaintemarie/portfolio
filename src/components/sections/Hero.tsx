@@ -36,7 +36,7 @@ export function Hero() {
       <GridBackground />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-between h-full px-5 pt-12 pb-26 md:pt-6 md:px-20">
+      <div className="relative z-10 flex flex-col justify-between h-full px-5 pt-12 pb-26 md:pt-6 md:px-20 xl:px-28">
         <motion.p
           initial={{ y: -60, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

@@ -11,16 +11,16 @@ export function Propositions() {
   return (
     <section
       id="propositions"
-      className="min-h-screen flex justify-center px-5 md:px-10 lg:px-28 pt-12 pb-22 lg:py-26 snap-start snap-always bg-background-secondary!"
+      className="min-h-screen flex justify-center px-5 md:px-20 lg:px-28 pb-26 pt-12 md:pt-20  snap-start snap-always bg-background-secondary!"
     >
-      <div className="flex flex-col md:flex-row gap-5 md:gap-6 items-start">
+      <div className="flex flex-col md:flex-row flex-wrap gap-5 md:gap-6 items-start">
         {propositions.map((item, index) => (
           <FadeInUp
             key={item.title}
             y={40}
             delay={0.2 + index * 0.15}
             className={cn(
-              "flex-1 rounded-lg bg-white/3 p-8 md:p-6 lg:p-8",
+              "flex-1 rounded-lg bg-white/3 p-8 md:p-6 lg:p-8 min-w-60",
               index === 1 && "md:self-end"
             )}
           >

@@ -16,10 +16,10 @@ export function Projects({ current }: { current?: string }) {
   return (
     <section
       id="projets"
-      className={cn("min-h-screen flex flex-col justify-center py-12 md:px-28 md:py-20 snap-start snap-always", current && 'bg-background-tertiary')}
+      className={cn("min-h-screen flex flex-col justify-center pb-26 pt-12 md:pt-20 md:px-20 lg:px-28 snap-start snap-always", current && 'bg-background-tertiary')}
     >
       {/* Title */}
-        <h2 className="text-heading-lg px-4 mb-8 md:px-0">
+        <h2 className="text-heading-lg px-5 mb-8 md:px-0">
           {
             current ? (
               <MaskInText delay={0.2}>
@@ -60,7 +60,7 @@ export function Projects({ current }: { current?: string }) {
                 {project.stacks.map((stack) => (
                   <span
                     key={stack}
-                    className="rounded-full px-3 py-1 text-paragraph-sm border border-white/8 uppercase"
+                    className="rounded-full px-3 py-1 text-paragraph-caps border border-white/8 uppercase"
                   >
                     {stack}
                   </span>
@@ -121,7 +121,7 @@ export function Projects({ current }: { current?: string }) {
                   {project.stacks.map((stack) => (
                     <span
                       key={stack}
-                      className="rounded-full px-3 py-1 text-paragraph-sm border border-white/8 uppercase"
+                      className="rounded-full px-3 py-1 text-paragraph-caps border border-white/8 uppercase"
                     >
                       {stack}
                     </span>

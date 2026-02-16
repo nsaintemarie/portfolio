@@ -23,7 +23,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen md:max-h-screen snap-start snap-always px-5 md:px-26 pt-14 md:pt-16 pb-22 flex flex-col justify-between bg-background-tertiary gap-12 md:gap-0">
+    <section id="contact" className="min-h-screen md:max-h-screen snap-start snap-always px-5 md:px-20 lg:px-28 pt-12 md:pt-20 pb-26 flex flex-col justify-between bg-background-tertiary gap-12 md:gap-0">
       <div className="flex flex-col md:flex-row md:justify-between md:items-end mr-10">
         <FadeInUp delay={0.2} className="lg:max-w-2/3 mb-12 md:mb-8">
           <h2 className="text-heading-lg">
@@ -120,7 +120,7 @@ export function Contact() {
         </FadeInUp>
 
         {/* Right - Photo */}
-        <FadeInUp delay={0.2} className="hidden md:block relative w-96 aspect-square -mb-22">
+        <FadeInUp delay={0.2} className="hidden md:block relative md:w-1/2 lg:w-96 aspect-square -mb-26">
           <Image
             src="/contact.png"
             alt="Photo de contact"

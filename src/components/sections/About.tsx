@@ -6,10 +6,10 @@ export function About() {
   return (
     <section
       id="a-propos"
-      className="min-h-screen md:max-h-screen flex flex-col gap-6 xl:gap-10 px-4 md:px-6 lg:px-28 pt-14 xl:pt-16 pb-24 snap-start snap-always overflow-hidden"
+      className="min-h-screen lg:max-h-screen flex flex-col gap-6 xl:gap-10 px-5 md:px-20 lg:px-28 pt-12 md:pt-16 pb-26 snap-start snap-always overflow-hidden"
     >
       {/* Row 1: Title + Image 2 (portrait) */}
-      <div className="flex md:gap-6 lg:gap-20 flex-1 justify-between">
+      <div className="flex md:gap-6 lg:gap-16 flex-1 justify-between">
         {/* Title */}
         <h2 className="text-heading-lg flex flex-col max-w-141.5 pb-10">
           <MaskInText delay={0.2}>Structurer la</MaskInText>
