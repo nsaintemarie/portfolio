@@ -23,31 +23,31 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen max-h-screen snap-start snap-always px-26 pt-16 pb-22 flex flex-col justify-between bg-background-tertiary">
-      <div className="flex justify-between items-end mr-10">
-        <FadeInUp delay={0.2} className="max-w-2/3 mb-8">
+    <section id="contact" className="min-h-screen md:max-h-screen snap-start snap-always px-5 md:px-26 pt-14 md:pt-16 pb-22 flex flex-col justify-between bg-background-tertiary gap-12 md:gap-0">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-end mr-10">
+        <FadeInUp delay={0.2} className="lg:max-w-2/3 mb-12 md:mb-8">
           <h2 className="text-heading-lg">
             Transformons une idée en produit.<br />
             Contactez-moi pour en parler.
           </h2>
         </FadeInUp>
-        <FadeInUp className="flex flex-col gap-8">
-          <div className="space-y-2">
+        <FadeInUp className="flex flex-col gap-6 md:gap-8">
+          <div className="space-y-1 md:space-y-2">
             <span className="text-paragraph-sm opacity-56 block">Reseau</span>
             <a
               href="https://linkedin.com/in/noemie-sainte-marie"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-paragraph block hover:opacity-80 transition-opacity"
+              className="text-paragraph block hover:opacity-80 transition-opacity underline underline-offset-2"
             >
               LinkedIn
             </a>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-1 md:space-y-2">
             <span className="text-paragraph-sm opacity-56 block">Email</span>
             <a
               href="mailto:contact@noemie-sainte-marie.fr"
-              className="text-paragraph block hover:opacity-80 transition-opacity"
+              className="text-paragraph block hover:opacity-80 transition-opacity underline underline-offset-2"
             >
               contact@noemie-sainte-marie.fr
             </a>
@@ -120,7 +120,7 @@ export function Contact() {
         </FadeInUp>
 
         {/* Right - Photo */}
-        <FadeInUp delay={0.2} className="relative w-96 aspect-square -mb-22">
+        <FadeInUp delay={0.2} className="hidden md:block relative w-96 aspect-square -mb-22">
           <Image
             src="/contact.png"
             alt="Photo de contact"
