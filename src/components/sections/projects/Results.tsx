@@ -8,10 +8,11 @@ export function Results({ data }: { data: ProjectContent["results"] }) {
 
   return (
     <section
-      className="relative w-full min-h-screen overflow-hidden bg-foreground-white text-background-secondary py-24 px-10"
+      data-theme="light"
+      className="relative w-full min-h-screen overflow-hidden bg-foreground-white text-background-secondary py-14 md:py-24 px-5 md:px-20"
       aria-label="Résultats"
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-2 gap-20">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20">
         <div>
           <MaskInText delay={0.2} className="text-paragraph uppercase">
             [LES RÉSULTATS]
