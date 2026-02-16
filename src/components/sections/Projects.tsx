@@ -39,14 +39,14 @@ export function Projects({ current }: { current?: string }) {
 
       {/* Content */}
       {/* Mobile - Project Cards with images */}
-      <FadeIn delay={1} className="flex flex-col gap-6 lg:hidden">
+      <FadeIn delay={1} className="flex flex-col gap-6 md:hidden">
         {projects.filter((project) => project.slug !== current).map((project) => (
           <a
             key={project.title}
             href={`/projets/${project.slug}`}
             className="group/item block"
           >
-            <div className="relative w-full h-60 overflow-hidden">
+            <div className="relative w-full h-80 overflow-hidden">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -75,8 +75,8 @@ export function Projects({ current }: { current?: string }) {
       </FadeIn>
 
       {/* Desktop - Project Cards with hover image */}
-      <FadeIn delay={1} className="hidden lg:grid lg:grid-cols-3 gap-8 h-full my-auto">
-        <div className="lg:col-span-2 flex flex-col gap-4 peer">
+      <FadeIn delay={1} className="hidden md:grid md:grid-cols-3 gap-8 h-full my-auto">
+        <div className="md:col-span-3 lg:col-span-2 flex flex-col gap-4 peer">
           {projects.filter((project) => project.slug !== current).map((project) => (
             <a
               key={project.title}
@@ -135,7 +135,7 @@ export function Projects({ current }: { current?: string }) {
         {/* Right - Image (1/3) */}
         <div
           className={cn(
-            "relative h-full border-[1.5px] border-background overflow-hidden bg-[#0E0E0E]",
+            "md:hidden lg:block relative h-full border-[1.5px] border-background overflow-hidden bg-[#0E0E0E]",
           )}
         >
           <AnimatePresence>
