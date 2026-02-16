@@ -22,7 +22,7 @@ export function Roadmap() {
     <section
       id="roadmap"
       ref={containerRef}
-      className="bg-background-secondary min-h-screen snap-start snap-always relative p-26"
+      className="bg-background-secondary min-h-screen snap-start snap-always relative p-26 hidden lg:block"
     >
       <GridBackground />
 

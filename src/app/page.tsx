@@ -5,8 +5,8 @@ export default function Home() {
     <>
       <Hero />
       <Projects />
-      <Propositions />
       <About />
+      <Propositions />
       <Roadmap />
       <Contact />
     </>

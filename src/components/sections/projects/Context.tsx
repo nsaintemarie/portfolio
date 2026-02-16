@@ -8,7 +8,7 @@ import Image from "next/image";
 export function Context({ data }: { data: ProjectContent["context"] }) {
   return (
     <section
-      className="relative h-screen w-full overflow-hidden snap-start snap-always bg-background-secondary flex flex-col justify-between gap-6 pb-22"
+      className="relative h-screen w-full overflow-hidden bg-background-secondary flex flex-col justify-between gap-6 pb-22"
       aria-label="Context"
     >
       <div className="flex justify-between items-start gap-12 pl-16 pr-10.5 ">

@@ -6,7 +6,7 @@ export function About() {
   return (
     <section
       id="a-propos"
-      className="min-h-screen lg:max-h-screen flex flex-col gap-6 xl:gap-10 px-5 md:px-20 lg:px-28 pt-12 md:pt-16 pb-26 snap-start snap-always overflow-hidden"
+      className="min-h-screen lg:max-h-screen flex flex-col gap-6 xl:gap-10 px-5 md:px-20 lg:px-28 pt-12 md:pt-16 pb-26 snap-start snap-always overflow-hidden bg-background-secondary!"
     >
       {/* Row 1: Title + Image 2 (portrait) */}
       <div className="flex md:gap-6 lg:gap-16 flex-1 justify-between">
@@ -57,7 +57,7 @@ export function About() {
           <p className="text-paragraph-line opacity-80 xl:self-end xl:-mb-10">
 
             Je ne code pas juste pour livrer :
-            Je structure vos projets pour qu'ils tiennent dans le temps, j'accompagne vos équipes pour qu'elles montent en compétences, et je vulgarise la tech pour que vous gardiez le contrôle.
+            je structure vos projets pour qu'ils tiennent dans le temps, j'accompagne vos équipes pour qu'elles montent en compétences, et je vulgarise la tech pour que vous gardiez le contrôle.
             <br />
             <br />
             J'aime comprendre un besoin, en saisir la logique métier, imaginer une architecture claire et écrire un code solide qui servira vraiment le produit — parce que la technique n'a de sens que si elle répond à un besoin réel.          </p>

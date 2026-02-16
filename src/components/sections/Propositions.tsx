@@ -11,7 +11,7 @@ export function Propositions() {
   return (
     <section
       id="propositions"
-      className="min-h-screen flex justify-center px-5 md:px-20 lg:px-28 pb-26 pt-12 md:pt-20  snap-start snap-always bg-background-secondary!"
+      className="min-h-screen flex justify-center px-5 md:px-20 lg:px-28 pb-26 pt-12 md:pt-20  snap-start snap-always bg-background-tertiary!"
     >
       <div className="flex flex-col md:flex-row flex-wrap gap-5 md:gap-6 items-start">
         {propositions.map((item, index) => (

@@ -1,4 +1,9 @@
+"use client";
+
+import { useCallback } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import { cn } from "@/utils";
 
 const navLinks = [
   { name: "[PROJETS]", href: "#projets", label: "Voir les projets" },
@@ -12,9 +17,24 @@ const navLinks = [
 ];
 
 export function Footer() {
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === "/";
+
+  const handleClick = useCallback((e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    if (isHome) {
+      const target = document.getElementById(id);
+      target?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push(`/#${id}`);
+    }
+  }, [isHome, router]);
+
   return (
     <footer
-      className="relative z-60 bg-background overflow-hidden snap-start"
+      className={cn("relative z-60 bg-background overflow-hidden", isHome && "snap-start")}
       role="contentinfo"
       aria-label="Pied de page"
     >
@@ -32,6 +52,7 @@ export function Footer() {
             href={link.href}
             target={link.external ? "_blank" : undefined}
             rel={link.external ? "noopener noreferrer" : undefined}
+            onClick={!link.external ? (e) => handleClick(e, link.href) : undefined}
             className="md:text-paragraph-sm text-paragraph-caps uppercase hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             aria-label={link.label}
           >

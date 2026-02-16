@@ -1,17 +1,32 @@
 "use client";
 
-import { useEffect } from "react";
+import { useCallback } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { FadeInUp } from "@/components/ui";
 
 const navigation = [
-  { name: "PROJETS", icon: "/diamond.svg", href: "/#projets", delay: 1.3 },
-  { name: "A PROPOS", href: "/#a-propos", delay: 1.4 },
-  { name: "CONTACT", href: "/#contact", delay: 1.5 },
+  { name: "PROJETS", icon: "/diamond.svg", id: "projets", delay: 1.3 },
+  { name: "A PROPOS", id: "a-propos", delay: 1.4 },
+  { name: "CONTACT", id: "contact", delay: 1.5 },
 ];
 
 export function Navigation() {
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === "/";
+
+  const handleClick = useCallback((e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    if (isHome) {
+      const target = document.getElementById(id);
+      target?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push(`/#${id}`);
+    }
+  }, [isHome, router]);
+
   return (
     <FadeInUp
       as="nav"
@@ -33,13 +48,9 @@ export function Navigation() {
               animate
             >
               <Link
-                href={item.href}
-                onNavigate={() => {
-                  setTimeout(() => {
-                    history.replaceState(null, "", window.location.pathname);
-                  }, 100)
-                }}
-                className="flex items-center justify-center text-paragraph-sm transition-colors gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                href={`/#${item.id}`}
+                onClick={(e) => handleClick(e, item.id)}
+                className="flex items-center justify-center text-paragraph-sm transition-colors gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:text-white"
               >
                 {item.icon && (
                   <Image

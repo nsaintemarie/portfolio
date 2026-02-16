@@ -68,8 +68,8 @@ export const projectsContents = {
         }
       ]
       ,
-      picture1: "/projects/gfield/result-picture-1.webp",
-      picture2: "/projects/gfield/result-picture-2.webp",
+      picture1: "/projects/uptoo/picture-4.webp",
+      picture2: "/projects/uptoo/picture-5.webp",
     }
   },
   kapture: {

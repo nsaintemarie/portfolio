@@ -16,7 +16,7 @@ export function Projects({ current }: { current?: string }) {
   return (
     <section
       id="projets"
-      className={cn("min-h-screen flex flex-col justify-center pb-26 pt-12 md:pt-20 md:px-20 lg:px-28 snap-start snap-always", current && 'bg-background-tertiary')}
+      className={cn("min-h-screen flex flex-col justify-center pb-26 pt-12 md:pt-20 md:px-20 lg:px-28 ", current ? 'bg-background-tertiary' : 'snap-start snap-always')}
     >
       {/* Title */}
         <h2 className="text-heading-lg px-5 mb-8 md:px-0">

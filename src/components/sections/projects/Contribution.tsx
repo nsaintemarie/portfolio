@@ -6,7 +6,7 @@ export function Contribution({ data }: { data: ProjectContent["contribution"] })
 
   return (
     <section
-      className="relative w-full overflow-hidden snap-start snap-always bg-foreground text-background-secondary py-24 px-10"
+      className="relative w-full overflow-hidden bg-foreground text-background-secondary py-24 px-10"
       aria-label="Contribution"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-2 gap-20">
@@ -18,7 +18,7 @@ export function Contribution({ data }: { data: ProjectContent["contribution"] })
             {data.title}
           </MaskInText>
         </div>
-        <FadeIn delay={1.2} className="space-y-6">
+        <FadeIn delay={1.2} className="space-y-9">
           {data.descriptions.map((desc, index) => (
             <div key={index}>
               <h3 className="text-paragraph-sm uppercase mb-2">{desc.title}</h3>
