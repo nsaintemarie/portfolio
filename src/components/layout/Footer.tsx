@@ -20,7 +20,7 @@ export function Footer() {
     >
       {/* Navigation line */}
       <nav
-        className="flex flex-col md:flex-rows items-center justify-center gap-21 md:gap-38 md:py-16 p-6"
+        className="flex flex-col md:flex-row items-center justify-center gap-21 md:gap-38 md:py-16 p-6"
         aria-label="Navigation secondaire"
       >
         <span className="text-2xl md:text-paragraph-sm" aria-hidden="true">
