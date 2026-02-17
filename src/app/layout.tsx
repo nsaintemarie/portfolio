@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Footer, Navigation } from "@/components/layout";
-import { SkipLink } from "@/components/ui";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -50,8 +48,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  projects,
 }: Readonly<{
   children: React.ReactNode;
+  projects: React.ReactNode;
 }>) {
   return (
     <html lang="fr">
@@ -64,15 +64,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        <SkipLink /> {/* Lien d'accessibilité pour sauter la navigation */}
-        <Navigation />
         <main
-          id="main-content"
-          className="h-screen overflow-y-auto snap-y snap-mandatory"
+          id="main"
           role="main"
         >
           {children}
-          <Footer />
+          {projects}
         </main>
       </body>
     </html>

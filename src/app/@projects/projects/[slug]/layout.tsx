@@ -1,4 +1,4 @@
-import { CloseButton, ModalTransition, PullToClose } from "@/components/ui";
+import { CloseButton, ProjectModal, PullToClose } from "@/components/ui";
 
 export default function ProjectLayout({
   children,
@@ -6,12 +6,12 @@ export default function ProjectLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ModalTransition>
+    <ProjectModal>
       {/* DESKTOP CLOSE */}
       <CloseButton />
       {/* MOBILE CLOSE */}
       <PullToClose />
       {children}
-    </ModalTransition>
+    </ProjectModal>
   );
 }

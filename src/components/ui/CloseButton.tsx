@@ -3,15 +3,19 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { EASE_OUT_EXPO } from "@/constants/animation";
+import { useRouter } from "next/navigation";
+import { useScrollContainer } from "./ScrollContainer";
 
 const CIRCUMFERENCE = 186;
 
 export function CloseButton() {
   const [progress, setProgress] = useState(0);
   const [isLight, setIsLight] = useState(false);
+  const router = useRouter();
+  const scrollRef = useScrollContainer();
 
   useEffect(() => {
-    const container = document.getElementById("main-content");
+    const container = scrollRef.current;
     if (!container) return;
 
     const lightSections = document.querySelectorAll("[data-theme='light']");
@@ -38,15 +42,15 @@ export function CloseButton() {
 
     container.addEventListener("scroll", handleScroll, { passive: true });
     return () => container.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [scrollRef]);
 
   const strokeDashoffset = 130 * (1 - progress);
   const strokeColor = isLight ? "#221C1C" : "#EAE3DC";
 
   return (
-    <motion.a
-      href="/#projets"
-      className="fixed top-5 right-10.5 z-50 hidden md:block"
+    <motion.button
+      onClick={() => router.back()}
+      className="fixed top-5 right-10.5 z-50 hidden md:block cursor-pointer"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.3, ease: EASE_OUT_EXPO }}
@@ -100,6 +104,6 @@ export function CloseButton() {
           style={{ transition: "stroke 0.3s ease" }}
         />
       </svg>
-    </motion.a>
+    </motion.button>
   );
 }

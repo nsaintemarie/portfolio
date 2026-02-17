@@ -1,11 +1,12 @@
 import { Projects } from "@/components/sections";
 import { Context, Contribution, Results } from "@/components/sections/projects/";
-import { projectsContents } from "@/data/projects/contents";
+import { ProjectModal } from "@/components/ui";
+import { projectsContents } from "@/data";
 
-export default async function ProjectPage({ params }: { params: { slug : string } }) {
-  const { slug } = (await params)
-     const data = projectsContents[slug];
-     
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const data = projectsContents[slug];
+
   return (
     <>
       <Context data={data.context} />
@@ -13,5 +14,5 @@ export default async function ProjectPage({ params }: { params: { slug : string 
       <Results data={data.results} />
       <Projects current={slug} />
     </>
-  );
+  )
 }

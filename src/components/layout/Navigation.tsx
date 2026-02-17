@@ -1,7 +1,5 @@
 "use client";
 
-import { useCallback } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { FadeInUp } from "@/components/ui";
@@ -13,19 +11,12 @@ const navigation = [
 ];
 
 export function Navigation() {
-  const pathname = usePathname();
-  const router = useRouter();
-  const isHome = pathname === "/";
 
-  const handleClick = useCallback((e: React.MouseEvent, id: string) => {
+  const handleClick = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
-    if (isHome) {
-      const target = document.getElementById(id);
-      target?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      router.push(`/#${id}`);
-    }
-  }, [isHome, router]);
+    const target = document.getElementById(id);
+    target?.scrollIntoView({ behavior: "smooth" });
+  }
 
   return (
     <FadeInUp

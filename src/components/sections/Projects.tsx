@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { FadeIn, MaskInText } from "@/components/ui";
 import { cn } from "@/utils";
 import { projectsListing as projects } from "@/data";
@@ -41,9 +42,10 @@ export function Projects({ current }: { current?: string }) {
       {/* Mobile - Project Cards with images */}
       <FadeIn delay={1} className="flex flex-col gap-6 md:hidden">
         {projects.filter((project) => project.slug !== current).map((project) => (
-          <a
+          <Link
             key={project.title}
-            href={`/projets/${project.slug}`}
+            href={`/projects/${project.slug}`}
+            replace={!!current}
             className="group/item block"
           >
             <div className="relative w-full h-80 overflow-hidden">
@@ -70,7 +72,7 @@ export function Projects({ current }: { current?: string }) {
                 En savoir plus
               </span>
             </div>
-          </a>
+          </Link>
         ))}
       </FadeIn>
 
@@ -78,9 +80,10 @@ export function Projects({ current }: { current?: string }) {
       <FadeIn delay={1} className="hidden md:grid md:grid-cols-3 gap-8 h-full my-auto">
         <div className="md:col-span-3 lg:col-span-2 flex flex-col gap-4 peer">
           {projects.filter((project) => project.slug !== current).map((project) => (
-            <a
+            <Link
               key={project.title}
-              href={`/projets/${project.slug}`}
+              href={`/projects/${project.slug}`}
+              replace={!!current}
               className="group/item relative bg-black/16 p-8 border-[1.5px] border-background hover:border-white/24"
               onMouseEnter={() => setHoveredProject(project)}
               onMouseLeave={() => setHoveredProject(null)}
@@ -128,7 +131,7 @@ export function Projects({ current }: { current?: string }) {
                   ))}
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 

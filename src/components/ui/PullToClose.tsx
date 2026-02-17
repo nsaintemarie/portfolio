@@ -2,23 +2,25 @@
 
 import { useRef, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import { useScrollContainer } from "./ScrollContainer";
 
 const THRESHOLD = 120;
 
 export function PullToClose() {
   const router = useRouter();
+  const scrollRef = useScrollContainer();
   const startY = useRef(0);
   const [dragY, setDragY] = useState(0);
   const isDragging = useRef(false);
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    const container = document.getElementById("main-content");
+    const container = scrollRef.current;
     // Only allow pull when scrolled to top
     if (container && container.scrollTop > 0) return;
 
     startY.current = e.touches[0].clientY;
     isDragging.current = true;
-  }, []);
+  }, [scrollRef]);
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
     if (!isDragging.current) return;
@@ -34,7 +36,7 @@ export function PullToClose() {
     isDragging.current = false;
 
     if (dragY >= THRESHOLD) {
-      router.push("/#projets");
+      router.back();
     } else {
       setDragY(0);
     }

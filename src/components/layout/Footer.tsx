@@ -1,7 +1,5 @@
 "use client";
 
-import { useCallback } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/utils";
 
@@ -17,24 +15,17 @@ const navLinks = [
 ];
 
 export function Footer() {
-  const pathname = usePathname();
-  const router = useRouter();
-  const isHome = pathname === "/";
 
-  const handleClick = useCallback((e: React.MouseEvent, href: string) => {
+  const handleClick = (e: React.MouseEvent, href: string) => {
     e.preventDefault();
     const id = href.replace("#", "");
-    if (isHome) {
-      const target = document.getElementById(id);
-      target?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      router.push(`/#${id}`);
-    }
-  }, [isHome, router]);
+    const target = document.getElementById(id);
+    target?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <footer
-      className={cn("relative z-60 bg-background overflow-hidden", isHome && "snap-start")}
+      className={cn("relative z-60 bg-background overflow-hidden snap-start")}
       role="contentinfo"
       aria-label="Pied de page"
     >
