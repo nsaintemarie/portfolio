@@ -1,6 +1,5 @@
 import { Projects } from "@/components/sections";
 import { Context, Contribution, Results } from "@/components/sections/projects/";
-import { ProjectModal } from "@/components/ui";
 import { projectsContents } from "@/data";
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
