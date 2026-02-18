@@ -6,7 +6,6 @@ export { PullToClose } from "./PullToClose";
 export { GridBackground } from "./GridBackground";
 export { SkipLink } from "./SkipLink";
 export { SocialLinks } from "./SocialLinks";
-export { useScrollProgress } from "./useScrollProgress";
 export { ProjectsListing } from "./ProjectsListing";
 export * from "./animations";
 export * from "./timeline";

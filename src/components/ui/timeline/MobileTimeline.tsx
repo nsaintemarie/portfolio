@@ -1,6 +1,6 @@
 "use client";
 
-import { useScrollProgress } from "../useScrollProgress";
+import { useScrollProgress } from "@/utils/useScrollProgress";
 import { MarkerActive, MarkerPassed, MarkerUpcoming, MARKER_Y_PERCENTS } from "./Markers";
 import { cn } from "@/utils/cn";
 

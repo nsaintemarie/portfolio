@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useScrollContainer } from "./ScrollContainer";
+import { useScrollContainer } from "@/components/ui/ScrollContainer";
 
 type UseScrollProgressOptions = {
   containerRef: React.RefObject<HTMLElement | null>;
