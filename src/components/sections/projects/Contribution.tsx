@@ -7,7 +7,7 @@ export function Contribution({ data }: { data: ProjectContent["contribution"] })
   return (
     <section
       data-theme="light"
-      className="relative w-full overflow-hidden bg-foreground text-background-secondary py-14 md:py-24 px-5 md:px-20"
+      className="relative w-full overflow-hidden bg-foreground text-background-secondary py-14 md:py-22 px-5 md:px-20"
       aria-label="Contribution"
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20">

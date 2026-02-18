@@ -78,7 +78,9 @@ export const projectsContents = {
       picture2: "/projects/kapture/picture-2.webp",
       picture3: "/projects/kapture/picture-3.webp",
       title: "Explorer le motion design au service de l’image",
-      description: `Projet personnel conçu comme laboratoire technique autour de l’expérience visuelle et du motion design. L’objectif : créer un portfolio photo immersif permettant d’explorer les possibilités offertes par SvelteKit et GSAP en matière de performance et d'animations. Ce projet m’a permis de sortir d’un contexte produit business pour me concentrer sur l’expérience utilisateur, la fluidité et la narration visuelle.`,
+      description: `Projet personnel conçu comme laboratoire technique autour de l’expérience visuelle et du motion design. 
+      L’objectif : créer un portfolio photo immersif permettant d’explorer les possibilités offertes par SvelteKit et GSAP en matière de performance et d'animations. 
+      Ce projet m’a permis de sortir d’un contexte produit business pour me concentrer sur l’expérience utilisateur, la fluidité et la narration visuelle.`,
       stack: ["SvelteKit", "TypeScript", "Tailwind CSS"],
     },
     contribution: {
@@ -187,9 +189,8 @@ export const projectsContents = {
       picture3: "/projects/nearlist/picture-3.webp",
       title: "Connecter les plateformes musicales autour d’une expérience sociale unifiée",
       description: `Nearlist est une application mobile pensée comme une surcouche sociale aux plateformes de streaming musical (Spotify, Deezer).
-      L’ambition : permettre aux utilisateurs de créer des playlists collaboratives inter-plateformes, enrichies d’interactions sociales — commentaires, 
-      
-      échanges en temps réel et découverte des playlists de ses amis — sans quitter leur écosystème musical existant. Le défi était double : proposer une expérience simple et naturelle côté utilisateur, tout en orchestrant une synchronisation complexe avec des APIs tierces.`,
+      L’ambition : permettre aux utilisateurs de créer des playlists collaboratives inter-plateformes, enrichies d’interactions sociales — commentaires, échanges en temps réel et découverte des playlists de ses amis — sans quitter leur écosystème musical existant. 
+      Le défi était double : proposer une expérience simple et naturelle côté utilisateur, tout en orchestrant une synchronisation complexe avec des APIs tierces.`,
       stack: ["React Native", "Node.Js"],
     },
     contribution: {
