@@ -1,5 +1,4 @@
-import { Projects } from "@/components/sections";
-import { Context, Contribution, Results } from "@/components/sections/projects/";
+import { Context, Contribution, Results, Projects } from "@/components/sections/projects/";
 import { projectsContents } from "@/data";
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
