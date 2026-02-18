@@ -12,13 +12,13 @@ export function CloseButton() {
   const [progress, setProgress] = useState(0);
   const [isLight, setIsLight] = useState(false);
   const scrollRef = useScrollContainer();
-  
-  const lightSections = document.querySelectorAll("[data-theme='light']");
-  const buttonCenterY = 50; // top-5 (20px) + half of 60px = 50px
 
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
+
+    const lightSections = document.querySelectorAll("[data-theme='light']");
+    const buttonCenterY = 50; // top-5 (20px) + half of 60px = 50px
 
     const handleScroll = () => {
       // Progress calculation
@@ -61,7 +61,7 @@ export function CloseButton() {
           fill="none"
         >
           {/* CIRCLE */}
-            <rect
+          <rect
             opacity="0.32"
             x="0.375"
             y="0.375"
@@ -72,7 +72,7 @@ export function CloseButton() {
             strokeWidth="0.75"
             style={{ transition: "stroke 0.3s ease" }}
             className="group-hover:opacity-50 transition-opacity duration-300"
-            />
+          />
           {/* PROGRESS */}
           <rect
             x="0.300"
