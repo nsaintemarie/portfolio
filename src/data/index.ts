@@ -4,3 +4,4 @@ export { socialLinks } from "./social-links";
 export { about } from "./about";
 export { projectsContents } from "./projects/contents";
 export { projectsListing } from "./projects/listing";
+export { mentions } from "./mentions-legales";

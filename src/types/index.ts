@@ -66,3 +66,8 @@ export interface ViewportConfig {
   once?: boolean;
   margin?: string;
 }
+
+export interface Mention {
+  title: string;
+  content: string[];
+}

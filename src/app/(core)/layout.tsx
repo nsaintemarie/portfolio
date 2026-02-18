@@ -1,5 +1,5 @@
-import { Footer } from "@/components/layout";
-import { ScrollContainer } from "@/components/ui";
+import { Footer, Navigation } from "@/components/layout";
+import { ScrollContainer, SkipLink } from "@/components/ui";
 
 export default function CoreLayout({
   children,
@@ -7,9 +7,14 @@ export default function CoreLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ScrollContainer className="h-screen overflow-y-auto snap-y snap-mandatory">
-      {children}
-      <Footer />
-    </ScrollContainer>
+    <>
+      {/* Navigation */}
+      <Navigation />
+      <SkipLink />
+      <ScrollContainer className="h-screen overflow-y-auto snap-y snap-mandatory">
+        {children}
+        <Footer />
+      </ScrollContainer>
+    </>
   );
 }
