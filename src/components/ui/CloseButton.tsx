@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { EASE_OUT_EXPO } from "@/constants/animation";
-import { useRouter } from "next/navigation";
 import { useScrollContainer } from "./ScrollContainer";
 import Link from "next/link";
 
@@ -13,23 +12,23 @@ export function CloseButton() {
   const [progress, setProgress] = useState(0);
   const [isLight, setIsLight] = useState(false);
   const scrollRef = useScrollContainer();
+  
+  const lightSections = document.querySelectorAll("[data-theme='light']");
+  const buttonCenterY = 50; // top-5 (20px) + half of 60px = 50px
 
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
 
-    const lightSections = document.querySelectorAll("[data-theme='light']");
-    // Button center Y: top-5 (20px) + half of 60px = 50px
-    const buttonCenterY = 50;
-
     const handleScroll = () => {
+      // Progress calculation
       const { scrollTop, scrollHeight, clientHeight } = container;
       const maxScroll = scrollHeight - clientHeight;
       if (maxScroll > 0) {
         setProgress(scrollTop / maxScroll);
       }
 
-      // Check if button overlaps a light section
+      // Background color change
       let light = false;
       lightSections.forEach((section) => {
         const rect = section.getBoundingClientRect();
@@ -44,13 +43,13 @@ export function CloseButton() {
     return () => container.removeEventListener("scroll", handleScroll);
   }, [scrollRef]);
 
-  const strokeDashoffset = 130 * (1 - progress);
+  const strokeDashoffset = CIRCUMFERENCE * (1 - progress);
   const strokeColor = isLight ? "#221C1C" : "#EAE3DC";
 
   return (
     <Link href="/">
       <motion.button
-        className="fixed top-5 right-10.5 z-50 hidden md:block cursor-pointer"
+        className="fixed top-5 right-10.5 z-50 hidden md:block cursor-pointer group"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: EASE_OUT_EXPO }}
@@ -61,7 +60,8 @@ export function CloseButton() {
           viewBox="0 0 60 60"
           fill="none"
         >
-          <rect
+          {/* CIRCLE */}
+            <rect
             opacity="0.32"
             x="0.375"
             y="0.375"
@@ -71,7 +71,9 @@ export function CloseButton() {
             stroke={strokeColor}
             strokeWidth="0.75"
             style={{ transition: "stroke 0.3s ease" }}
-          />
+            className="group-hover:opacity-50 transition-opacity duration-300"
+            />
+          {/* PROGRESS */}
           <rect
             x="0.300"
             y="0.375"
@@ -89,12 +91,14 @@ export function CloseButton() {
               transition: "stroke-dashoffset 0.1s linear, stroke 0.3s ease",
             }}
           />
+          {/* "X" */}
           <path
             opacity="0.32"
             d="M24 24L36.375 36.375"
             stroke={strokeColor}
             strokeWidth="1.5"
             style={{ transition: "stroke 0.3s ease" }}
+            className="group-hover:opacity-80 transition-opacity duration-300"
           />
           <path
             opacity="0.32"
@@ -102,6 +106,7 @@ export function CloseButton() {
             stroke={strokeColor}
             strokeWidth="1.5"
             style={{ transition: "stroke 0.3s ease" }}
+            className="group-hover:opacity-70 transition-opacity duration-300"
           />
         </svg>
       </motion.button>
