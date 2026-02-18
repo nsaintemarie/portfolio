@@ -10,7 +10,7 @@ export const projectsContents: { [key: string]: ProjectContent } = {
       description: `Pendant 3 ans et demi chez Uptoo, j’ai piloté l’évolution de la stack en tant que Stack Owner – Lead Developer, au cœur d’un écosystème multi-plateformes (interne ~200 utilisateurs, clients, partenaires, stagiaires). 
       Ma mission : structurer et moderniser une base technique de près de 10 ans pour en faire un socle scalable, capable d'absorber de nouveaux enjeux métiers — notamment l’intégration de l’IA — sans ralentir la croissance produit. 
       L’objectif n’était pas seulement de migrer une stack, mais de poser une architecture durable, alignée avec la vision business et les process métiers, tout en accompagnant l’équipe dans cette transformation.`,
-      stack: ["Next.Js", "NestJs", "Node.js", "TypeScript", "Vue.js", "MongoDB", "ElasticSearch", "Redis", "GCP"],
+      stack: ["Node.js", "NestJs", "Next.Js", "Vue.js", "TypeScript", "MongoDB", "ElasticSearch", "Redis", "GCP"],
     },
     contribution: {
       title: "Transformer un mastodonte technique en levier d’innovation",
@@ -61,11 +61,11 @@ export const projectsContents: { [key: string]: ProjectContent } = {
         },
         {
           title: "Montée en compétences",
-          content: `Adoption d’une nouvelle stack pour l’équipe, capable d’itérer rapidement sur de nouvelles fonctionnalités tout en maintenant cohérence et qualité du code.`
+          content: `Adoption d’une nouvelle architecture et d'une nouvelle stack pour l’équipe, capable d’itérer rapidement sur de nouvelles fonctionnalités tout en maintenant cohérence et qualité du code.`
         },
         {
           title: "Stack unifiée & maîtrisée",
-          content: `Sortie d’un legacy historique pour une stack moderne, pensée pour évoluer sur le long terme et absorber de nouveaux enjeux métier.`
+          content: `Sortie d’un legacy historique pour une stack plus moderne, pensée pour évoluer sur le long terme et absorber de nouveaux enjeux métier.`
         }
       ]
       ,
