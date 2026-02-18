@@ -1,6 +1,7 @@
 "use client";
 
 import { FadeIn, FramedImage, MaskInText } from "@/components/ui";
+import { about } from "@/data";
 
 export function About() {
   return (
@@ -46,21 +47,12 @@ export function About() {
 
         {/* Text */}
         <FadeIn delay={1.2} className="md:max-w-7/12 grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-12 xl:pt-4 xl:pl-10">
-          <p className="text-paragraph-line opacity-80 self-start">
-            Avant de devenir développeuse, je travaillais dans les operations d'une startup tech. C'est là que j'ai découvert le plaisir de résoudre des problèmes, d'améliorer des process… et l'envie de passer "de l'autre côté", celui où l'on construit des solutions.
-            <br />
-            <br />
-            J'ai changé de voie il y a plus de 3 ans, appris, beaucoup expérimenté, et rapidement évolué vers un rôle de lead technique.
-             Aujourd'hui, j'accompagne des startups, des équipes tech et des entrepreuneurs.
-
+          <p className="text-paragraph-line opacity-80 self-start whitespace-pre-line">
+            {about.description1}
           </p>
-          <p className="text-paragraph-line opacity-80 xl:self-end xl:-mb-10">
-
-            Je ne code pas juste pour livrer :
-            je structure vos projets pour qu'ils tiennent dans le temps, j'accompagne vos équipes pour qu'elles montent en compétences, et je vulgarise la tech pour que vous gardiez le contrôle.
-            <br />
-            <br />
-            J'aime comprendre un besoin, en saisir la logique métier, imaginer une architecture claire et écrire un code solide qui servira vraiment le produit — parce que la technique n'a de sens que si elle répond à un besoin réel.          </p>
+          <p className="text-paragraph-line opacity-80 xl:self-end xl:-mb-10 whitespace-pre-line">
+            {about.description2}
+          </p>
         </FadeIn>
       </div>
     </section>

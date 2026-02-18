@@ -39,6 +39,11 @@ export interface Proposition {
   image: string;
 }
 
+export interface About {
+  description1: string;
+  description2: string;
+}
+
 export interface RoadmapStep {
   title: string;
   content: string;
