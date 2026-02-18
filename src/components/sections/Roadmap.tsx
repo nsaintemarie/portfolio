@@ -22,7 +22,7 @@ export function Roadmap() {
     <section
       id="roadmap"
       ref={containerRef}
-      className="bg-background-secondary min-h-screen snap-start snap-always relative px-5 pb-26 pt-12 lg:p-26"
+      className="bg-background-secondary min-h-screen md:snap-start md:snap-always relative px-5 pb-26 pt-12 lg:p-26"
     >
       <GridBackground />
 

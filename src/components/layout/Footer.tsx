@@ -25,13 +25,13 @@ export function Footer() {
 
   return (
     <footer
-      className={cn("relative z-60 bg-background overflow-hidden snap-start")}
+      className={cn("relative z-60 bg-background overflow-hidden md:snap-start")}
       role="contentinfo"
       aria-label="Pied de page"
     >
       {/* Navigation line */}
       <nav
-        className="flex flex-col md:flex-row items-center justify-center gap-21 lg:gap-38 md:py-16 p-6"
+        className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-38 md:py-16 p-6"
         aria-label="Navigation secondaire"
       >
         <span className="text-2xl md:text-paragraph-sm" aria-hidden="true">

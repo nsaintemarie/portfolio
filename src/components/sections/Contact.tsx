@@ -23,7 +23,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen md:max-h-screen snap-start snap-always px-5 md:px-20 lg:px-28 pt-12 md:pt-20 pb-26 flex flex-col justify-between bg-background-tertiary gap-12 md:gap-0">
+    <section id="contact" className="min-h-screen md:max-h-screen md:snap-start md:snap-always px-5 md:px-20 lg:px-28 pt-12 md:pt-20 pb-26 flex flex-col justify-between bg-background-tertiary gap-12 md:gap-0">
       <div className="flex flex-col md:flex-row md:justify-between md:items-end mr-10">
         <FadeInUp delay={0.2} className="lg:max-w-2/3 mb-12 md:mb-8">
           <h2 className="text-heading-lg">

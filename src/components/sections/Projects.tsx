@@ -9,7 +9,7 @@ export function Projects() {
   return (
     <section
       id="projets"
-      className="min-h-screen flex flex-col justify-center pb-26 pt-12 md:pt-20 md:px-20 lg:px-28 snap-start snap-always"
+      className="min-h-screen flex flex-col justify-center pb-26 pt-12 md:pt-20 md:px-20 lg:px-28 md:snap-start md:snap-always"
     >
       <h2 className="text-heading-lg px-5 mb-8 md:px-0">
         <MaskInText delay={0.2}>Des projets pensés pour durer</MaskInText>
