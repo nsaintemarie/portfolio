@@ -118,7 +118,7 @@ export function Projects({ current }: { current?: string }) {
                 +
               </span>
 
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center gap-2">
                 <h3 className="text-paragraph-line text-nowrap">{project.title}</h3>
                 <div className="flex gap-3 flex-wrap justify-end">
                   {project.stacks.map((stack) => (
