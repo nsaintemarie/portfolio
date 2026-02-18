@@ -2,7 +2,7 @@
 
 import { useRef, useState, useCallback } from "react";
 import { cn } from "@/utils";
-import { FadeInUp, GridBackground, Timeline, MARKER_Y_PERCENTS } from "@/components/ui";
+import { FadeInUp, GridBackground, Timeline, MobileTimeline, MARKER_Y_PERCENTS } from "@/components/ui";
 import { roadmapSteps } from "@/data/roadmap-steps";
 
 export function Roadmap() {
@@ -22,21 +22,24 @@ export function Roadmap() {
     <section
       id="roadmap"
       ref={containerRef}
-      className="bg-background-secondary min-h-screen snap-start snap-always relative p-26 hidden lg:block"
+      className="bg-background-secondary min-h-screen snap-start snap-always relative px-5 pb-26 pt-12 lg:p-26"
     >
       <GridBackground />
 
-      {/* Content wrapper */}
       <div className="relative max-w-7xl mx-auto">
-        {/* SVG Timeline au centre */}
         <Timeline
           containerRef={containerRef}
-          className="absolute left-1/2 -translate-x-1/2 top-20 bottom-26 flex items-start justify-center pointer-events-none"
+          className="absolute left-1/2 -translate-x-1/2 top-20 bottom-26 hidden lg:flex items-start justify-center pointer-events-none"
+          onProgressChange={handleProgressChange}
+        />
+        <MobileTimeline
+          className="block lg:hidden"
+          containerRef={containerRef}
           onProgressChange={handleProgressChange}
         />
 
         {/* Steps en quinconce */}
-        <div className="relative z-10 grid grid-cols-2 gap-x-120 gap-y-20">
+        <div className="relative z-10 lg:grid lg:grid-cols-2 md:gap-x-120 space-y-20 md:gap-y-20 pl-20 lg:pl-0">
           {roadmapSteps.map((step, index) => (
             <FadeInUp
               key={index}
@@ -44,8 +47,8 @@ export function Roadmap() {
             >
               <div
                 className={cn(
-                  "max-w-md space-y-6 transition-opacity duration-300",
-                  index % 2 ? "col-start-1" : "col-start-2",
+                  "max-w-md space-y-4 md:space-y-6 transition-opacity duration-300",
+                  index % 2 ? "lg:col-start-1" : "lg:col-start-2",
                   isStepPassed(index) ? "opacity-100" : "opacity-30"
                 )}
               >
