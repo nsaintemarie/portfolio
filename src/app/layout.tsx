@@ -65,6 +65,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        font-display="swap"
       >
         <main
           id="main"
