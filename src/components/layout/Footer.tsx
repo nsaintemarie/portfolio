@@ -8,7 +8,7 @@ const navLinks = [
   { name: "[À PROPOS]", href: "#a-propos", label: "En savoir plus sur moi" },
   {
     name: "[LINKEDIN]",
-    href: "https://linkedin.com/",
+    href: "https://www.linkedin.com/in/no%C3%A9mie-sainte-marie-8209b9160/",
     external: true,
     label: "Voir mon profil LinkedIn",
   },

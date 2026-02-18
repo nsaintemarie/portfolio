@@ -35,7 +35,7 @@ export function Contact() {
           <div className="space-y-1 md:space-y-2">
             <span className="text-paragraph-sm opacity-56 block">Reseau</span>
             <a
-              href="https://linkedin.com/in/noemie-sainte-marie"
+              href="https://www.linkedin.com/in/no%C3%A9mie-sainte-marie-8209b9160/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-paragraph block hover:opacity-80 transition-opacity underline underline-offset-2"
@@ -46,10 +46,10 @@ export function Contact() {
           <div className="space-y-1 md:space-y-2">
             <span className="text-paragraph-sm opacity-56 block">Email</span>
             <a
-              href="mailto:contact@noemie-sainte-marie.fr"
+              href="mailto:saintemarie.noemie@gmail.com"
               className="text-paragraph block hover:opacity-80 transition-opacity underline underline-offset-2"
             >
-              contact@noemie-sainte-marie.fr
+              saintemarie.noemie@gmail.com
             </a>
           </div>
         </FadeInUp>
