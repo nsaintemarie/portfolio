@@ -124,7 +124,7 @@ export function Hero() {
           {/* Description */}
           <div className="max-w-sm lg:max-w-2/5" style={{ clipPath: "inset(0 0 0 0)" }}>
             <motion.p
-              initial={{ y: "120%" }}
+              initial={{ y: "150%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.3, delay: 1.2, ease: EASE_OUT_EXPO }}
               className="text-paragraph-line"

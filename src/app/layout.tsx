@@ -71,8 +71,6 @@ export default function RootLayout({
           id="main"
           role="main"
         >
-          <Navigation />
-          <SkipLink />
           {children}
           {projects}
         </main>

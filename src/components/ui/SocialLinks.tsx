@@ -1,8 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { socialLinks } from "@/data/social-links";
-import { EASE_OUT_EXPO } from "@/constants/animation";
 import { cn } from "@/utils";
 import { FadeInUp } from "./animations/FadeInUp";
 
