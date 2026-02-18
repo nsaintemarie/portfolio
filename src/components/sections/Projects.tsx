@@ -119,12 +119,12 @@ export function Projects({ current }: { current?: string }) {
               </span>
 
               <div className="flex justify-between items-center">
-                <h3 className="text-paragraph-line">{project.title}</h3>
-                <div className="flex gap-3">
+                <h3 className="text-paragraph-line text-nowrap">{project.title}</h3>
+                <div className="flex gap-3 flex-wrap justify-end">
                   {project.stacks.map((stack) => (
                     <span
                       key={stack}
-                      className="rounded-full px-3 py-1 text-paragraph-caps border border-white/8 uppercase"
+                      className="rounded-full px-3 py-1 text-paragraph-sm border border-white/8 uppercase"
                     >
                       {stack}
                     </span>

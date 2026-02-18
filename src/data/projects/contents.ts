@@ -10,7 +10,7 @@ export const projectsContents = {
       description: `Pendant 3 ans et demi chez Uptoo, j’ai piloté l’évolution de la stack en tant que Stack Owner – Lead Developer, au cœur d’un écosystème multi-plateformes (interne ~200 utilisateurs, clients, partenaires, stagiaires). 
       Ma mission : structurer et moderniser une base technique de près de 10 ans pour en faire un socle scalable, capable d'absorber de nouveaux enjeux métiers — notamment l’intégration de l’IA — sans ralentir la croissance produit. 
       L’objectif n’était pas seulement de migrer une stack, mais de poser une architecture durable, alignée avec la vision business et les process métiers, tout en accompagnant l’équipe dans cette transformation.`,
-      stack: ["React", "Tailwind CSS", "Node.js", "GraphQL"],
+      stack: ["Next.Js", "NestJs", "Node.js", "TypeScript", "Vue.js", "MongoDB", "ElasticSearch", "Redis", "GCP"],
     },
     contribution: {
       title: "Transformer un mastodonte technique en levier d’innovation",
@@ -79,7 +79,7 @@ export const projectsContents = {
       picture3: "/projects/kapture/picture-3.webp",
       title: "Explorer le motion design au service de l’image",
       description: `Projet personnel conçu comme laboratoire technique autour de l’expérience visuelle et du motion design. L’objectif : créer un portfolio photo immersif permettant d’explorer les possibilités offertes par SvelteKit et GSAP en matière de performance et d'animations. Ce projet m’a permis de sortir d’un contexte produit business pour me concentrer sur l’expérience utilisateur, la fluidité et la narration visuelle.`,
-      stack: ["Next.JS", "Firebase", "Tailwind CSS"],
+      stack: ["SvelteKit", "TypeScript", "Tailwind CSS"],
     },
     contribution: {
       title: "Construire une expérience immersive, de la performance à l’animation",
@@ -190,7 +190,7 @@ export const projectsContents = {
       L’ambition : permettre aux utilisateurs de créer des playlists collaboratives inter-plateformes, enrichies d’interactions sociales — commentaires, 
       
       échanges en temps réel et découverte des playlists de ses amis — sans quitter leur écosystème musical existant. Le défi était double : proposer une expérience simple et naturelle côté utilisateur, tout en orchestrant une synchronisation complexe avec des APIs tierces.`,
-      stack: ["Angular", "TypeScript", "RxJS"],
+      stack: ["React Native", "Node.Js"],
     },
     contribution: {
       title: "Concevoir une expérience collaborative fluide au-dessus de systèmes tiers",
