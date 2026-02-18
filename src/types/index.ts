@@ -17,6 +17,7 @@ export interface ProjectContent {
   };
   contribution: {
     title: string;
+    link?: string;
     descriptions: {
       title: string;
       content: string;

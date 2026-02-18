@@ -15,8 +15,15 @@ export function Contribution({ data }: { data: ProjectContent["contribution"] })
           <MaskInText delay={0.2} className="text-paragraph uppercase">
             [L'APPROCHE]
           </MaskInText>
-          <MaskInText as='h1' delay={0.5} className="text-heading-lg mt-2">
+          <MaskInText as='h1' delay={0.5} className="text-heading-lg my-2">
             {data.title}
+          </MaskInText>
+          <MaskInText as='p'delay={0.8} className="text-paragraph-line hover:opacity-100 opacity-70 ml-1.5">
+          {data.link && (
+            <a href={data.link} target="_blank" rel="noopener noreferrer">
+              Voir le projet <span className="mdi mdi-arrow-top-right hover:text-primary" />
+            </a>
+          )}
           </MaskInText>
         </div>
         <FadeIn delay={1.2} className="space-y-9">

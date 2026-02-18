@@ -1,6 +1,6 @@
 import { ProjectContent } from "@/types"
 
-export const projectsContents = {
+export const projectsContents: { [key: string]: ProjectContent } = {
   uptoo: {
     context: {
       picture1: "/projects/uptoo/picture-1.webp",
@@ -14,6 +14,7 @@ export const projectsContents = {
     },
     contribution: {
       title: "Transformer un mastodonte technique en levier d’innovation",
+      link: "https://uptoo.fr/",
       descriptions: [
         {
           title: "Migration frontend — Next.js App Router & Design System",
@@ -85,6 +86,7 @@ export const projectsContents = {
     },
     contribution: {
       title: "Construire une expérience immersive, de la performance à l’animation",
+      link: "https://kapture-portfolio.pages.dev/",
       descriptions: [
         {
           title: "Architecture statique avec SvelteKit",
@@ -142,6 +144,7 @@ export const projectsContents = {
     },
     contribution: {
       title: "Faire des choix techniques au service de la musique",
+      link: "https://www.gabriel-field.com/",
       descriptions: [{
         title: "Refonte technique",
         content: "Migration vers un site statique en Next.js, hébergé sur Vercel, afin d’obtenir des performances élevées, un excellent SEO et une maintenance minimale."
@@ -243,6 +246,4 @@ export const projectsContents = {
       picture2: "/projects/nearlist/picture-5.webp",
     }
   },
-} as {
-  [key: string]: ProjectContent
 }
