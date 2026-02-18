@@ -5,11 +5,11 @@ import Image from "next/image";
 import { GridBackground, SocialLinks } from "@/components/ui";
 import { EASE_OUT_EXPO } from "@/constants/animation";
 
-const heroLines = [
+const heroLines: { text: string; label: string; align: string; delay: number }[] = [
   { text: "LEAD", label: "[ARCHITECTURE]", align: "start", delay: 0.3 },
   { text: "FULLSTACK", label: "[FORMATION]", align: "center", delay: 0.5 },
   { text: "DEVELOPER", label: "[CONSEIL]", align: "end", delay: 0.7 },
-] as const;
+]
 
 export function Hero() {
   return (
