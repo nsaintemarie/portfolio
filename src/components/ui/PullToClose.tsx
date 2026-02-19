@@ -9,20 +9,17 @@ const THRESHOLD = 80;
 export function PullToClose() {
   const router = useRouter();
   const scrollRef = useScrollContainer();
-  const handleRef = useRef<HTMLDivElement>(null);
   const startY = useRef(0);
   const dragYRef = useRef(0);
   const isDragging = useRef(false);
   const [dragY, setDragY] = useState(0);
 
   useEffect(() => {
-    const el = handleRef.current;
-    if (!el) return;
+    const container = scrollRef.current;
+    if (!container) return;
 
     const onTouchStart = (e: TouchEvent) => {
-      const container = scrollRef.current;
-      // Tolérance de 4px pour le rubber-banding iOS
-      if (container && container.scrollTop > 4) return;
+      if (container.scrollTop > 4) return;
       startY.current = e.touches[0].clientY;
       dragYRef.current = 0;
       isDragging.current = true;
@@ -32,9 +29,14 @@ export function PullToClose() {
       if (!isDragging.current) return;
       const delta = e.touches[0].clientY - startY.current;
       if (delta > 0) {
-        e.preventDefault(); // Bloque le rubber-band iOS
+        e.preventDefault();
         dragYRef.current = delta;
         setDragY(delta);
+      } else {
+        // Scroll vers le haut → annule le drag
+        isDragging.current = false;
+        dragYRef.current = 0;
+        setDragY(0);
       }
     };
 
@@ -49,14 +51,14 @@ export function PullToClose() {
       }
     };
 
-    el.addEventListener("touchstart", onTouchStart, { passive: true });
-    el.addEventListener("touchmove", onTouchMove, { passive: false });
-    el.addEventListener("touchend", onTouchEnd, { passive: true });
+    container.addEventListener("touchstart", onTouchStart, { passive: true });
+    container.addEventListener("touchmove", onTouchMove, { passive: false });
+    container.addEventListener("touchend", onTouchEnd, { passive: true });
 
     return () => {
-      el.removeEventListener("touchstart", onTouchStart);
-      el.removeEventListener("touchmove", onTouchMove);
-      el.removeEventListener("touchend", onTouchEnd);
+      container.removeEventListener("touchstart", onTouchStart);
+      container.removeEventListener("touchmove", onTouchMove);
+      container.removeEventListener("touchend", onTouchEnd);
     };
   }, [scrollRef, router]);
 
@@ -64,7 +66,6 @@ export function PullToClose() {
 
   return (
     <div
-      ref={handleRef}
       className="md:hidden sticky top-0 z-10 flex justify-center py-4 bg-background-secondary"
       style={{ paddingTop: "max(1rem, env(safe-area-inset-top))" }}
     >
