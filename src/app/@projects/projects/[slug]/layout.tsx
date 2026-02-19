@@ -1,4 +1,4 @@
-import { CloseButton, ProjectModal, PullToClose } from "@/components/ui";
+import { CloseButton, ProjectModal } from "@/components/ui";
 
 export default function ProjectLayout({
   children,
@@ -7,10 +7,7 @@ export default function ProjectLayout({
 }) {
   return (
     <ProjectModal>
-      {/* DESKTOP CLOSE */}
       <CloseButton />
-      {/* MOBILE CLOSE */}
-      <PullToClose />
       {children}
     </ProjectModal>
   );
