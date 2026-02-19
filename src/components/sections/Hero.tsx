@@ -14,7 +14,7 @@ const heroLines: { text: string; label: string; align: string; delay: number }[]
 export function Hero() {
   return (
     <section
-      className="relative h-screen w-full overflow-hidden md:snap-start md:snap-always"
+      className="relative h-dvh w-full overflow-hidden md:snap-start md:snap-always"
       aria-label="Introduction"
     >
       {/* Background image - optimized with Next/Image */}
