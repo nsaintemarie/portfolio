@@ -37,7 +37,7 @@
   --leading-heading-xl: 0.9;
   --tracking-heading-xl: -0.08em;
 
-  --text-heading-lg: clamp(40px, 3.9vw, 56px);
+  --text-heading-lg: clamp(32px, 3.9vw, 56px);
   --leading-heading-lg: 1.25;
   --tracking-heading-lg: -0.08em;
 
