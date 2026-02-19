@@ -20,7 +20,7 @@ export function Contribution({ data }: { data: ProjectContent["contribution"] })
           </MaskInText>
           <MaskInText as='p'delay={0.8} className="text-paragraph-line hover:opacity-100 opacity-70 ml-1.5">
           {data.link && (
-            <a href={data.link} target="_blank" rel="noopener noreferrer">
+            <a href={data.link} target="_blank" rel="noopener noreferrer" className="focus-within:outline-black!">
               Voir le projet <span className="mdi mdi-arrow-top-right hover:text-primary" />
             </a>
           )}
