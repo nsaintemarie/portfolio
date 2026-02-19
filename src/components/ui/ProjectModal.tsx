@@ -1,16 +1,26 @@
 "use client";
 
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Drawer } from "vaul";
 import { Dialog } from "radix-ui";
 import { EASE_OUT_EXPO } from "@/constants/animation";
-import { ScrollContainer } from "./ScrollContainer";
+import { ScrollContainer, useScrollContainer } from "./ScrollContainer";
 import { useMediaQuery } from "@/lib/hooks";
 import { CloseButton } from "./CloseButton";
 
 interface ProjectModalProps {
   children: React.ReactNode;
+}
+
+// For keyboard navigations
+function ScrollAutoFocus() {
+  const scrollRef = useScrollContainer();
+  useEffect(() => {
+    scrollRef.current?.focus();
+  }, [scrollRef]);
+  return null;
 }
 
 function MobileDrawer({ children }: ProjectModalProps) {
@@ -22,7 +32,8 @@ function MobileDrawer({ children }: ProjectModalProps) {
         <Drawer.Content className="fixed inset-x-0 bottom-0 z-70 flex flex-col bg-background-secondary focus:outline-none h-dvh">
           <Drawer.Title className="sr-only">Projet</Drawer.Title>
           <div className="mx-auto mt-4 mb-2.5 h-1.5 w-20 shrink-0 rounded-full bg-primary/30" />
-          <ScrollContainer className="flex-1 overflow-y-auto">
+          <ScrollContainer className="flex-1 overflow-y-auto focus-visible:outline-none!">
+            <ScrollAutoFocus />
             {children}
           </ScrollContainer>
         </Drawer.Content>
@@ -37,7 +48,11 @@ function DesktopDialog({ children }: ProjectModalProps) {
     <Dialog.Root open onOpenChange={(open) => !open && router.back()}>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-60 bg-black/40" />
-        <Dialog.Content asChild aria-describedby={undefined}>
+        <Dialog.Content
+          asChild
+          aria-describedby={'Project content'}
+          onOpenAutoFocus={(e) => e.preventDefault()}
+        >
           <motion.div
             className="fixed inset-0 z-70 bg-background focus:outline-none"
             initial={{ y: "100%" }}
@@ -45,7 +60,8 @@ function DesktopDialog({ children }: ProjectModalProps) {
             transition={{ duration: 0.8, ease: EASE_OUT_EXPO }}
           >
             <Dialog.Title className="sr-only">Projet</Dialog.Title>
-            <ScrollContainer className="h-full overflow-y-auto">
+            <ScrollContainer className="h-full overflow-y-auto focus-visible:outline-none!">
+              <ScrollAutoFocus />
               <CloseButton />
               {children}
             </ScrollContainer>
