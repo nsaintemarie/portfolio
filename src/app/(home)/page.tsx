@@ -3,7 +3,6 @@ import { Hero, Projects, About, Contact, Propositions, Roadmap } from "@/compone
 export default function Home() {
   return (
     <>
-      {/* Sections */}
       <Hero />
       <Projects />
       <About />
