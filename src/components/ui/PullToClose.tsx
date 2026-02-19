@@ -1,61 +1,77 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useScrollContainer } from "./ScrollContainer";
 
-const THRESHOLD = 120;
+const THRESHOLD = 80;
 
 export function PullToClose() {
   const router = useRouter();
   const scrollRef = useScrollContainer();
+  const handleRef = useRef<HTMLDivElement>(null);
   const startY = useRef(0);
-  const [dragY, setDragY] = useState(0);
+  const dragYRef = useRef(0);
   const isDragging = useRef(false);
+  const [dragY, setDragY] = useState(0);
 
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    const container = scrollRef.current;
-    // Only allow pull when scrolled to top
-    if (container && container.scrollTop > 0) return;
+  useEffect(() => {
+    const el = handleRef.current;
+    if (!el) return;
 
-    startY.current = e.touches[0].clientY;
-    isDragging.current = true;
-  }, [scrollRef]);
+    const onTouchStart = (e: TouchEvent) => {
+      const container = scrollRef.current;
+      // Tolérance de 4px pour le rubber-banding iOS
+      if (container && container.scrollTop > 4) return;
+      startY.current = e.touches[0].clientY;
+      dragYRef.current = 0;
+      isDragging.current = true;
+    };
 
-  const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    if (!isDragging.current) return;
+    const onTouchMove = (e: TouchEvent) => {
+      if (!isDragging.current) return;
+      const delta = e.touches[0].clientY - startY.current;
+      if (delta > 0) {
+        e.preventDefault(); // Bloque le rubber-band iOS
+        dragYRef.current = delta;
+        setDragY(delta);
+      }
+    };
 
-    const delta = e.touches[0].clientY - startY.current;
-    if (delta > 0) {
-      setDragY(delta);
-    }
-  }, []);
+    const onTouchEnd = () => {
+      if (!isDragging.current) return;
+      isDragging.current = false;
+      if (dragYRef.current >= THRESHOLD) {
+        router.back();
+      } else {
+        dragYRef.current = 0;
+        setDragY(0);
+      }
+    };
 
-  const handleTouchEnd = useCallback(() => {
-    if (!isDragging.current) return;
-    isDragging.current = false;
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    el.addEventListener("touchend", onTouchEnd, { passive: true });
 
-    if (dragY >= THRESHOLD) {
-      router.back();
-    } else {
-      setDragY(0);
-    }
-  }, [dragY, router]);
+    return () => {
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
+      el.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [scrollRef, router]);
 
   const progress = Math.min(dragY / THRESHOLD, 1);
-  const opacity = 0.4 + progress * 0.6;
 
   return (
     <div
-      className="md:hidden mt-8 flex justify-center py-3 bg-background-secondary rounded-t-2xl"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+      ref={handleRef}
+      className="md:hidden sticky top-0 z-10 flex justify-center py-4 bg-background-secondary"
+      style={{ paddingTop: "max(1rem, env(safe-area-inset-top))" }}
     >
       <div
-        className="w-1/3 h-1 rounded-full bg-primary/40 transition-transform"
+        className="w-10 h-1 rounded-full bg-primary/40"
         style={{
-          opacity,
+          opacity: 0.4 + progress * 0.6,
           transform: `scaleX(${1 + progress * 0.5})`,
           transition: isDragging.current ? "none" : "all 0.3s ease",
         }}

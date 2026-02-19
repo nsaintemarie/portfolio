@@ -11,7 +11,7 @@ export default function CoreLayout({
       {/* Navigation */}
       <Navigation />
       <SkipLink />
-      <ScrollContainer className="h-screen overflow-y-auto md:snap-y md:snap-mandatory">
+      <ScrollContainer className="h-dvh overflow-y-auto md:snap-y md:snap-mandatory">
         {children}
         <Footer />
       </ScrollContainer>

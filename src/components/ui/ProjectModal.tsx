@@ -11,7 +11,7 @@ interface ProjectModalProps {
 export function ProjectModal({ children }: ProjectModalProps) {
   return (
     <motion.div
-      className="absolute inset-0 z-70"
+      className="fixed inset-0 z-70"
       initial={{ y: "100%" }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: EASE_OUT_EXPO }}
