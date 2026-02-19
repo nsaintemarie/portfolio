@@ -47,9 +47,10 @@ export function CloseButton() {
   const strokeColor = isLight ? "#221C1C" : "#EAE3DC";
 
   return (
-    <Link href="/">
+    // Rather use link than closing dialog button for shareability
+    <Link href="/"> 
       <motion.button
-        className="fixed top-5 right-10.5 z-50 hidden md:block cursor-pointer group"
+        className="fixed top-5 md:right-4 lg:right-9 z-50 cursor-pointer group"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: EASE_OUT_EXPO }}

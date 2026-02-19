@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { EASE_OUT_EXPO, VIEWPORT_ONCE } from "@/constants/animation";
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 
 type MaskInTextProps = {
   children: React.ReactNode;

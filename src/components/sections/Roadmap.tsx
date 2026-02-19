@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useCallback } from "react";
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import { FadeInUp, GridBackground, Timeline, MobileTimeline, MARKER_Y_PERCENTS } from "@/components/ui";
 import { roadmapSteps } from "@/data/roadmap-steps";
 

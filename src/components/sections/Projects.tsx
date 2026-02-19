@@ -1,7 +1,6 @@
 "use client";
 
 import { MaskInText, ProjectsListing } from "@/components/ui";
-import { cn } from "@/utils";
 import { projectsListing as projects } from "@/data";
 
 export function Projects() {

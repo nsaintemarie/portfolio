@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { VIEWPORT_ONCE } from "@/constants/animation";
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 
 type FadeInProps = {
   children: React.ReactNode;

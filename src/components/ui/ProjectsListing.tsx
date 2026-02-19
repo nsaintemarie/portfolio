@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "./animations";
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import { Project } from "@/types";
 
 interface ProjectsListingProps {

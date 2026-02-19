@@ -1,8 +1,8 @@
 "use client";
 
-import { useScrollProgress } from "@/utils/useScrollProgress";
+import { useScrollProgress } from "@/lib/hooks";
 import { MarkerActive, MarkerPassed, MarkerUpcoming, MARKER_Y_PERCENTS } from "./Markers";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
 type MobileTimelineProps = {
   containerRef: React.RefObject<HTMLDivElement | null>;

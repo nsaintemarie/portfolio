@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "[PROJETS]", href: "#projets", label: "Voir les projets" },

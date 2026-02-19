@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 type FramedImageProps = {

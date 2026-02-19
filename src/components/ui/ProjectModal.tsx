@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Drawer } from "vaul";
 import { Dialog } from "radix-ui";
 import { EASE_OUT_EXPO } from "@/constants/animation";
 import { ScrollContainer } from "./ScrollContainer";
+import { useMediaQuery } from "@/lib/hooks";
+import { CloseButton } from "./CloseButton";
 
 interface ProjectModalProps {
   children: React.ReactNode;
@@ -19,7 +20,7 @@ function MobileDrawer({ children }: ProjectModalProps) {
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 z-60 bg-black/40" />
         <Drawer.Content className="fixed inset-x-0 bottom-0 z-70 flex flex-col bg-background-secondary focus:outline-none h-dvh">
-          {/* Handle */}
+          <Drawer.Title className="sr-only">Projet</Drawer.Title>
           <div className="mx-auto mt-4 mb-2 h-1.5 w-20 shrink-0 rounded-full bg-primary/30" />
           <ScrollContainer className="flex-1 overflow-y-auto">
             {children}
@@ -45,6 +46,7 @@ function DesktopDialog({ children }: ProjectModalProps) {
           >
             <Dialog.Title className="sr-only">Projet</Dialog.Title>
             <ScrollContainer className="h-full overflow-y-auto">
+              <CloseButton />
               {children}
             </ScrollContainer>
           </motion.div>
@@ -55,17 +57,7 @@ function DesktopDialog({ children }: ProjectModalProps) {
 }
 
 export function ProjectModal({ children }: ProjectModalProps) {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
-    setIsMobile(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-
-  if (isMobile === null) return null;
+  const isMobile = useMediaQuery();
   if (isMobile) return <MobileDrawer>{children}</MobileDrawer>;
   return <DesktopDialog>{children}</DesktopDialog>;
 }

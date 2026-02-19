@@ -1,4 +1,4 @@
-import { CloseButton, ProjectModal } from "@/components/ui";
+import { ProjectModal } from "@/components/ui";
 
 export default function ProjectLayout({
   children,
@@ -7,7 +7,6 @@ export default function ProjectLayout({
 }) {
   return (
     <ProjectModal>
-      <CloseButton />
       {children}
     </ProjectModal>
   );

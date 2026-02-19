@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import { propositions } from "@/data/propositions";
 import { EASE_OUT_EXPO, VIEWPORT_ONCE } from "@/constants/animation";
 import { FadeInUp } from "../ui";

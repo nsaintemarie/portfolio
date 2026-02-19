@@ -1,12 +1,12 @@
 // Data types
-export interface Project {
+export type Project = {
   title: string;
   stacks: readonly string[];
   image: string;
   slug: string;
 }
 
-export interface ProjectContent {
+export type ProjectContent = {
   context: {
     picture1: string;
     picture2: string;
@@ -34,40 +34,40 @@ export interface ProjectContent {
   };
 }
 
-export interface Proposition {
+export type Proposition = {
   title: string;
   description: string;
   image: string;
 }
 
-export interface About {
+export type About = {
   description1: string;
   description2: string;
 }
 
-export interface RoadmapStep {
+export type RoadmapStep = {
   title: string;
   content: string;
 }
 
-export interface SocialLink {
+export type SocialLink = {
   name: string;
   href: string;
 }
 
 // Component prop types
-export interface AnimationConfig {
+export type AnimationConfig = {
   duration?: number;
   delay?: number;
   ease?: readonly number[] | string;
 }
 
-export interface ViewportConfig {
+export type ViewportConfig = {
   once?: boolean;
   margin?: string;
 }
 
-export interface Mention {
+export type Mention = {
   title: string;
   content: string[];
 }

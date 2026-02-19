@@ -1,7 +1,7 @@
 "use client";
 
 import { socialLinks } from "@/data/social-links";
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import { FadeInUp } from "./animations/FadeInUp";
 
 type SocialLinksProps = {

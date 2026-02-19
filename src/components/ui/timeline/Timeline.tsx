@@ -1,6 +1,6 @@
 "use client";
 
-import { useScrollProgress } from "@/utils/useScrollProgress";
+import { useScrollProgress } from "@/lib/hooks";
 import { MARKER_POSITIONS, MarkerActive, MarkerPassed, MarkerUpcoming } from "./Markers";
 
 const SVG_PATH = "M542.682 1.54297L322.487 182.659C285.821 212.818 287.869 269.586 326.614 297.024L660.226 533.276C699.729 561.25 700.927 619.455 662.608 649.031L71.2539 1105.46C35.1074 1133.36 33.7265 1187.43 68.4018 1217.13L644.239 1710.48C679.468 1740.66 677.379 1795.79 639.966 1823.22L1.18164 2291.54";

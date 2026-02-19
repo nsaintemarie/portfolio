@@ -1,2 +1,2 @@
-export {cn} from './cn';
 export { useScrollProgress } from './useScrollProgress';
+export { useMediaQuery } from './useMediaQuery';
