@@ -6,7 +6,7 @@ export const mentions: Mention[] = [
     content: [
       "Noémie Sainte-Marie",
       "Développeuse fullstack freelance",
-      "Email : saintemarie.noemie@gmail.com",
+      "Email : contact@noemiesaintemarie.com",
       "SIRET : 10133814300015",
     ],
   },
@@ -35,7 +35,7 @@ export const mentions: Mention[] = [
     content: [
       "Ce site ne collecte aucune donnée personnelle à des fins commerciales.",
       "Les informations transmises via le formulaire de contact sont utilisées uniquement pour répondre à votre demande et ne sont pas conservées au-delà de cette finalité.",
-      "Conformément au RGPD et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit : saintemarie.noemie@gmail.com",
+      "Conformément au RGPD et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit : contact@noemiesaintemarie.com",
     ],
   },
   {

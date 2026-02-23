@@ -1,4 +1,5 @@
 export { CloseButton } from "./CloseButton";
+export { ObfuscatedEmail } from "./ObfuscatedEmail";
 export { ProjectModal } from "./ProjectModal";
 export { ScrollContainer, useScrollContainer } from "./ScrollContainer";
 export { FramedImage } from "./Framed-Image";

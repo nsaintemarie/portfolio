@@ -1,7 +1,26 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { GridBackground } from "@/components/ui";
+import { GridBackground, ObfuscatedEmail } from "@/components/ui";
 import { mentions } from "@/data";
+
+const EMAIL_REGEX = /([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/;
+
+function renderLine(line: string) {
+  const match = line.match(EMAIL_REGEX);
+  if (!match || match.index === undefined) return line;
+
+  const [fullEmail, user, domain] = match;
+  const before = line.slice(0, match.index);
+  const after = line.slice(match.index + fullEmail.length);
+
+  return (
+    <>
+      {before}
+      <ObfuscatedEmail user={user} domain={domain} className="hover:underline" />
+      {after}
+    </>
+  );
+}
 
 export const metadata: Metadata = {
   title: "Mentions légales | Noémie Sainte-Marie",
@@ -54,7 +73,7 @@ export default function MentionsLegales() {
             <div className="md:col-span-2 flex flex-col gap-2">
               {section.content.map((line, j) => (
                 <p key={j} className="text-paragraph-line text-primary/90">
-                  {line}
+                  {renderLine(line)}
                 </p>
               ))}
             </div>

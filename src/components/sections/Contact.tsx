@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { FadeInUp } from "@/components/ui";
+import { FadeInUp, ObfuscatedEmail } from "@/components/ui";
 import { cn } from "@/lib/utils/cn";
 
 export function Contact() {
@@ -14,7 +14,7 @@ export function Contact() {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
     try {
@@ -61,12 +61,7 @@ export function Contact() {
           </div>
           <div className="space-y-1 md:space-y-2">
             <span className="text-paragraph-sm opacity-56 block">Email</span>
-            <a
-              href="mailto:saintemarie.noemie@gmail.com"
-              className="text-paragraph block hover:opacity-80 transition-opacity underline underline-offset-2"
-            >
-              saintemarie.noemie@gmail.com
-            </a>
+            <ObfuscatedEmail user="contact" domain="noemiesaintemarie.com" className="text-paragraph block hover:opacity-80 transition-opacity underline underline-offset-2" />
           </div>
         </FadeInUp>
       </div>
