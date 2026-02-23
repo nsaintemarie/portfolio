@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     "TypeScript",
     "Node.js",
   ],
+  icons: { icon: "/favicon.svg" },
   authors: [{ name: "Noémie Sainte-Marie" }],
   alternates: {
     canonical: "https://noemiesaintemarie.com",

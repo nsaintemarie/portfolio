@@ -25,7 +25,7 @@ export function About() {
         {/* Image 2 - portrait */}
         <FadeIn delay={0.8} className="hidden md:block flex-1 max-w-162.5 mx-auto xl:-mb-6 px-10 py-2">
           <FramedImage
-            src="/about-2.png"
+            src="/about-2.web"
             alt="Noémie Sainte-Marie, développeuse fullstack"
             sizes="(max-width: 768px) 0px, 50vw"
             className="w-full h-full"
@@ -39,7 +39,7 @@ export function About() {
         {/* Image 1 - en action */}
         <FadeIn delay={1} className="w-full md:w-72 xl:w-80 flex-1 lg:-mt-10 p-2">
           <FramedImage
-            src="/about-1.png"
+            src="/about-1.webp"
             alt="Noémie Sainte-Marie en action"
             sizes="(max-width: 768px) 100vw, 320px"
             className="w-full h-full min-h-60"

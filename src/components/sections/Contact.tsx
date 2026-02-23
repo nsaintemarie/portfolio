@@ -154,7 +154,7 @@ export function Contact() {
         {/* Right - Photo */}
         <FadeInUp delay={0.2} className="hidden md:block relative md:w-1/2 lg:w-96 aspect-square -mb-26">
           <Image
-            src="/contact.png"
+            src="/contact.webp"
             alt="Noémie Sainte-Marie"
             fill
             sizes="(max-width: 1024px) 50vw, 384px"
