@@ -56,15 +56,15 @@ export const projectsContents: { [key: string]: ProjectContent } = {
       descriptions: [
         {
           title: "Efficacité et qualité",
-          content: `Gain estimé de 40% en vélocité sur les évolutions frontend, avec une qualité et une cohérence UI nettement améliorées qui ont contribuées à remporter de gros contrats clients.`
+          content: `Gain estimé de **40% en vélocité** sur les évolutions frontend, avec une qualité et une cohérence UI nettement améliorées qui ont contribuées à remporter de gros contrats clients.`
         },
         {
           title: "Scalabilité et réduction des frictions",
-          content: `Fin des “projets marathon” de 3 mois. Livraisons incrémentales plus prévisibles, moins d’épuisement de l’équipe, meilleure maîtrise des dépendances entre plateformes. Capacité de livrer de nouvelles briques IA en 2 à 4 semaines, et réduction drastique des bugs et effets de bords.`
+          content: `Fin des “projets marathon” de 3 mois. Livraisons incrémentales plus prévisibles, moins d’épuisement de l’équipe, meilleure maîtrise des dépendances entre plateformes. Capacité de livrer de **nouvelles briques IA en 2 à 4 semaines**, et réduction drastique des bugs et effets de bords.`
         },
         {
           title: "Adoption IA opérationnelle",
-          content: `Nouvelle plateforme utilisée quotidiennement par ~50 recruteurs et ~100 commerciaux. Envoi des comptes rendus d’entretien le jour même, contre 5 jours en moyenne auparavant, avec témoignages d’une hausse de qualité par les clients.`
+          content: `Nouvelle plateforme utilisée quotidiennement par ~50 recruteurs et ~100 commerciaux. **Envoi des comptes rendus d’entretien le jour même**, contre 5 jours en moyenne auparavant, avec témoignages d’une hausse de qualité par les clients.`
         },
         {
           title: "Montée en compétences",
@@ -188,11 +188,11 @@ export const projectsContents: { [key: string]: ProjectContent } = {
       title: "Un site léger, rapide et fidèle à l’artiste",
       descriptions: [{
         title: "Performance optimisée",
-        content: "Passage d’un site WordPress à un site statique Next.js : chargement < 1s sur la majorité des pages."
+        content: "Passage d’un site WordPress à un site statique Next.js : **chargement < 1s** sur la majorité des pages."
       },
       {
         title: "Maintenance simplifiée",
-        content: "Coûts de maintenance divisés par 4, suppression totale de la dette liée aux plugins WordPress."
+        content: "**Coûts de maintenance divisés par 4**, suppression totale de la dette liée aux plugins WordPress."
       },
       {
         title: "Visibilité accrue",

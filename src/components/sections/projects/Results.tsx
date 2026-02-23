@@ -1,6 +1,7 @@
 "use client";
 
 import { FadeIn, MaskInText } from "@/components/ui";
+import { renderBold } from "@/lib/utils";
 import { ProjectContent } from "@/types";
 import Image from "next/image";
 
@@ -24,7 +25,7 @@ export function Results({ data }: { data: ProjectContent["results"] }) {
             {data.descriptions.map((desc, index) => (
               <div key={index}>
                 <h3 className="text-paragraph-sm uppercase mb-2">{desc.title}</h3>
-                <p className="text-paragraph">{desc.content}</p>
+                <p className="text-paragraph">{renderBold(desc.content)}</p>
               </div>
             ))}
           </FadeIn>
