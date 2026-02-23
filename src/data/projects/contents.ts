@@ -2,6 +2,12 @@ import { ProjectContent } from "@/types"
 
 export const projectsContents: { [key: string]: ProjectContent } = {
   uptoo: {
+    metadata: {
+      title: "Uptoo | Refonte technique et intégration de l’IA pour une plateforme de recrutement performante",
+      description: "En tant que Stack Owner – Lead Developer chez Uptoo, j’ai piloté la refonte technique d’une plateforme de recrutement utilisée par 200+ utilisateurs internes et clients. J’ai structuré une architecture scalable, orchestré la migration vers NestJS et Next.js, et intégré des solutions d’IA pour automatiser des process métiers, tout en accompagnant l’équipe dans cette transformation majeure.",
+      keywords: ["recrutement", "refonte technique", "NestJS", "Next.js", "intégration IA", "lead developer"],
+      image: "/projects/uptoo/listing.webp",
+    },
     context: {
       picture1: "/projects/uptoo/picture-1.webp",
       picture2: "/projects/uptoo/picture-2.webp",
@@ -74,6 +80,12 @@ export const projectsContents: { [key: string]: ProjectContent } = {
     }
   },
   kapture: {
+    metadata: {
+      title: "Kapture | Un portfolio photo immersif alliant SvelteKit et GSAP pour une expérience visuelle fluide",
+      description: "Projet personnel de portfolio photo conçu comme un laboratoire technique autour de l’expérience visuelle et du motion design. Création d’un site statique performant avec SvelteKit, intégration d’animations immersives avec GSAP, et optimisation avancée des images pour une fluidité maximale.",
+      keywords: ["portfolio photo", "SvelteKit", "GSAP", "motion design", "optimisation d'images"],
+      image: "/projects/kapture/listing.webp",
+    },
     context: {
       picture1: "/projects/kapture/picture-1.webp",
       picture2: "/projects/kapture/picture-2.webp",
@@ -131,6 +143,12 @@ export const projectsContents: { [key: string]: ProjectContent } = {
     }
   },
   gfield: {
+    metadata: {
+      title: "Gabriel Field | Refonte d’un site musical pour une expérience immersive et performante",
+      description: "Refonte complète du site de Gabriel Field, musicien compositeur, pour créer une vitrine artistique immersive et performante. Migration d’un WordPress générique vers un site statique Next.js, avec un design épuré et des animations légères pour refléter l’univers musical de l’artiste, tout en améliorant les performances et la maintenance.",
+      keywords: ["Gabriel Field", "refonte de site", "Next.js", "performance web", "design immersif"],
+      image: "/projects/gfield/listing.webp",
+    },
     context: {
       picture1: "/projects/gfield/picture-1.webp",
       picture2: "/projects/gfield/picture-2.webp",
@@ -186,6 +204,12 @@ export const projectsContents: { [key: string]: ProjectContent } = {
     }
   },
   nearlist: {
+    metadata: {
+      title: "Nearlist | Connecter les plateformes musicales autour d’une expérience sociale unifiée",
+      description: "Nearlist est une application mobile pensée comme une surcouche sociale aux plateformes de streaming musical (Spotify, Deezer). L’ambition : permettre aux utilisateurs de créer des playlists collaboratives inter-plateformes, enrichies d’interactions sociales.",
+      keywords: ["Nearlist", "application mobile", "streaming musical", "playlists collaboratives", "expérience sociale", "interopérabilité"],
+      image: "/projects/nearlist/listing.webp",
+    },
     context: {
       picture1: "/projects/nearlist/picture-1.webp",
       picture2: "/projects/nearlist/picture-2.webp",

@@ -7,6 +7,12 @@ export type Project = {
 }
 
 export type ProjectContent = {
+  metadata: {
+    title: string;
+    description: string;
+    keywords: string[];
+    image: string;
+  }
   context: {
     picture1: string;
     picture2: string;

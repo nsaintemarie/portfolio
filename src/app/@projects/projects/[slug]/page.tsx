@@ -8,18 +8,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!data) return {};
 
-  const { title, description, picture2 } = data.context;
-  const shortDesc = description.split("\n").filter(Boolean)[0]?.trim() ?? "";
+  const { title, description, image, keywords } = data.metadata;
 
   return {
     title: `${slug.toUpperCase()} — Noémie Sainte-Marie`,
-    description: shortDesc.slice(0, 160),
+    description: description,
+    keywords,
     alternates: { canonical: `https://noemiesaintemarie.com/projects/${slug}` },
     openGraph: {
       title,
-      description: shortDesc.slice(0, 160),
+      description: description,
       url: `https://noemiesaintemarie.com/projects/${slug}`,
-      images: [{ url: picture2, width: 1200, height: 630, alt: title }],
+      images: [{ url: image, width: 1200, height: 630, alt: title }],
     },
   };
 }

@@ -6,5 +6,4 @@ export const about: About = {
 
   description2: `Je ne code pas juste pour livrer : je structure vos projets pour qu'ils tiennent dans le temps, j'accompagne vos équipes pour qu'elles montent en compétences, et je vulgarise la tech pour que vous gardiez le contrôle.\n
   J'aime comprendre un besoin, en saisir la logique métier, imaginer une architecture claire et écrire un code solide qui servira vraiment le produit — parce que la technique n'a de sens que si elle répond à un besoin réel.`
-
 };
