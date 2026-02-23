@@ -30,7 +30,6 @@ export const metadata: Metadata = {
 
 
 export default function MentionsLegales() {
-  console.log('test')
   return (
     <section className="relative py-12 md:py-20">
       <GridBackground />
