@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://noemiesaintemarie.com"),
   title: "Noémie Sainte-Marie | Développeuse Fullstack",
   description:
-    "Développeuse fullstack freelance - Architecture, conseil et développement d'applications web performantes et évolutives.",
+    "Lead développeuse fullstack freelance - Architecture, conseil et développement d'applications web et mobiles performantes et évolutives.",
   keywords: [
     "développeuse",
     "fullstack",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     title: "Noémie Sainte-Marie | Développeuse Fullstack",
     description:
-      "Développeuse fullstack freelance - Architecture, conseil et développement d'applications web.",
+      "Lead développeuse fullstack freelance - Architecture, conseil et développement d'applications web et mobiles.",
     siteName: "Portfolio Noémie Sainte-Marie",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Noémie Sainte-Marie — Développeuse Fullstack Freelance" }],
   },
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Noémie Sainte-Marie | Développeuse Fullstack",
     description:
-      "Développeuse fullstack freelance - Architecture, conseil et développement d'applications web.",
+      "Lead développeuse fullstack freelance - Architecture, conseil et développement d'applications web et mobiles.",
     images: ["/og-image.png"],
   },
   robots: {
