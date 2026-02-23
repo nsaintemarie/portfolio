@@ -18,6 +18,7 @@ export type ProjectContent = {
     picture2: string;
     picture3: string;
     stack: string[];
+    date: string;
     title: string;
     description: string;
   };

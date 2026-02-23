@@ -12,6 +12,7 @@ export const projectsContents: { [key: string]: ProjectContent } = {
       picture1: "/projects/uptoo/picture-1.webp",
       picture2: "/projects/uptoo/picture-2.webp",
       picture3: "/projects/uptoo/picture-3.webp",
+      date: "2022 - 2025",
       title: "La refonte d'une machine technique pour une machine de vente plus performante ",
       description: `Pendant 3 ans et demi chez Uptoo, j’ai piloté l’évolution de la stack en tant que Stack Owner – Lead Developer, au cœur d’un écosystème multi-plateformes (interne ~200 utilisateurs, clients, partenaires, stagiaires). 
       Ma mission : structurer et moderniser une base technique de près de 10 ans pour en faire un socle scalable, capable d'absorber de nouveaux enjeux métiers — notamment l’intégration de l’IA — sans ralentir la croissance produit. 
@@ -90,6 +91,7 @@ export const projectsContents: { [key: string]: ProjectContent } = {
       picture1: "/projects/kapture/picture-1.webp",
       picture2: "/projects/kapture/picture-2.webp",
       picture3: "/projects/kapture/picture-3.webp",
+      date: "2026",
       title: "Explorer le motion design au service de l’image",
       description: `Projet personnel conçu comme laboratoire technique autour de l’expérience visuelle et du motion design. 
       L’objectif : créer un portfolio photo immersif permettant d’explorer les possibilités offertes par SvelteKit et GSAP en matière de performance et d'animations. 
@@ -153,6 +155,7 @@ export const projectsContents: { [key: string]: ProjectContent } = {
       picture1: "/projects/gfield/picture-1.webp",
       picture2: "/projects/gfield/picture-2.webp",
       picture3: "/projects/gfield/picture-3.webp",
+      date: "2026",
       title: "Du WordPress générique à un site qui parle: Redonner vie à l’univers de Gabriel Field.",
       description: `Gabriel Field, musicien compositeur, disposait d’un site qui ne traduisait ni son univers musical ni sa sensibilité artistique
       La boutique de partitions, rarement utilisée, alourdissait l’expérience et détournait le site de son objectif principal : mettre la musique en avant.\n
@@ -214,6 +217,7 @@ export const projectsContents: { [key: string]: ProjectContent } = {
       picture1: "/projects/nearlist/picture-1.webp",
       picture2: "/projects/nearlist/picture-2.webp",
       picture3: "/projects/nearlist/picture-3.webp",
+      date: "2022",
       title: "Connecter les plateformes musicales autour d’une expérience sociale unifiée",
       description: `Nearlist est une application mobile pensée comme une surcouche sociale aux plateformes de streaming musical (Spotify, Deezer).
       L’ambition : permettre aux utilisateurs de créer des playlists collaboratives inter-plateformes, enrichies d’interactions sociales — commentaires, échanges en temps réel et découverte des playlists de ses amis — sans quitter leur écosystème musical existant. 
