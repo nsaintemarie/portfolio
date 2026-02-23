@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { title, description, image, keywords } = data.metadata;
 
   return {
-    title: `${slug.toUpperCase()} — Noémie Sainte-Marie`,
+    title: `${title} — Noémie Sainte-Marie`,
     description: description,
     keywords,
     alternates: { canonical: `https://noemiesaintemarie.com/projects/${slug}` },
