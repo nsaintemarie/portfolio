@@ -74,14 +74,15 @@ export function ProjectsListing({ data, background = "bg-background", replace = 
               key={project.title}
               href={`/projects/${project.slug}`}
               replace={replace}
+              aria-label={`Voir le projet ${project.title}`}
               className="group/item relative bg-black/16 p-8 border-[1.5px] border-background hover:border-white/24"
               onMouseEnter={() => setHoveredProject(project)}
               onMouseLeave={() => setHoveredProject(null)}
             >
-              <span className={cornerClass("-top-0.5 left-0 -translate-x-1/2 -translate-y-1/2 px-1.5")}>+</span>
-              <span className={cornerClass("-top-0.5 right-0 translate-x-1/2 -translate-y-1/2 p-0.5")}>+</span>
-              <span className={cornerClass("bottom-0.5 left-0 -translate-x-1/2 translate-y-1/2 p-0.5")}>+</span>
-              <span className={cornerClass("bottom-0.5 right-0 translate-x-1/2 translate-y-1/2 p-0.5")}>+</span>
+              <span aria-hidden="true" className={cornerClass("-top-0.5 left-0 -translate-x-1/2 -translate-y-1/2 px-1.5")}>+</span>
+              <span aria-hidden="true" className={cornerClass("-top-0.5 right-0 translate-x-1/2 -translate-y-1/2 p-0.5")}>+</span>
+              <span aria-hidden="true" className={cornerClass("bottom-0.5 left-0 -translate-x-1/2 translate-y-1/2 p-0.5")}>+</span>
+              <span aria-hidden="true" className={cornerClass("bottom-0.5 right-0 translate-x-1/2 translate-y-1/2 p-0.5")}>+</span>
 
               <div className="flex justify-between items-center gap-2">
                 <h3 className="text-paragraph-line text-nowrap">{project.title}</h3>

@@ -48,9 +48,9 @@ export function CloseButton() {
 
   return (
     // Rather use link than closing dialog button for shareability
-    <Link href="/"> 
-      <motion.button
-        className="fixed top-5 md:right-4 lg:right-9 z-50 cursor-pointer group"
+    <Link href="/" aria-label="Fermer et retourner à l'accueil">
+      <motion.span
+        className="fixed top-5 md:right-4 lg:right-9 z-50 cursor-pointer group block"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: EASE_OUT_EXPO }}
@@ -60,6 +60,7 @@ export function CloseButton() {
           height="60"
           viewBox="0 0 60 60"
           fill="none"
+          aria-hidden="true"
         >
           {/* CIRCLE */}
           <rect
@@ -110,7 +111,7 @@ export function CloseButton() {
             className="group-hover:opacity-70 transition-opacity duration-300"
           />
         </svg>
-      </motion.button>
+      </motion.span>
     </Link>
   );
 }
