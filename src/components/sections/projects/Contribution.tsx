@@ -15,7 +15,7 @@ export function Contribution({ data }: { data: ProjectContent["contribution"] })
           <MaskInText delay={0.2} className="text-paragraph uppercase">
             [L'APPROCHE]
           </MaskInText>
-          <MaskInText as='h1' delay={0.5} className="text-heading-lg my-2">
+          <MaskInText as='h2' delay={0.5} className="text-heading-lg my-2">
             {data.title}
           </MaskInText>
           <MaskInText as='p'delay={0.8} className="text-paragraph-line hover:opacity-100 opacity-70 ml-1.5">

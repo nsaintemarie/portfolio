@@ -5,11 +5,12 @@ import Image from "next/image";
 type FramedImageProps = {
   src: string;
   alt: string;
+  sizes?: string;
   className?: string;
   imageClassName?: string;
 };
 
-export function FramedImage({ src, alt, className, imageClassName }: FramedImageProps) {
+export function FramedImage({ src, alt, sizes, className, imageClassName }: FramedImageProps) {
   return (
     <div className={cn('relative', className)}>
       {/* Border frame */}
@@ -26,6 +27,7 @@ export function FramedImage({ src, alt, className, imageClassName }: FramedImage
           src={src}
           alt={alt}
           fill
+          sizes={sizes}
           className={cn("object-cover", imageClassName)}
         />
       </div>

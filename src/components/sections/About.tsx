@@ -26,7 +26,8 @@ export function About() {
         <FadeIn delay={0.8} className="hidden md:block flex-1 max-w-162.5 mx-auto xl:-mb-6 px-10 py-2">
           <FramedImage
             src="/about-2.png"
-            alt="Portrait"
+            alt="Noémie Sainte-Marie, développeuse fullstack"
+            sizes="(max-width: 768px) 0px, 50vw"
             className="w-full h-full"
             imageClassName="p-3 object-cover"
           />
@@ -39,7 +40,8 @@ export function About() {
         <FadeIn delay={1} className="w-full md:w-72 xl:w-80 flex-1 lg:-mt-10 p-2">
           <FramedImage
             src="/about-1.png"
-            alt="En action"
+            alt="Noémie Sainte-Marie en action"
+            sizes="(max-width: 768px) 100vw, 320px"
             className="w-full h-full min-h-60"
             imageClassName="min-h-60  p-3 md:pb-20 md:pt-4 object-[50%38%]"
           />

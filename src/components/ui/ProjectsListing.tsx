@@ -42,6 +42,7 @@ export function ProjectsListing({ data, background = "bg-background", replace = 
                 src={project.image}
                 alt={project.title}
                 fill
+                sizes="100vw"
                 className="object-cover object-[50%_15%]"
               />
             </div>
@@ -112,8 +113,9 @@ export function ProjectsListing({ data, background = "bg-background", replace = 
             >
               <Image
                 src={currentImage}
-                alt="Project preview"
+                alt={hoveredProject?.title ?? "Aperçu du projet"}
                 fill
+                sizes="33vw"
                 className={cn("object-cover", replace ? "object-[50%_15%]" : "object-top")}
               />
             </motion.div>

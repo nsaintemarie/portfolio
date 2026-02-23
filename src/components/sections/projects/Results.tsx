@@ -17,7 +17,7 @@ export function Results({ data }: { data: ProjectContent["results"] }) {
           <MaskInText delay={0.2} className="text-paragraph uppercase">
             [LES RÉSULTATS]
           </MaskInText>
-          <MaskInText as='h1' delay={0.5} className="text-heading-lg mt-2 mb-10">
+          <MaskInText as='h2' delay={0.5} className="text-heading-lg mt-2 mb-10">
             {data.title}
           </MaskInText>
           <FadeIn delay={1.2} className="space-y-9">
@@ -32,14 +32,14 @@ export function Results({ data }: { data: ProjectContent["results"] }) {
         <FadeIn delay={1.3} className="flex flex-col items-center gap-8">
           <Image
             src={data.picture1}
-            alt="Photo de contact"
+            alt={data.title}
             width={460}
             height={301}
             className="h-full object-contain opacity-95"
           />
           <Image
             src={data.picture2}
-            alt="Photo de contact"
+            alt={data.title}
             width={460}
             height={301}
             className="h-full object-contain opacity-95"
