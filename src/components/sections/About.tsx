@@ -25,7 +25,7 @@ export function About() {
         {/* Image 2 - portrait */}
         <FadeIn delay={0.8} className="hidden md:block flex-1 max-w-162.5 mx-auto xl:-mb-6 px-10 py-2">
           <FramedImage
-            src="/about-2.web"
+            src="/about-2.webp"
             alt="Noémie Sainte-Marie, développeuse fullstack"
             sizes="(max-width: 768px) 0px, 50vw"
             className="w-full h-full"
