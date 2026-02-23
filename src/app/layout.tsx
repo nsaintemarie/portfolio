@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     description:
       "Développeuse fullstack freelance - Architecture, conseil et développement d'applications web.",
     siteName: "Portfolio Noémie Sainte-Marie",
-    images: [{ url: "/og-image.webp", width: 1200, height: 630, alt: "Noémie Sainte-Marie — Développeuse Fullstack Freelance" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Noémie Sainte-Marie — Développeuse Fullstack Freelance" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Noémie Sainte-Marie | Développeuse Fullstack",
     description:
       "Développeuse fullstack freelance - Architecture, conseil et développement d'applications web.",
-    images: ["/og-image.webp"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
