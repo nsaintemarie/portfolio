@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FadeInUp } from "@/components/ui";
+import { cn } from "@/lib/utils/cn";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -11,11 +12,26 @@ export function Contact() {
     phone: "",
     message: "",
   });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission
-    console.log(formData);
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -55,69 +71,90 @@ export function Contact() {
         </FadeInUp>
       </div>
 
-      {/* Second view */}
-      <div className="flex justify-between gap-24 items-end">
-        {/* Left - Contact form */}
-        <FadeInUp className="w-full flex-1">
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-6"
-        >
-          <div>
-            <label htmlFor="name" className="text-paragraph-sm opacity-56 block">Nom *</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full bg-transparent border-b border-primary/56 py-2 text-paragraph-line focus-visible:outline-none!"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="text-paragraph-sm opacity-56 block">Email *</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full bg-transparent border-b border-primary/56 py-2 text-paragraph-line focus-visible:outline-none!"
-            />
-          </div>
-          <div>
-            <label htmlFor="phone" className="text-paragraph-sm opacity-56 block">Numéro de téléphone</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full bg-transparent border-b border-primary/56 py-2 text-paragraph-line focus-visible:outline-none!"
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="text-paragraph-sm opacity-56 block">Message *</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              rows={3}
-              className="w-full bg-transparent border-b border-primary/56 py-2 text-paragraph-line focus-visible:outline-none! resize-none"
-            />
-          </div>
-          <button
-            type="submit"
-            className="relative overflow-hidden text-paragraph-sm uppercase w-full border border-primary/56 text-primary/90 py-3 rounded-sm cursor-pointer hover:border-primary hover:text-background-tertiary transition-all before:absolute before:inset-0 before:bg-primary/80 before:origin-left before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-600 before:ease-out"
-          >
-            <span className="relative z-10">Envoyer</span>
-          </button>
-        </form>
-        </FadeInUp>
+      <div className={cn("flex justify-between gap-24 ", status !== "success" ? "items-end" : "items-start")}>
+        {status === "success" ? (
+          <FadeInUp className="w-full flex-1 flex flex-col items-center gap-10">
+            <div className="space-y-6">
+              <p className="text-heading-xl opacity-60"> MERCI </p>
+              <p className="text-paragraph-lines text-foreground">Message envoyé ! Je vous répondrai rapidement.</p>
+            </div>
+            <button
+              onClick={() => setStatus("idle")}
+              className="relative overflow-hidden text-paragraph-sm uppercase w-full border border-primary/56 text-primary/90 py-3 rounded-sm cursor-pointer hover:border-primary hover:text-background-tertiary transition-all before:absolute before:inset-0 before:bg-primary/80 before:origin-left before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-600 before:ease-out"
+            >
+              <span className="relative z-10">
+                Envoyer un autre message
+              </span>
+            </button>
+          </FadeInUp>
+        ) : (
+          <FadeInUp className="w-full flex-1">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
+              <div>
+                <label htmlFor="name" className="text-paragraph-sm opacity-56 block">Nom *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-transparent border-b border-primary/56 py-2 text-paragraph-line focus-visible:outline-none!"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="text-paragraph-sm opacity-56 block">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-transparent border-b border-primary/56 py-2 text-paragraph-line focus-visible:outline-none!"
+                />
+              </div>
+              <div>
+                <label htmlFor="phone" className="text-paragraph-sm opacity-56 block">Numéro de téléphone</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-primary/56 py-2 text-paragraph-line focus-visible:outline-none!"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="text-paragraph-sm opacity-56 block">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={3}
+                  className="w-full bg-transparent border-b border-primary/56 py-2 text-paragraph-line focus-visible:outline-none! resize-none"
+                />
+              </div>
+              {status === "error" && (
+                <p className="text-paragraph-sm text-red-800">Une erreur s&apos;est produite. Veuillez réessayer.</p>
+              )}
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="relative overflow-hidden text-paragraph-sm uppercase w-full border border-primary/56 text-primary/90 py-3 rounded-sm cursor-pointer hover:border-primary hover:text-background-tertiary transition-all before:absolute before:inset-0 before:bg-primary/80 before:origin-left before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-600 before:ease-out disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <span className="relative z-10">
+                  {status === "loading" ? "Envoi en cours…" : "Envoyer"}
+                </span>
+              </button>
+            </form>
+          </FadeInUp>
+        )}
 
         {/* Right - Photo */}
         <FadeInUp delay={0.2} className="hidden md:block relative md:w-1/2 lg:w-96 aspect-square -mb-26">
