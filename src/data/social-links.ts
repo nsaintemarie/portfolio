@@ -11,6 +11,6 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "Malt",
-    href: "https://malt.fr",
+    href: "https://www.malt.fr/profile/noemiesaintemarie",
   },
 ];
