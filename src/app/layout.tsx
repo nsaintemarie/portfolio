@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   description:
     "Lead développeuse fullstack freelance - Architecture, conseil et développement d'applications web et mobiles performantes et évolutives.",
   keywords: [
+    "Noémie Sainte-Marie",
     "développeuse",
     "fullstack",
     "freelance",
@@ -76,6 +77,26 @@ export default function RootLayout({
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `var l=document.createElement('link');l.rel='stylesheet';l.href='https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css';document.head.appendChild(l);`,
+          }}
+        />
+        <Script
+          id="json-ld-person"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Noémie Sainte-Marie",
+              url: "https://noemiesaintemarie.com",
+              jobTitle: "Lead Développeuse Fullstack Freelance",
+              description:
+                "Lead développeuse fullstack freelance spécialisée en architecture, conseil et développement d'applications web et mobiles performantes.",
+              sameAs: [
+                "https://github.com/nsaintemarie",
+                "https://www.linkedin.com/in/no%C3%A9mie-sainte-marie-8209b9160/",
+                "https://www.malt.fr/profile/noemiesaintemarie",
+              ],
+            }),
           }}
         />
         <main
