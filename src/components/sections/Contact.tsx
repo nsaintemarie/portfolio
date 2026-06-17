@@ -43,8 +43,7 @@ export function Contact() {
       <div className="flex flex-col md:flex-row md:justify-between md:items-end mr-10">
         <FadeInUp delay={0.2} className="lg:max-w-2/3 mb-12 md:mb-8">
           <h2 className="text-heading-lg">
-            Transformons une idée en produit.<br />
-            Contactez-moi pour en parler.
+            Si aller vite commence à vous ralentir, parlons-en.
           </h2>
         </FadeInUp>
         <FadeInUp className="flex flex-col gap-6 md:gap-8">

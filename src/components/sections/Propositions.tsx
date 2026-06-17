@@ -2,13 +2,13 @@
 
 import { cn } from "@/lib/utils";
 import { propositions } from "@/data/propositions";
-import { FadeInUp, GridBackground, MaskInText } from "../ui";
+import { FadeIn, FadeInUp, GridBackground, MaskInText } from "../ui";
 
 export function Propositions() {
   return (
     <section
       id="propositions"
-      className="min-h-screen flex flex-col px-5 md:px-20 lg:px-28 pb-26 pt-12 md:pt-20  md:snap-start md:snap-always bg-background-tertiary!"
+      className="min-h-screen flex flex-col px-5 md:px-20 lg:px-28 pb-10 pt-12 md:pt-20  md:snap-start md:snap-always bg-background-tertiary!"
     >
       <MaskInText as="h2" className="text-heading-lg px-5 mb-12 md:px-0" delay={0.2}>Vous reconnaissez l'une de ces situations ?</MaskInText>
 
@@ -23,7 +23,7 @@ export function Propositions() {
               index === 1 && "md:self-end"
             )}
           >
-            <GridBackground lineSpacing={16} />
+            <GridBackground lineSpacing={16} className="rounded-lg" />
             <h3 className={cn(
               "inline text-heading-md text-primary",
               "bg-[linear-gradient(--theme(--color-primary/0.6),--theme(--color-primary/0.6))] bg-no-repeat bg-bottom-left bg-size-[0%_1px]",
@@ -35,6 +35,15 @@ export function Propositions() {
           </FadeInUp>
         ))}
       </div>
+
+      <FadeIn delay={0.7} className="mt-6 flex items-center justify-end gap-3 px-5 md:px-0 mb-12">
+        <h2 className="text-heading-md text-foreground-white opacity-70 text-right">Alors voilà comment je vous accompagne</h2>
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="opacity-70 shrink-0 mt-9 animate-pulse">
+          <path d="M8 6 C8 6, 36 6, 36 28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
+          <path d="M29 24 L36 32 L43 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+        </svg>
+      </FadeIn>
+
     </section>
   );
 }

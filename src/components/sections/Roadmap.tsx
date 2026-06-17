@@ -2,7 +2,7 @@
 
 import { useRef, useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
-import { FadeInUp, GridBackground, Timeline, MobileTimeline, MARKER_Y_PERCENTS } from "@/components/ui";
+import { FadeInUp, GridBackground, Timeline, MobileTimeline, MARKER_Y_PERCENTS, MaskInText } from "@/components/ui";
 import { roadmapSteps } from "@/data/roadmap-steps";
 
 export function Roadmap() {
@@ -25,7 +25,7 @@ export function Roadmap() {
       className="bg-background-secondary min-h-screen md:snap-start md:snap-always relative px-5 pb-26 pt-12 lg:p-26"
     >
       <GridBackground />
-
+      
       <div className="relative max-w-7xl mx-auto">
         <Timeline
           containerRef={containerRef}
