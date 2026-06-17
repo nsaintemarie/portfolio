@@ -29,7 +29,7 @@ export function Roadmap() {
       <div className="relative max-w-7xl mx-auto">
         <Timeline
           containerRef={containerRef}
-          className="absolute left-1/2 -translate-x-1/2 top-20 bottom-26 hidden lg:flex items-start justify-center pointer-events-none"
+          className="absolute left-1/2 -translate-x-1/2 top-20 -bottom-26 hidden lg:flex items-start justify-center pointer-events-none"
           onProgressChange={handleProgressChange}
         />
         <MobileTimeline
@@ -39,7 +39,7 @@ export function Roadmap() {
         />
 
         {/* Steps en quinconce */}
-        <div className="relative z-10 lg:grid lg:grid-cols-2 md:gap-x-120 space-y-20 md:gap-y-20 pl-20 lg:pl-0">
+        <div className="relative z-10 lg:grid lg:grid-cols-2 md:gap-x-120 space-y-20 md:gap-y-20 pl-20 lg:pl-0 lg:pb-10">
           {roadmapSteps.map((step, index) => (
             <FadeInUp
               key={index}

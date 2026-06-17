@@ -12,7 +12,8 @@ type MobileTimelineProps = {
 
 export function MobileTimeline({ containerRef, className, onProgressChange }: MobileTimelineProps) {
   const scrollProgress = useScrollProgress({ containerRef, onProgressChange });
-  const spotlightPos = scrollProgress * 100;
+  const lastMarkerYPercent = MARKER_Y_PERCENTS[MARKER_Y_PERCENTS.length - 1];
+  const spotlightPos = Math.min(scrollProgress * 100, lastMarkerYPercent + 10);
 
   return (
     <div className={cn("absolute left-5 top-0 bottom-0 w-0.5", className)}>

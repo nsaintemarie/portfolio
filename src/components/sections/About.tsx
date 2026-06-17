@@ -48,7 +48,7 @@ export function About() {
         </FadeIn>
 
         {/* Text */}
-        <FadeIn delay={1.2} className="md:max-w-7/12 grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-12 xl:pt-4 xl:pl-10">
+        <FadeIn delay={1.2} className="md:max-w-8/12 grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-12 xl:pt-4 xl:pl-10">
           <p className="text-paragraph-line opacity-80 self-start whitespace-pre-line">
             {about.description1}
           </p>

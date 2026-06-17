@@ -7,6 +7,7 @@ const twMerge = extendTailwindMerge({
       'font-size': [
         'text-heading-xl',
         'text-heading-lg',
+        'text-heading-md',
         'text-logo',
         'text-paragraph-caps',
         'text-paragraph',

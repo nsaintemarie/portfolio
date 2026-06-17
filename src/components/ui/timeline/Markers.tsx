@@ -1,10 +1,9 @@
 
 export const MARKER_POSITIONS = [
-  { x: 459, y: 70.659 },      // Sur segment départ → premier coude
-  { x: 660, y: 533.276 },     // Coude 2 (point exact du path)
-  { x: 162, y: 1035.46 },     // Sur segment coude 2 → coude 3
-  { x: 413, y: 1512.48 },     // Sur segment coude 3 → coude 4
-  { x: 301, y: 2071.54 },     // Sur segment coude 4 → fin
+  { x: 417.4, y: 70.659 },
+  { x: 643.9, y: 620 },
+  { x: 164.7, y: 1335 },
+  { x: 410.4, y: 1960 },
 ];
 
 // Marqueur actif (spotlight dessus) - Cercle avec +

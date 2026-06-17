@@ -44,7 +44,6 @@ export type ProjectContent = {
 export type Proposition = {
   title: string;
   description: string;
-  image: string;
 }
 
 export type About = {

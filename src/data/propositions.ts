@@ -2,21 +2,18 @@ import type { Proposition } from "@/types";
 
 export const propositions: Proposition[] = [
   {
-    title: "Concevoir et lancer votre produit",
+    title: "Aller vite commence à coûter cher",
     description:
-      "J'accompagne la création de votre produit de l'idée au déploiement, en prenant en charge toutes les étapes clés : conception, cadrage technique, développement et mise en production  — en vous transmettant les clés pour comprendre et piloter votre tech.",
-    image: "/proposition-1.webp",
+      "Le produit tourne, mais chaque évolution prend plus de temps que la précédente : dette qui s'accumule, choix techniques qui se rappellent à vous. J'interviens en immersion pour reprendre la main sur l'architecture et anticiper les points de rupture avant qu'ils ne bloquent l'équipe.",
   },
   {
-    title: "Renforcer et structurer votre équipe",
+    title: "La tech repose sur une seule personne",
     description:
-      "J'intègre vos équipes en tant que développeuse ou lead technique, selon vos enjeux du moment. Je peux prendre en charge des fonctionnalités clés, structurer le travail, faciliter la collaboration ou apporter une vision plus claire sur la direction technique d'un projet.",
-    image: "/proposition-2.webp",
+      "Le CTO ou le lead porte la vision technique seul, et l'équipe peine à gagner en autonomie. Je code avec elle et je transmets de l'intérieur — reviews, pair coding, ateliers ancrés dans vos projets — pour qu'elle tienne les décisions sans dépendre d'un seul porteur.",
   },
   {
-    title: "Optimiser vos choix techniques",
+    title: "Pour le produit, la technique est une boîte noire",
     description:
-      "Je vous accompagne, que ce soit pour structurer votre stack, vous aider sur des migrations, améliorer la qualité de votre code ou faire monter une équipe en compétences. C'est un format flexible : quelques séances, un audit léger ou un suivi régulier, selon vos besoins.",
-    image: "/proposition-3.webp",
+      "Les contraintes techniques sont opaques pour les PO et le métier, et chaque décision produit doit remonter vers la tech. Je rends les arbitrages lisibles des deux côtés, pour que le produit décide vite et juste sans devenir un goulot d'étranglement.",
   },
 ];

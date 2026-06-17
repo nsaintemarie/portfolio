@@ -7,8 +7,8 @@ import { EASE_OUT_EXPO } from "@/constants/animation";
 
 const heroLines: { text: string; label: string; align: string; delay: number }[] = [
   { text: "LEAD", label: "[ARCHITECTURE]", align: "start", delay: 0.3 },
-  { text: "FULLSTACK", label: "[FORMATION]", align: "center", delay: 0.5 },
-  { text: "DEVELOPER", label: "[CONSEIL]", align: "end", delay: 0.7 },
+  { text: "FULLSTACK", label: "[ARBITRAGES]", align: "center", delay: 0.5 },
+  { text: "DEVELOPER", label: "[TRANSMISSION]", align: "end", delay: 0.7 },
 ]
 
 export function Hero() {
@@ -129,9 +129,8 @@ export function Hero() {
               transition={{ duration: 1.3, delay: 1.2, ease: EASE_OUT_EXPO }}
               className="text-paragraph-line"
             >
-              Du site vitrine à l'application complexe, je construis et déploie
-              vos sites et applications, ou accompagne vos équipes, pour des
-              projets performants et évolutifs, pensés pour votre business.
+              Je rejoins votre équipe tech en immersion : je code avec elle, j'identifie les frictions, je tiens l'architecture dans le temps et je rends les choix techniques lisibles pour tous, devs comme produit. 
+              <br/>Pour aller vite aujourd'hui sans que chaque évolution coûte plus cher demain.
             </motion.p>
           </div>
 

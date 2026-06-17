@@ -2,28 +2,23 @@ import type { RoadmapStep } from "@/types";
 
 export const roadmapSteps: RoadmapStep[] = [
   {
-    title: "On fait connaissance",
+    title: "Je code avec l'équipe",
     content:
-      "On échange sur votre idée, votre contexte et vos objectifs. Je vous pose quelques questions pour bien cerner le besoin, les contraintes et les priorités, afin de partir sur des bases claires.",
+      "Je commence dans le code, avec vous : c'est de l'intérieur que je lis l'état réel de la base et les vraies frictions. Pas un audit de loin — une lecture ancrée dans le concret.",
   },
   {
-    title: "Je vous propose une approche claire",
+    title: "Je co-construis avec le produit",
     content:
-      "Je vous envoie une proposition de mission détaillée : plan d'action, planning, budget. Vous savez exactement ce qui est inclus, ce qui ne l'est pas, et comment on avance — aucune surprise.",
+      "Dans les deux sens : je n'éxecute pas juste des tickets, j'échange avec le produit pour m'imprègner de vos besoins métiers et les traduire en solutions techniques robustes, même face aux contraites. Et je traduis ces contraintes et solutions pour les PO et le métier, afin que le produit décide en connaissance de cause et gagne en autonomie."
   },
   {
-    title: "On construit, étape par étape",
+    title: "J'aide à tenir une vision technique dans le temps",
     content:
-      "Je développe de façon itérative, avec des points réguliers et des démos fonctionnelles. Vous voyez le projet prendre forme au fil de l'eau, ce qui permet d'ajuster en cours de route plutôt qu'à la fin.",
+      "Je vous aide à faire émerger des directions d'architecture, je rends les arbitrages visibles et je les applique dans le code. La décision reste la vôtre: je vous donne de quoi la prendre et la défendre dans la durée."
   },
   {
-    title: "On affine ensemble",
+    title: "Je transmets pour rendre l'équipe autonome",
     content:
-      "Vous testez, je recueille vos retours, et j'ajuste en conséquence. L'objectif : améliorer l'expérience, corriger les détails, et coller au plus près de vos usages réels.",
-  },
-  {
-    title: "On lance, et je reste là",
-    content:
-      "Je gère la mise en production (déploiement, configuration, vérifications) et je vous accompagne après la livraison. En cas de question, de bug ou d'évolution, je reste disponible pour assurer une transition sereine.",
+      "Reviews, pair coding, ateliers ancrés dans vos projets. La vision ne reste pas dans une seule tête : elle s'ancre dans l'équipe, pour que la qualité de code et les décisions tiennent dans le temps.",
   },
 ];

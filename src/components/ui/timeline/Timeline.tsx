@@ -1,9 +1,9 @@
 "use client";
 
 import { useScrollProgress } from "@/lib/hooks";
-import { MARKER_POSITIONS, MarkerActive, MarkerPassed, MarkerUpcoming } from "./Markers";
+import { MARKER_POSITIONS, MARKER_Y_PERCENTS, MarkerActive, MarkerPassed, MarkerUpcoming } from "./Markers";
 
-const SVG_PATH = "M542.682 1.54297L322.487 182.659C285.821 212.818 287.869 269.586 326.614 297.024L660.226 533.276C699.729 561.25 700.927 619.455 662.608 649.031L71.2539 1105.46C35.1074 1133.36 33.7265 1187.43 68.4018 1217.13L644.239 1710.48C679.468 1740.66 677.379 1795.79 639.966 1823.22L1.18164 2291.54";
+const SVG_PATH = "M501.436 1.54297L281.241 182.659C244.575 212.818 246.623 269.586 285.368 297.024L618.98 533.276C658.483 561.25 659.681 619.455 621.362 649.031L30.0078 1105.46C-6.13874 1133.36 -7.5196 1187.43 27.1557 1217.13L602.767 1710.28C638.068 1740.53 635.885 1795.8 598.309 1823.16L418.936 1953.79L165.936 2138.04";
 
 
 type TimelineProps = {
@@ -17,8 +17,8 @@ type TimelineProps = {
 export function Timeline({ containerRef, className, onProgressChange }: TimelineProps) {
   const scrollProgress = useScrollProgress({ containerRef, onProgressChange });
 
-  // Position du spotlight en pourcentage (0-100)
-  const spotlightPos = scrollProgress * 100;
+  const lastMarkerYPercent = MARKER_Y_PERCENTS[MARKER_Y_PERCENTS.length - 1];
+  const spotlightPos = Math.min(scrollProgress * 100, lastMarkerYPercent + 10);
   return (
     <div className={className}>
       {/* Base SVG - transparent */}
@@ -82,6 +82,7 @@ export function Timeline({ containerRef, className, onProgressChange }: Timeline
               style={{
                 left: `${xPercent}%`,
                 top: `${yPercent}%`,
+                transform: "translate(-50%, -50%)",
               }}
             >
               {isActive ? <MarkerActive /> : isPassed ? <MarkerPassed /> : <MarkerUpcoming />}

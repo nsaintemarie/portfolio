@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://noemiesaintemarie.com"),
-  title: "Noémie Sainte-Marie | Développeuse Fullstack",
+  title: "Noémie Sainte-Marie | Lead développeuse fullstack — renfort pour équipes tech",
   description:
     "Lead développeuse fullstack freelance - Architecture, conseil et développement d'applications web et mobiles performantes et évolutives.",
   keywords: [
@@ -40,17 +40,17 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://noemiesaintemarie.com",
     locale: "fr_FR",
-    title: "Noémie Sainte-Marie | Développeuse Fullstack",
+    title: "Noémie Sainte-Marie | Lead développeuse fullstack — renfort pour équipes tech",
     description:
-      "Lead développeuse fullstack freelance - Architecture, conseil et développement d'applications web et mobiles.",
+      "Je m'intègre dans votre équipe tech pour structurer l'architecture, améliorer les pratiques et faire monter vos devs en compétences.",
     siteName: "Portfolio Noémie Sainte-Marie",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Noémie Sainte-Marie — Développeuse Fullstack Freelance" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Noémie Sainte-Marie — Lead développeuse fullstack — renfort pour équipes tech" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Noémie Sainte-Marie | Développeuse Fullstack",
+    title: "Noémie Sainte-Marie | Lead développeuse fullstack — renfort pour équipes tech",
     description:
-      "Lead développeuse fullstack freelance - Architecture, conseil et développement d'applications web et mobiles.",
+      "Je m'intègre dans votre équipe tech pour structurer l'architecture, améliorer les pratiques et faire monter vos devs en compétences.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -90,7 +90,7 @@ export default function RootLayout({
               url: "https://noemiesaintemarie.com",
               jobTitle: "Lead Développeuse Fullstack Freelance",
               description:
-                "Lead développeuse fullstack freelance spécialisée en architecture, conseil et développement d'applications web et mobiles performantes.",
+                "Je m'intègre dans votre équipe tech pour structurer l'architecture, améliorer les pratiques et faire monter vos devs en compétences.",
               sameAs: [
                 "https://github.com/nsaintemarie",
                 "https://www.linkedin.com/in/no%C3%A9mie-sainte-marie-8209b9160/",
