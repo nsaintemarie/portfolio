@@ -4,10 +4,10 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Projects />
-      <About />
       <Propositions />
       <Roadmap />
+      <Projects />
+      <About />
       <Contact />
     </>
   );
