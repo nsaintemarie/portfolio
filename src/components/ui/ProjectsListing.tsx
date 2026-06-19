@@ -10,11 +10,11 @@ import { Project } from "@/types";
 
 interface ProjectsListingProps {
   data: Project[];
-  background?: "bg-background" | "bg-background-tertiary";
+  background?: "bg-background-secondary" | "bg-background-tertiary";
   replace?: boolean;
 }
 
-export function ProjectsListing({ data, background = "bg-background", replace = false }: ProjectsListingProps) {
+export function ProjectsListing({ data, background = "bg-background-secondary", replace = false }: ProjectsListingProps) {
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
 
   const currentImage = hoveredProject?.image || "/projects/project-placeholder.webp";

@@ -8,7 +8,7 @@ const navLinks = [
   { name: "[MENTIONS LÉGALES]", href: "/mentions-legales", label: "Voir les mentions légales", redirect: true },
   {
     name: "[LINKEDIN]",
-    href: "https://www.linkedin.com/in/no%C3%A9mie-sainte-marie-8209b9160/",
+    href: "https://www.linkedin.com/in/noemie-sainte-marie/",
     external: true,
     label: "Voir mon profil LinkedIn",
   },

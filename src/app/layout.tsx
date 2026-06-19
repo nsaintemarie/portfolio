@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { Analytics } from '@vercel/analytics/next';
 
 export const viewport: Viewport = {
   viewportFit: "cover",
@@ -72,6 +73,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
+        <Analytics />
         <Script
           id="mdi-font"
           strategy="afterInteractive"
@@ -93,7 +95,7 @@ export default function RootLayout({
                 "Je m'intègre dans votre équipe tech pour structurer l'architecture, améliorer les pratiques et faire monter vos devs en compétences.",
               sameAs: [
                 "https://github.com/nsaintemarie",
-                "https://www.linkedin.com/in/no%C3%A9mie-sainte-marie-8209b9160/",
+                "https://www.linkedin.com/in/noemie-sainte-marie/",
                 "https://www.malt.fr/profile/noemiesaintemarie",
               ],
             }),

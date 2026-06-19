@@ -50,7 +50,7 @@ export function Contact() {
           <div className="space-y-1 md:space-y-2">
             <span className="text-paragraph-sm opacity-56 block">Reseau</span>
             <a
-              href="https://www.linkedin.com/in/no%C3%A9mie-sainte-marie-8209b9160/"
+              href="https://www.linkedin.com/in/noemie-sainte-marie/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-paragraph block hover:opacity-80 transition-opacity underline underline-offset-2"
