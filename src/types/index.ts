@@ -22,14 +22,14 @@ export type ProjectContent = {
     title: string;
     description: string;
   };
-  contribution: {
+  contributions: {
     title: string;
-    link?: string;
+    subtitle?: string;
     descriptions: {
-      title: string;
+      title?: string;
       content: string;
     }[]
-  };
+  }[];
   results: {
     title: string;
     descriptions: {

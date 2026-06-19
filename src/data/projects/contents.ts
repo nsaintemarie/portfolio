@@ -14,43 +14,64 @@ export const projectsContents: { [key: string]: ProjectContent } = {
       picture3: "/projects/uptoo/picture-3.webp",
       date: "2022 - 2025",
       title: "La refonte d'une machine technique pour une machine de vente plus performante ",
-      description: `Pendant 3 ans et demi chez Uptoo, j’ai piloté l’évolution de la stack en tant que Stack Owner – Lead Developer, au cœur d’un écosystème multi-plateformes (interne ~200 utilisateurs, clients, partenaires, stagiaires). 
-      Ma mission : structurer et moderniser une base technique de près de 10 ans pour en faire un socle scalable, capable d'absorber de nouveaux enjeux métiers — notamment l’intégration de l’IA — sans ralentir la croissance produit. 
-      L’objectif n’était pas seulement de migrer une stack, mais de poser une architecture durable, alignée avec la vision business et les process métiers, tout en accompagnant l’équipe dans cette transformation.`,
+      description: `Chez Uptoo, j'ai été Stack Owner – Lead Developer d'un écosystème multi-plateformes : ~200 utilisateurs internes, plus les clients, candidats et partenaires.
+      Ma mission : faire d'une base technique de près de 10 ans un socle capable d'absorber de nouveaux enjeux métier — l'IA en tête — sans ralentir la croissance produit.
+      Le vrai enjeu n'était pas de migrer une stack, mais de choisir une architecture qui tienne dans le temps, alignée avec la vision business et pensée pour que le prochain virage ne fasse pas tout casser.`,
       stack: ["Node.js", "NestJs", "Next.Js", "Vue.js", "TypeScript", "MongoDB", "ElasticSearch", "Redis", "GCP"],
     },
-    contribution: {
-      title: "Transformer un mastodonte technique en levier d’innovation",
-      link: "https://uptoo.fr/",
+    contributions: [{
+      title: "Anticiper la rupture",
+      subtitle: "Sur un socle de 10 ans, le risque n'est pas qu'il soit vieux : c'est qu'il casse au prochain virage. Chaque choix d'architecture a anticipé une rupture précise.",
       descriptions: [
         {
-          title: "Migration frontend — Next.js App Router & Design System",
-          content: `Migration du Pages Router vers l’App Router, avec refactor progressif de l’architecture frontend et intégration d’un Design System
-          Mise en place de bonnes pratiques (architecture, conventions, performance)`
+          title: "Monolithe Express -> NestJs en DDD",
+          content: `
+          <p><i>Le problème.</i> Un monolithe Express où la logique métier se noyait dans des controllers interminables. Le code ne laissait plus retracer les vrais besoins métier — régressions en série, et des process si enchevêtrés (créer une mission imposait un contrat, puis des factures…) qu'ils plombaient la productivité. La rupture était écrite : chaque évolution coûtait plus cher et cassait autre chose.</p>
+          <p><i>Le choix.</i> Repenser le back en domaines, avec du DDD : segmenter, isoler, rendre le code lisible par le métier qu'il sert. NestJS et Turborepo ne sont pas des choix de mode — Nest rend ces frontières idiomatiques (modules, injection, guards), donc tenables par l'équipe ; le monorepo garde les contrats partagés sans éclater le code. Le tout typé en TypeScript, pour qu'on sache toujours ce qu'on manipule.</p>
+          <p><i>Mon rôle.</i> Trier ce qui, du théorique, a vraiment du sens en interne et restera maintenable — pas appliquer le DDD par dogme. Exemple : entre domaines, j'ai choisi des ports/adapters plutôt que de l'événementiel, parce qu'on sortait d'un repo saturé de middlewares où plus personne ne suivait quelle action déclenchait quoi. L'événementiel aurait rejoué cette opacité ; les ports/adapters rendent les échanges explicites. J'ai posé la base technique du repo, défendue auprès du CTO, validée sur un projet réel, puis transmis à l'équipe.</p>`
         },
         {
-          title: "Migration backend — NestJS en DDD",
-          content: `Découpage d’un monolithe Express vers un Turborepo en NestJS (TS) avec une architecture Domain-Driven Design: Structuration des couches et mise en place des bases de code et des standards techniques
-          Passage de Kubernetes (GKE) vers GCP Cloud Run avec approche serverless (Cloud Functions, Cloud Tasks, Cloud Scheduler)
-          Décision stratégique de ne plus tout développer en interne : recentrage sur les domaines métier critiques, intégration de plateformes externes pour les besoins non-core`
+          title: "GKE (Kubernetes) → Cloud Run + serverless (Functions, Tasks, Scheduler)",
+          content: `
+          <p><i>Le problème.</i> Le cluster ne suivait plus : crashs par CPU insuffisant, et un parc de 6 VMs à se partager pour les environnements de test, à répartir entre front et back — un goulot dès qu'on menait plusieurs projets en parallèle. À côté, du code « infra » (jobs asynchrones, tâches planifiées) maintenu en interne, alors que ce n'est pas du cœur métier.</p>
+          <p><i>Le choix.</i> Cloud Run, serverless : chaque service se dimensionne et scale seul, et on déploie autant d'environnements par branche que nécessaire — les PO testent chaque feature en isolation, en parallèle. Et sortir le non-core du code : l'asynchrone et le planifié partent dans les primitives managées de GCP (Tasks, Functions, Scheduler), avec leurs retries et leurs logs, plutôt que reconstruits et entretenus maison.</p>
+          <p><i>Mon rôle.</i> Co-piloter la migration avec le CTO, l'embarquer dans l'équipe et en devenir un point d'appui autonome — capable de faire avancer et de débugger même en son absence. Et surtout, poser toute la logique asynchrone : décider quand un traitement bascule en job queué — pas seulement l'envoi d'e-mails (quasi le seul cas avant), mais tout process long sans réponse immédiate attendue — puis l'architecture côté repo et les bonnes pratiques d'écriture des functions (idempotence, retries).</p>`
         },
         {
-          title: "Leadership & organisation",
-          content: `Participation active aux sprint plannings, structuration des process agiles
-          Encadrement technique sur les projets majeurs, code reviews régulières et mise en place des PR`
+          title: "Next 12 Pages Router → Next 14 App Router + Design System",
+          content: `
+          <p><i>Le problème.</i> Un frontend en Next 12, sans logique d'architecture : composants mêlant UI et métier, fichiers à rallonge, chacun codant à sa main. Résultat, une UX qui variait d'une feature et d'une plateforme à l'autre — et, avec une équipe fullstack pour un seul intégrateur, des maquettes mal suivies et une friction design/dev permanente. La rupture : à ce rythme, chaque feature coûtait en cohérence et en vélocité.</p>
+          <p><i>Le choix.</i>Migration en App Router, et surtout un Design System (shadcn + variants en cva) pensé modulaire — on compose à partir des primitives nécessaires plutôt que d'importer des composants monolithiques. Côté architecture, un modèle « en entonnoir » : les composants métier au plus près des pages qui les utilisent, des pages server par défaut, du client réduit aux endroits qui en ont vraiment besoin. La logique native de l'App Router, mise au service de la perf et de la lisibilité.</p>
+          <p><i>Mon rôle. Poser cette architecture et les bases techniques (auth, droits d'accès, fetch, cache de données via TanStack pour l'UX), encadrer l'intégrateur sur les composants d'UI, et prendre en charge moi-même les pièces les plus délicates — tables paginées, formulaires, éditeur — avant de passer la main à l'équipe. Le Design System a réglé la friction design/dev en donnant un langage commun : fini les maquettes réinterprétées à chaque feature.</p>`
         },
-        {
-          title: "Intégration de l’IA dans les process métiers",
-          content: `Conception d’une nouvelle plateforme interne pour des process intégrant des modèles d’IA, avec une première brique d’automatisation de la rédaction de comptes rendus d’entretiens. Réflexion sur les prompts, la fiabilité et l’intégration métier`
-        },
-        {
-          title: "Transmission & formation",
-          content: `Mise en place de documentations sur les bonnes pratiques et les bases conceptuelles et techniques du DDD
-          Animation d’ateliers internes pour faciliter l’adoption et permettre à l’équipe d’itérer rapidement et simplement`
-        }
       ]
 
-    },
+    }, {
+      title: "Intégrer l'IA dans le produit, sous contrôle",
+      descriptions: [{
+        content: `
+        <p>Le problème. Les recruteurs passaient trop de temps à prendre des notes pendant les entretiens, et pas assez à mener l'entretien lui-même.
+        Questionner la structure. La demande : une plateforme qui récupère le transcript de l'entretien, le CV et le contexte de l'offre, puis rédige le compte rendu destiné au client. J'aurais pu livrer ça comme une feature. J'ai livré autre chose : un bounded context IA complet, indépendant et rebranchable — des agents configurables, des « projets » où l'on choisit un agent et ses contextes (CV, offre…) pour lancer une génération. Le compte rendu n'était que la première brique ; n'importe quel autre domaine métier peut s'y brancher, sans tout reconstruire.
+        L'arbitrage LLM. J'ai benchmarké les modèles pour trouver, par cas d'usage, le bon ratio entre réflexion nécessaire et coût. Côté code, une factory d'attribution des modèles : l'utilisateur peut changer de LLM depuis le front pour parer la panne d'un fournisseur, mais la tech garde le contrôle des coûts en assignant toujours le niveau de raisonnement adapté à l'usage — rédiger un e-mail ne demande pas le même modèle que rédiger un compte rendu.
+        La fiabilité, comme discipline. Trois leviers. Humain d'abord : une validation humaine systématique, parce que les équipes métier restent responsables de ce qui part chez le client — c'est autant de la pédagogie qu'une règle. Le prompt ensuite, optimisé dans la durée avec les ops pour réduire les hallucinations. Et pour les usages où l'IA produit de la donnée (extraire d'un compte rendu si une mise en situation a eu lieu, par exemple), une vraie démarche d'évaluation plutôt qu'une confiance aveugle.
+        Validation de l'extraction : vérification manuelle par les ops sur 3 mois, ajustements, nouveau run sur 3 mois, jusqu'à moins de 2 % d'erreur — concentrées sur les cas où l'info n'était pas assez claire dans le compte rendu. Pour tenir la consistance dans le temps : l'info affichée sur chaque fiche côté front, pour que les TA remontent les erreurs aux ops ; et un rapport automatique hebdomadaire qui rejoue les comptes rendus de moins de 7 jours et isole les écarts.</p>`
+      },]
+    }, {
+      title: "Faire monter l'équipe en autonomie",
+      subtitle: "Rendre lisible pour décider, transmettre pour maintenir : pour que toute l'équipe construise ensemble, sans cavalier solitaire.",
+      descriptions: [{
+        title: "Rendre lisible, pour décider, comprendre, prendre la relève",
+        content: `
+        <p><i>Le principe.</i> Je ne garde pas le savoir technique dans ma tête. Je le rends lisible pour qui doit décider ou construire dessus — ce qui retire le lead dev du rôle de goulot et donne de l'autonomie à tous les membres de l'équipe.</p>
+        <p><i>Décider vite.</i> Tout choix qui demandait un arbitrage (CTO, produit) arrivait structuré : le +, le −, ma recommandation. On tranche en quelques minutes.</p>
+        <p><i>Rendre l'équipe produit autonome.</i> Sur les sujets complexes — typiquement la gestion d'API partenaires sur mesure — j'ai pris l'habitude de rédiger la liste des contraintes et des choix, en langage accessible, pour que les PO raisonnent et décident seuls plutôt que de dépendre d'un dev à chaque question.</p>
+        <p><i>Que la connaissance survive.</i> Chaque grosse feature traitée comme un projet : un README, une doc qui explique ce que ça fait, comment ça marche globalement, les points de vigilance, et les choix techniques — et pourquoi ceux-là. N'importe qui qui embarque sur le projet a la vision d'ensemble ; et quand on y revient six mois plus tard, on répond sans replonger des heures dans le code.</p>`
+      }, {
+        title: "Transmettre, pour s'approprier, construire et maintenir",
+        content: `<p>La transmission ne passe pas par une formation descendante : elle est ancrée dans les projets en cours. Le pair coding intervient dans les moments de blocage, ou pour trancher une décision technique à deux. Les reviews et les standards back/front sont des moments de transmission, pas des contrôles. Et les ateliers DDD, avec la documentation conceptuelle, font que la nouvelle architecture est adoptée — comprise et défendue par l'équipe — plutôt que subie.
+        J'ai aussi tenu à lisser les pratiques : des conventions et des standards partagés, une manière de coder homogène d'un dev à l'autre. Le code devient lisible non seulement par sa documentation, mais parce qu'il se ressemble — n'importe qui peut reprendre celui d'un autre.</p>`
+      }]
+    }],
     results: {
       title: "Une transformation devenue avantage compétitif",
       descriptions: [
@@ -78,200 +99,6 @@ export const projectsContents: { [key: string]: ProjectContent } = {
       ,
       picture1: "/projects/uptoo/picture-4.webp",
       picture2: "/projects/uptoo/picture-5.webp",
-    }
-  },
-  kapture: {
-    metadata: {
-      title: "Kapture | Un portfolio photo immersif alliant SvelteKit et GSAP pour une expérience visuelle fluide",
-      description: "Projet personnel de portfolio photo conçu comme un laboratoire technique autour de l’expérience visuelle et du motion design. Création d’un site statique performant avec SvelteKit, intégration d’animations immersives avec GSAP, et optimisation avancée des images pour une fluidité maximale.",
-      keywords: ["portfolio photo", "SvelteKit", "GSAP", "motion design", "optimisation d'images"],
-      image: "/projects/kapture/listing.webp",
-    },
-    context: {
-      picture1: "/projects/kapture/picture-1.webp",
-      picture2: "/projects/kapture/picture-2.webp",
-      picture3: "/projects/kapture/picture-3.webp",
-      date: "2026",
-      title: "Explorer le motion design au service de l’image",
-      description: `Projet personnel conçu comme laboratoire technique autour de l’expérience visuelle et du motion design. 
-      L’objectif : créer un portfolio photo immersif permettant d’explorer les possibilités offertes par SvelteKit et GSAP en matière de performance et d'animations. 
-      Ce projet m’a permis de sortir d’un contexte produit business pour me concentrer sur l’expérience utilisateur, la fluidité et la narration visuelle.`,
-      stack: ["SvelteKit", "TypeScript", "Tailwind CSS"],
-    },
-    contribution: {
-      title: "Construire une expérience immersive, de la performance à l’animation",
-      link: "https://kapture-portfolio.pages.dev/",
-      descriptions: [
-        {
-          title: "Architecture statique avec SvelteKit",
-          content: `Mise en place d’un site entièrement statique généré avec SvelteKit, garantissant une rapidité de chargement optimale. Déploiement sur Cloudflare pour une distribution performante et mondiale.`
-        },
-        {
-          title: "Animations immersives avec GSAP",
-          content: `Orchestration de transitions fluides entre les pages, effets au scroll et micro-interactions afin de donner une dimension cinématographique à la navigation.`
-        },
-        {
-          title: "Optimisation avancée des images",
-          content: `Création d’un script de conversion automatique des images en WebP afin de réduire drastiquement le poids des assets tout en conservant une qualité visuelle élevée. Génération d’une version full résolution et d’une version miniature (thumbnails) pour optimiser les performances.`
-        },
-        {
-          title: "Interface minimaliste orientée image",
-          content: `Design volontairement épuré pour laisser toute la place à la photographie, avec une attention particulière portée au rythme des transitions et à l’expérience immersive.`
-        }
-      ]
-    },
-    results: {
-      title: "Une vitrine technique de précision et de fluidité",
-      descriptions: [
-        {
-          title: "Chargement ultra-rapide",
-          content: `Site statique optimisé, images compressées en WebP et distribution via CDN Cloudflare : navigation fluide et temps de chargement quasi instantané.`
-        },
-        {
-          title: "Expérience immersive maîtrisée",
-          content: `Transitions animées cohérentes et fluides, renforçant la perception premium du portfolio.`
-        },
-        {
-          title: "Démonstration de polyvalence frontend",
-          content: `Projet illustrant une capacité à travailler hors contexte produit business : motion design, optimisation d’assets, déploiement edge et architecture moderne.`
-        },
-        {
-          title: "Approfondissement technique ciblé",
-          content: `Montée en expertise sur SvelteKit, gestion d’assets statiques et intégration d’animations avancées avec GSAP.`
-        }
-      ],
-      picture1: "/projects/kapture/picture-4.webp",
-      picture2: "/projects/kapture/picture-5.webp",
-    }
-  },
-  gfield: {
-    metadata: {
-      title: "Gabriel Field | Refonte d’un site musical pour une expérience immersive et performante",
-      description: "Refonte complète du site de Gabriel Field, musicien compositeur, pour créer une vitrine artistique immersive et performante. Migration d’un WordPress générique vers un site statique Next.js, avec un design épuré et des animations légères pour refléter l’univers musical de l’artiste, tout en améliorant les performances et la maintenance.",
-      keywords: ["Gabriel Field", "refonte de site", "Next.js", "performance web", "design immersif"],
-      image: "/projects/gfield/listing.webp",
-    },
-    context: {
-      picture1: "/projects/gfield/picture-1.webp",
-      picture2: "/projects/gfield/picture-2.webp",
-      picture3: "/projects/gfield/picture-3.webp",
-      date: "2026",
-      title: "Du WordPress générique à un site qui parle: Redonner vie à l’univers de Gabriel Field.",
-      description: `Gabriel Field, musicien compositeur, disposait d’un site qui ne traduisait ni son univers musical ni sa sensibilité artistique
-      La boutique de partitions, rarement utilisée, alourdissait l’expérience et détournait le site de son objectif principal : mettre la musique en avant.\n
-      À cela s’ajoutaient des contraintes de maintenance qui faisaient du site une charge plutôt qu’un outil de communication. 
-      Nous avons donc décidé de repartir de zéro pour transformer le site en une véritable vitrine artistique, où sa musique et son univers visuel seraient au centre de l’expérience.`,
-      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    },
-    contribution: {
-      title: "Faire des choix techniques au service de la musique",
-      link: "https://www.gabriel-field.com/",
-      descriptions: [{
-        title: "Refonte technique",
-        content: "Migration vers un site statique en Next.js, hébergé sur Vercel, afin d’obtenir des performances élevées, un excellent SEO et une maintenance minimale."
-      },
-      {
-        title: "Design immersif",
-        content: "Conception d’une interface responsive, épurée et ponctuée d’animations légères, pensée pour faire ressentir l’univers musical dès la première visite."
-      },
-      {
-        title: "Simplification stratégique",
-        content: `Suppression de la boutique et recentrage du site sur l’essentiel : la musique, les projets et l’identité artistique. 
-        Mise en place d’une version anglaise du site, afin de rendre le travail de Gabriel accessible à un public international, et d’un formulaire de contact permettant aux professionnels et auditeurs de contacter facilement l’artiste.`
-      },
-      {
-        title: "Accompagnement & conseil",
-        content: "Travail collaboratif sur la structuration des contenus et leur mise en valeur, pour garantir un parcours clair et cohérent."
-      }]
-    },
-    results: {
-      title: "Un site léger, rapide et fidèle à l’artiste",
-      descriptions: [{
-        title: "Performance optimisée",
-        content: "Passage d’un site WordPress à un site statique Next.js : **chargement < 1s** sur la majorité des pages."
-      },
-      {
-        title: "Maintenance simplifiée",
-        content: "**Coûts de maintenance divisés par 4**, suppression totale de la dette liée aux plugins WordPress."
-      },
-      {
-        title: "Visibilité accrue",
-        content: "Amélioration du référencement naturel grâce à une structure optimisée et des performances élevées."
-      },
-      {
-        title: "Satisfaction client",
-        content: "Site autonome, élégant et évolutif, prêt à accompagner la carrière artistique de Gabriel."
-      }],
-      picture1: "/projects/gfield/picture-4.webp",
-      picture2: "/projects/gfield/picture-5.webp",
-    }
-  },
-  nearlist: {
-    metadata: {
-      title: "Nearlist | Connecter les plateformes musicales autour d’une expérience sociale unifiée",
-      description: "Nearlist est une application mobile pensée comme une surcouche sociale aux plateformes de streaming musical (Spotify, Deezer). L’ambition : permettre aux utilisateurs de créer des playlists collaboratives inter-plateformes, enrichies d’interactions sociales.",
-      keywords: ["Nearlist", "application mobile", "streaming musical", "playlists collaboratives", "expérience sociale", "interopérabilité"],
-      image: "/projects/nearlist/listing.webp",
-    },
-    context: {
-      picture1: "/projects/nearlist/picture-1.webp",
-      picture2: "/projects/nearlist/picture-2.webp",
-      picture3: "/projects/nearlist/picture-3.webp",
-      date: "2022",
-      title: "Connecter les plateformes musicales autour d’une expérience sociale unifiée",
-      description: `Nearlist est une application mobile pensée comme une surcouche sociale aux plateformes de streaming musical (Spotify, Deezer).
-      L’ambition : permettre aux utilisateurs de créer des playlists collaboratives inter-plateformes, enrichies d’interactions sociales — commentaires, échanges en temps réel et découverte des playlists de ses amis — sans quitter leur écosystème musical existant. 
-      Le défi était double : proposer une expérience simple et naturelle côté utilisateur, tout en orchestrant une synchronisation complexe avec des APIs tierces.`,
-      stack: ["React Native", "Node.Js"],
-    },
-    contribution: {
-      title: "Concevoir une expérience collaborative fluide au-dessus de systèmes tiers",
-      descriptions: [
-        {
-          title: "Penser “usage” avant intégration",
-          content: `Plutôt que de reproduire un player musical, Nearlist a été conçu comme un espace d’interaction. La valeur réside dans la collaboration, les échanges et la découverte.`
-        },
-        {
-          title: "Rendre l’interopérabilité invisible",
-          content: `Connexion des comptes Spotify ou Deezer via OAuth, puis manipulation des playlists comme si elles étaient natives. Toute la complexité de synchronisation est masquée derrière une expérience simple.`
-        },
-        {
-          title: "Créer une dynamique sociale autour de la musique",
-          content: `Ajout de commentaires par morceau, playlists collaboratives et chat en temps réel pour transformer l’écoute en expérience partagée.`
-        },
-        {
-          title: "Favoriser la découverte communautaire via l'humain",
-          content: `Mise en place d’un espace Discover permettant d’explorer les playlists publiques de ses amis et de naviguer dans leurs univers musicaux.`
-        },
-        {
-          title: "Structurer une base extensible",
-          content: `Architecture pensée pour accueillir de nouveaux fournisseurs musicaux sans modifier l’expérience utilisateur.`
-        }
-      ]
-
-    },
-    results: {
-      title: "Une architecture sociale extensible et cohérente",
-      descriptions: [
-        {
-          title: "Expérience musicale réellement unifiée",
-          content: `Les utilisateurs interagissent avec une seule interface sociale tout en conservant leurs plateformes musicales natives.`
-        },
-        {
-          title: "Robustesse face aux contraintes externes",
-          content: `Gestion fiable des flux OAuth, des refresh tokens et des limites d’API assurant une synchronisation stable.`
-        },
-        {
-          title: "Base prête à évoluer",
-          content: `L’abstraction multi-fournisseurs permettrait d’intégrer de nouvelles plateformes de streaming sans refonte majeure.`
-        },
-        {
-          title: "Démonstration produit & technique complète",
-          content: `Nearlist illustre la capacité à concevoir un produit mobile cohérent, à forte dimension sociale, tout en maîtrisant les intégrations tierces et le temps réel.`
-        }
-      ],
-      picture1: "/projects/nearlist/picture-4.webp",
-      picture2: "/projects/nearlist/picture-5.webp",
     }
   },
 }
