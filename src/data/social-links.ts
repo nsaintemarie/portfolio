@@ -7,7 +7,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "Linkedin",
-    href: "https://www.linkedin.com/in/no%C3%A9mie-sainte-marie-8209b9160/",
+    href: "https://www.linkedin.com/in/noemie-sainte-marie/",
   },
   {
     name: "Malt",
