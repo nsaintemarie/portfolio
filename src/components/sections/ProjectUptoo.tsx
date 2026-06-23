@@ -27,7 +27,7 @@ export function ProjectUptoo() {
         <h2 className="text-heading-lg">
           <MaskInText delay={0.2}>2022 - 2025, Uptoo</MaskInText>
           <MaskInText delay={0.5} className="text-right pr-0.5 md:text-left md:pl-28">
-            Détail d'une transformation technique
+            Détails d'une transformation technique
           </MaskInText>
         </h2>
         <FadeIn delay={1} className="mt-5">

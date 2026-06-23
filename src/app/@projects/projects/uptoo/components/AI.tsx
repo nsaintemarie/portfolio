@@ -6,9 +6,10 @@ export function AIApproach({ data }: { data: UptooContentType["ai"] }) {
   return (
     <section
       id="ia"
-      className="relative w-full overflow-hidden bg-background-secondary text-foreground py-14 px-5 md:px-40"
+      className="relative w-full overflow-hidden bg-background-secondary text-foreground py-14 px-5 md:px-20"
       aria-label="IA appliquée"
     >
+      <div className="max-w-6xl mx-auto">
       <div className="mb-14 md:mb-18">
         <MaskInText delay={0.2} className="text-paragraph uppercase opacity-40 tracking-widest">
           Les réalisations · 02
@@ -18,7 +19,7 @@ export function AIApproach({ data }: { data: UptooContentType["ai"] }) {
         </MaskInText>
       </div>
 
-      <FadeIn delay={0.4} className="flex flex-col md:flex-row gap-12 md:gap-24 items-start">
+      <FadeIn delay={0.8} className="flex flex-col md:flex-row gap-12 md:gap-24 items-start">
         {data.subtitle && (
           <div className="flex-none md:w-72">
             <p className="text-paragraph italic opacity-40 leading-relaxed">{data.subtitle}</p>
@@ -50,6 +51,7 @@ export function AIApproach({ data }: { data: UptooContentType["ai"] }) {
           ))}
         </div>
       </FadeIn>
+      </div>
     </section>
   );
 }
