@@ -6,7 +6,6 @@ export { FramedImage } from "./Framed-Image";
 export { GridBackground } from "./GridBackground";
 export { SkipLink } from "./SkipLink";
 export { SocialLinks } from "./SocialLinks";
-export { ProjectsListing } from "./ProjectsListing";
 export { ProjectCards } from "./ProjectCards";
 export * from "./animations";
 export * from "./timeline";
