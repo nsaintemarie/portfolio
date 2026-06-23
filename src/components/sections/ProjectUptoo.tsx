@@ -38,11 +38,11 @@ export function ProjectUptoo() {
       </div>
 
       <ProjectCards data={projects} />
-      <FadeIn delay={1} className="flex gap-3 flex-wrap mt-8 width-full justify-evenly">
+      <FadeIn delay={1} className="flex gap-3 flex-wrap mt-6 width-full justify-evenly">
         {stacks.map((stack) => (
           <span
             key={stack}
-            className="rounded-full px-3 py-1 text-paragraph-sm border border-white/8 uppercase text-foreground/50"
+            className="rounded-full px-3 py-1 text-paragraph-sm  uppercase text-foreground/50"
           >
             {stack}
           </span>
