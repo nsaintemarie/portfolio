@@ -5,6 +5,7 @@ import { UptooContentType } from "@/types";
 export function AIApproach({ data }: { data: UptooContentType["ai"] }) {
   return (
     <section
+      id="ia"
       className="relative w-full overflow-hidden bg-background-secondary text-foreground py-14 px-5 md:px-40"
       aria-label="IA appliquée"
     >

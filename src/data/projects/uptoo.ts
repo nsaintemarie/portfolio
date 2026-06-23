@@ -16,7 +16,7 @@ export const UptooContent: UptooContentType = {
     description: `Chez Uptoo, j'ai été Stack Owner – Lead Developer d'un écosystème multi-plateformes : ~200 utilisateurs internes, plus les clients, candidats et partenaires.
       Ma mission : faire d'une base technique de près de 10 ans un socle capable d'absorber de nouveaux enjeux métier — l'IA en tête — sans ralentir la croissance produit.
       Le vrai enjeu n'était pas de migrer une stack, mais de choisir une architecture qui tienne dans le temps, alignée avec la vision business et pensée pour que le prochain virage ne fasse pas tout casser.`,
-    stack: ["Node.js", "NestJs", "Next.Js", "Vue.js", "TypeScript", "MongoDB", "ElasticSearch", "Redis", "GCP"],
+    stack: ["TypeScript", "Node.js", "NestJs", "Next.Js", "MongoDB", "ElasticSearch", "Redis", "GCP"],
   },
   migrations: {
     title: "Anticiper la rupture",
@@ -83,7 +83,7 @@ export const UptooContent: UptooContentType = {
     ]
   },
   team: {
-    title: "Faire monter l'équipe en autonomie",
+    title: "Faire gagner l'équipe en autonomie",
     subtitle: "Rendre lisible pour décider, transmettre pour maintenir : pour que toute l'équipe construise ensemble, sans cavalier solitaire.",
     descriptions: [
       {

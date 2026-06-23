@@ -34,6 +34,7 @@ function TeamItem({ desc }: { desc: TeamDesc; }) {
 export function Team({ data }: { data: UptooContentType["team"] }) {
   return (
     <section
+      id="autonomie"
       data-theme="light"
       className="relative w-full overflow-hidden bg-foreground text-background-secondary px-5 md:px-40 py-14"
       aria-label="Équipe autonome"

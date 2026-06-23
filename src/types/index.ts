@@ -1,9 +1,9 @@
 // Data types
 export type Project = {
   title: string;
-  stacks: readonly string[];
-  image: string;
-  slug: string;
+  content: string;
+  results: string;
+  link: string;
 }
 
 export type UptooContentType = {

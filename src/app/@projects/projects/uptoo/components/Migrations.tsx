@@ -52,7 +52,7 @@ function MigrationItem({ desc }: { desc: MigrationDesc }) {
 
 export function Migrations({ data }: { data: UptooContentType["migrations"] }) {
   return (
-    <section aria-label="Migrations" className="bg-foreground text-background-secondary px-5 md:px-40 py-14">
+    <section id="anticiper" aria-label="Migrations" className="bg-foreground text-background-secondary px-5 md:px-40 py-14">
       <div className="mb-14 md:mb-18">
         <MaskInText delay={0.2} className="text-paragraph uppercase opacity-40 tracking-widest">
           Les réalisations · 01

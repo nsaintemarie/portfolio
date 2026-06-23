@@ -7,7 +7,7 @@ export function About() {
   return (
     <section
       id="a-propos"
-      className="min-h-screen lg:max-h-screen flex flex-col gap-6 xl:gap-10 px-5 md:px-20 lg:px-28 pt-12 md:pt-16 pb-26 md:snap-start md:snap-always overflow-hidden bg-background-tertiary"
+      className="min-h-screen lg:max-h-screen flex flex-col gap-6 xl:gap-10 px-5 md:px-20 lg:px-28 pt-12 md:pt-16 pb-26 md:snap-start md:snap-always overflow-hidden bg-background-secondary"
     >
       {/* Row 1: Title + Image 2 (portrait) */}
       <div className="flex md:gap-6 lg:gap-16 flex-1 justify-between">
