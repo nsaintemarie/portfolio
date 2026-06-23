@@ -15,8 +15,8 @@ export function Results({ data }: { data: ProjectContent["results"] }) {
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20">
         <div>
-          <MaskInText delay={0.2} className="text-paragraph uppercase">
-            [LES RÉSULTATS]
+          <MaskInText delay={0.2} className="text-paragraph uppercase opacity-40 tracking-widest">
+            LES RÉSULTATS
           </MaskInText>
           <MaskInText as='h2' delay={0.5} className="text-heading-lg mt-2 mb-10">
             {data.title}
@@ -24,7 +24,7 @@ export function Results({ data }: { data: ProjectContent["results"] }) {
           <FadeIn delay={1.2} className="space-y-9">
             {data.descriptions.map((desc, index) => (
               <div key={index}>
-                <h3 className="text-paragraph-sm uppercase mb-2">{desc.title}</h3>
+                <h3 className="text-heading-sm uppercase mb-2 leading-snug opacity-80">{desc.title}</h3>
                 <p className="text-paragraph">{renderBold(desc.content)}</p>
               </div>
             ))}

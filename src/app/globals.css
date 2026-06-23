@@ -45,6 +45,10 @@
   --leading-heading-md: auto;
   --tracking-heading-md: -0.02em;
 
+  --text-heading-sm: clamp(16px, 1.67vw, 18px);
+  --leading-heading-sm: auto;
+  --tracking-heading-sm: -0.02em;
+
   --text-logo: 20px;
   --leading-logo: auto;
   --tracking-logo: -0.06em;
@@ -105,6 +109,12 @@ body {
   font-size: var(--text-heading-md);
   line-height: var(--leading-heading-md);
   letter-spacing: var(--tracking-heading-md);
+}
+
+.text-heading-sm {
+  font-size: var(--text-heading-sm);
+  line-height: var(--leading-heading-sm);
+  letter-spacing: var(--tracking-heading-sm);
 }
 
 .text-logo {

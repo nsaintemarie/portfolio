@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Context, Contribution, Results, Projects } from "@/components/sections/projects/";
-import { projectsContents } from "@/data";
+import { Context, Results } from "@/components/sections/projects/";
+import { Migrations, AIApproach, Team } from "./components";
+import { UptooContent as data } from "@/data";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = projectsContents.uptoo;
 
   if (!data) return {};
 
@@ -24,14 +24,13 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ProjectPage() {
-  const data = projectsContents.uptoo;
 
   return (
     <>
       <Context data={data.context} />
-      {data.contributions.map((contribution, index) => (
-        <Contribution data={contribution} index={index}/>
-      ))}
+      <Migrations data={data.migrations} />
+      <AIApproach data={data.ai} />
+      <Team data={data.team} />
       <Results data={data.results} />
     </>
   )

@@ -6,7 +6,7 @@ export type Project = {
   slug: string;
 }
 
-export type ProjectContent = {
+export type UptooContentType = {
   metadata: {
     title: string;
     description: string;
@@ -22,13 +22,76 @@ export type ProjectContent = {
     title: string;
     description: string;
   };
+  migrations: {
+    title: string;
+    subtitle: string;
+    descriptions: {
+      title: {
+        from : string;
+        to : string;
+        subtitle: string;
+      };
+      content: {
+        problem : string;
+        solution : string;
+        role: string;
+        detail?: string;
+      };
+    }[]
+  };
+  ai: {
+    title: string;
+    subtitle: string;
+    descriptions: {
+      title: string;
+      content: string;
+      detail?: string;
+    }[]
+  };
+  team: {
+    title: string;
+    subtitle?: string;
+    descriptions: {
+      title: string;
+      subtitle: string;
+      content: string;
+      cards?: { label: string; content: string }[];
+    }[]
+  };
+  results: {
+    title: string;
+    descriptions: {
+      title: string;
+      content: string;
+    }[];
+    picture1: string;
+    picture2: string;
+  };
+}
+
+export type ProjectContent = {
+  metadata: {
+    title: string;
+    description: string;
+    keywords: string[];
+    image: string;
+  };
+  context: {
+    picture1: string;
+    picture2: string;
+    picture3: string;
+    stack: string[];
+    date: string;
+    title: string;
+    description: string;
+  };
   contributions: {
     title: string;
     subtitle?: string;
     descriptions: {
       title?: string;
       content: string;
-    }[]
+    }[];
   }[];
   results: {
     title: string;
