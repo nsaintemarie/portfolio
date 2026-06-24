@@ -13,12 +13,12 @@ export function About() {
       <div className="flex md:gap-6 lg:gap-16 flex-1 justify-between">
         {/* Title */}
         <h2 className="text-heading-lg flex flex-col max-w-141.5 pb-10">
-          <MaskInText delay={0.2}>Structurer la</MaskInText>
+          <MaskInText delay={0.2}>Ex Ops,</MaskInText>
           <MaskInText delay={0.4} wrapperClassName="md:self-center" className="pr-0.5">
-            complexité. Construire des
+            je lis la tech depuis
           </MaskInText>
           <MaskInText delay={0.6} wrapperClassName="md:self-end">
-            solutions {"{ utiles }"}
+            le métier
           </MaskInText>
         </h2>
 
