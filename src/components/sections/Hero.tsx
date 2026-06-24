@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, GridBackground, SocialLinks } from "@/components/ui";
+import { GridBackground, SocialLinks } from "@/components/ui";
 import { EASE_OUT_EXPO } from "@/constants/animation";
 
 const heroLines: { text: string; label: string; align: string; delay: number }[] = [
