@@ -18,6 +18,7 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
             width={272}
             height={400}
             className="h-full object-cover hidden md:block"
+            loading="eager"
           />
         </FadeInUp>
         <FadeInUp delay={0.2} className="mt-24 -ml-10">
@@ -28,6 +29,7 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
             height={385}
             priority
             className="h-full object-cover"
+            loading="eager"
           />
         </FadeInUp>
         <FadeInUp delay={0.4}>
@@ -37,6 +39,7 @@ export function Context({ data }: { data: ProjectContent["context"] }) {
             width={350}
             height={461}
             className="h-full object-cover -mt-1.5"
+            loading="eager"
           />
         </FadeInUp>
       </div>

@@ -53,7 +53,7 @@ export function Roadmap() {
                 )}
               >
                 <span className="text-heading-xl block">[{index + 1}]</span>
-                <h3 className="text-heading-md opacity-80">{step.title}</h3>
+                <h2 className="text-heading-md opacity-80">{step.title}</h2>
                 <p className="text-paragraph-line opacity-80">{step.content}</p>
               </div>
             </FadeInUp>

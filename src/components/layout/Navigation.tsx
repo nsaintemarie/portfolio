@@ -5,8 +5,8 @@ import Link from "next/link";
 import { FadeInUp } from "@/components/ui";
 
 const navigation = [
-  { name: "REALISATIONS", icon: "/diamond.svg", id: "projets", delay: 1.3 },
-  { name: "A PROPOS",  id: "a-propos", delay: 1.4 },
+  { name: "RÉALISATIONS", icon: "/diamond.svg", id: "projets", delay: 1.3 },
+  { name: "À PROPOS",  id: "a-propos", delay: 1.4 },
   { name: "CONTACT", id: "contact", delay: 1.5 },
 ];
 

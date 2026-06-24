@@ -29,7 +29,10 @@ function MobileDrawer({ children }: ProjectModalProps) {
     <Drawer.Root open onClose={() => router.back()} direction="bottom">
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 z-60 bg-black/40" />
-        <Drawer.Content className="fixed inset-x-0 bottom-0 z-70 flex flex-col bg-background-secondary focus:outline-none h-dvh">
+        <Drawer.Content
+          className="fixed inset-x-0 bottom-0 z-70 flex flex-col bg-background-secondary focus:outline-none h-dvh"
+          aria-describedby={undefined}
+          >
           <Drawer.Title className="sr-only">Projet</Drawer.Title>
           <div className="mx-auto mt-4 mb-2.5 h-1.5 w-20 shrink-0 rounded-full bg-primary/30" />
           <ScrollContainer className="flex-1 overflow-y-auto focus-visible:outline-none!">
@@ -50,7 +53,7 @@ function DesktopDialog({ children }: ProjectModalProps) {
         <Dialog.Overlay className="fixed inset-0 z-60 bg-black/40" />
         <Dialog.Content
           asChild
-          aria-describedby={'Project content'}
+          aria-describedby={undefined}
           onOpenAutoFocus={(e) => e.preventDefault()}
         >
           <motion.div

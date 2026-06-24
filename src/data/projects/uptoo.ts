@@ -5,7 +5,7 @@ export const UptooContent: UptooContentType = {
     title: "Uptoo | Refonte technique et intégration de l'IA pour une plateforme de recrutement performante",
     description: "En tant que Stack Owner – Lead Developer chez Uptoo, j'ai piloté la refonte technique d'une plateforme de recrutement utilisée par 200+ utilisateurs internes et clients. J'ai structuré une architecture scalable, orchestré la migration vers NestJS et Next.js, et intégré des solutions d'IA pour automatiser des process métiers, tout en accompagnant l'équipe dans cette transformation majeure.",
     keywords: ["recrutement", "refonte technique", "NestJS", "Next.js", "intégration IA", "lead developer"],
-    image: "/projects/uptoo/listing.webp",
+    image: "og-image.png",
   },
   context: {
     picture1: "/projects/uptoo/picture-1.webp",

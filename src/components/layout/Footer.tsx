@@ -4,7 +4,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "[PROJETS]", href: "#projets", label: "Voir les projets" },
+  { name: "[RÉALISATIONS]", href: "#projets", label: "Voir les projets" },
   { name: "[MENTIONS LÉGALES]", href: "/mentions-legales", label: "Voir les mentions légales", redirect: true },
   {
     name: "[LINKEDIN]",
@@ -26,7 +26,6 @@ export function Footer() {
   return (
     <footer
       className={cn("relative z-60 bg-background overflow-hidden md:snap-start")}
-      role="contentinfo"
       aria-label="Pied de page"
     >
       {/* Navigation line */}

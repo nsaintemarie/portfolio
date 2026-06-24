@@ -37,7 +37,7 @@ export function Propositions() {
       </div>
 
       <FadeIn delay={0.7} className="mt-6 flex items-center justify-end gap-3 px-5 md:px-0 mb-12">
-        <h2 className="text-heading-md text-foreground-white opacity-70 text-right">Alors voilà comment je vous accompagne</h2>
+        <p className="text-heading-md text-foreground-white opacity-70 text-right">Alors voilà comment je vous accompagne</p>
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="opacity-70 shrink-0 mt-9 animate-pulse">
           <path d="M8 6 C8 6, 36 6, 36 28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
           <path d="M29 24 L36 32 L43 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>

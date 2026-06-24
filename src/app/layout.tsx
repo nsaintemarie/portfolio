@@ -103,7 +103,6 @@ export default function RootLayout({
         />
         <main
           id="main"
-          role="main"
         >
           {children}
           {projects}
