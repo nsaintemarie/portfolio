@@ -51,7 +51,7 @@ export function Hero() {
       <GridBackground />
 
       <motion.div
-        className="absolute z-10 md:flex gap-3 bottom-38 md:top-0 md:left-0 w-1/2 justify-around pl-3 md:pl-5 pt-1.5 lg:pt-2.5 md:pr-8.5"
+        className="hidden absolute z-10 md:flex gap-3 top-0 left-0 w-1/2 justify-around pl-5 pt-1.5 lg:pt-2.5 pr-8.5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
@@ -66,12 +66,27 @@ export function Hero() {
         ))}
       </motion.div>
       <motion.div
-        className="absolute z-10 md:flex gap-3 bottom-34 md:top-0 md:right-0 w-1/2 justify-around pl-3 md:pr-5 pt-1.5 lg:pt-2.5 md:pl-8.5"
+        className="hidden absolute z-10 md:flex gap-3 top-0 right-0 w-1/2 justify-around pr-5 pt-1.5 lg:pt-2.5 pl-8.5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
       >
         {stacksRight.map((stack) => (
+          <span
+            key={stack}
+            className="px-3 py-1 text-paragraph-sm uppercase text-foreground/40"
+          >
+            {stack}
+          </span>
+        ))}
+      </motion.div>
+       <motion.div
+        className="md:hidden absolute z-10 flex gap-x-2 bottom-22 max-w-[60%] flex-wrap pl-3"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
+      >
+        {[...stacksLeft, ...stacksRight].map((stack) => (
           <span
             key={stack}
             className="px-3 py-1 text-paragraph-sm uppercase text-foreground/40"
